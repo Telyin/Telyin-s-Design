@@ -1,0 +1,46 @@
+/* 웹폰트 선언 */
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), 
+    url(../fonts/Pretendard-Regular.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), 
+    url(../fonts/Pretendard-Bold.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+* /* *(별)은 와일드태그로 모든 태그를 포함한 개념이다 */ {
+    margin: 0; padding: 0;
+}
+/* body태그에 기본 서체 스타일(본문)을 지정 */
+body {
+    font-family: 'Pretendard';
+    font-size: 17px;
+    font-weight: 400;
+    color: #555; /* 6자리 문자가 같으면 3개만 써도 됨(ex 555555) */
+    line-height: 1.5;
+}
+/* html태그의 기본스타일을 리셋시킴, body에서 선언한 기본 스타일로 적용 */
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit; /* 브라우저가 주는 스타일을 무시 */
+    font-weight: inherit;
+}
+strong {
+    font-weight: inherit;
+}
+em {
+    font-style: normal; /* 기울어진 글꼴 초기화 */
+}
+a {
+    color: inherit;
+    text-decoration: none; /* 밑줄 삭제 */
+}
+ol, ul, li {
+    list-style: none; /* 리스트 앞 도형 및 숫자 제거 */
+}
