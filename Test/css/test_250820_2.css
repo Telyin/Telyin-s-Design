@@ -48,6 +48,15 @@ ol, ul, li {
     width: 1260px;
     margin: 0 auto;
 }
+.nat .eul {
+    font-weight: 700;
+    font-size: 40px;
+    color: #1d1d1d;
+    margin: 100px 0 13px 0;
+}
+.nat .eulp {
+    margin: 0 0 0 0;
+}
 .nat strong {
     font-weight: 700;
     color: #81a3c9;
@@ -56,8 +65,34 @@ ol, ul, li {
     font-weight: 700;
     color: #4d93e3;
 }
+.vil .vla {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin: 170px 0 25px 0;
+}
+.cyc {
+    text-align: right;
+    margin: 0 0 200px 0;
+}
+.cyc h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 130px 0 23px 0;
+}
+.cyc h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 23px 0 22px 0;
+}
 .cyc .sun {
     color: #283313;
+}
+.cyc p strong {
+    font-weight: 700;
+    text-decoration: underline;
 }
 .cyc strong {
     font-weight: 700;
