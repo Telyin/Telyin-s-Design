@@ -25,6 +25,7 @@ body {
     font-weight: 400;
     color: #555; /* 6자리 문자가 같으면 3개만 써도 됨(ex 555555) */
     line-height: 1.5;
+    word-break: keep-all;
 }
 /* html태그의 기본스타일을 리셋시킴, body에서 선언한 기본 스타일로 적용 */
 h1, h2, h3, h4, h5, h6 {
