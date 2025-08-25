@@ -1,0 +1,44 @@
+@import url(common.css);
+.line h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 120px 0 0 0;
+}
+.line h2 {
+    color: #00b900;
+    margin: 20px 0 10px 0;
+}
+.line a {
+    color: #00b900;
+    border: 1px solid #00b900;
+    display: block;
+    display: inline-block;
+    margin: 26px 0 28px 0;
+    padding: 8px 31px 8px 31px;
+}
+.line .photo {
+    margin: 0 0 98px 0;
+}
+
+.sti {
+    text-align: center;
+    color: #fff;
+    background-image: url(../images/background\ 250825_2.jpg);
+    height: 700px;
+}
+.sti h1 {
+    font-size: 40px;
+    font-weight: 700;
+    padding: 120px 0 0 0;
+}
+.sti .lav {
+    margin: 22px 0 40px 0;
+}
+.sti a {
+    margin: 0 0 50px 0;
+    border: 1px solid #fff;
+    padding: 9px 31px 9px 31px;
+    display: block;
+    display: inline-block;
+}
