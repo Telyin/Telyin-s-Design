@@ -1,44 +1,130 @@
+/* 메인 페이지 css */
+@import url(default.css);
+@import url(font.css);
 @import url(common.css);
-.line h1 {
-    font-size: 40px;
+
+header {
+    height: 100px;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    font-size: 17px;
     font-weight: 700;
     color: #1d1d1d;
-    margin: 120px 0 0 0;
-}
-.line h2 {
-    color: #00b900;
-    margin: 20px 0 10px 0;
-}
-.line a {
-    color: #00b900;
-    border: 1px solid #00b900;
+    line-height: 100px; /* header의 높이와 동일한 행간 값을 준다 */
     display: block;
-    display: inline-block;
-    margin: 26px 0 28px 0;
-    padding: 8px 31px 8px 31px;
-}
-.line .photo {
-    margin: 0 0 98px 0;
+    padding: 0 57px 0 57px;
 }
 
-.sti {
-    text-align: center;
+.visual {
+    background: url(../images/visual_background.jpg) no-repeat center center / cover;
+    height: 800px;
     color: #fff;
-    background-image: url(../images/background\ 250825_2.jpg);
-    height: 700px;
 }
-.sti h1 {
+.visual h2 {
+    font-size: 60px;
+    font-weight: 700;
+    padding: 283px 0 18px 0;
+    line-height: 1.3;
+}
+.visual p {
+    font-size: 25px;
+}
+
+.biz {
+    margin: 69px 0 0 0;
+}
+.biz .tit {
+    text-align: center;
+}
+.biz .tit h2 {
+    color: #174193;
+    font-weight: 700;
+}
+.biz .tit strong {
     font-size: 40px;
     font-weight: 700;
-    padding: 120px 0 0 0;
 }
-.sti .lav {
-    margin: 22px 0 40px 0;
+.biz .tit p {
+    font-weight: 700;
+    font-size: 28px;
+    color: #1d1d1d;
+    margin: 10px 0 0 0;
+    line-height: 1.3;
 }
-.sti a {
-    margin: 0 0 50px 0;
-    border: 1px solid #fff;
-    padding: 9px 31px 9px 31px;
+.biz .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.biz .list{
+    text-align: center;
+    margin: 42px 0 0 0;
+}
+.biz .list ul li h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 9px 0 0 0;
+    color: #1d1d1d;
+}
+.biz .list ul li p {
+    margin: 5px 0 0 0;
+}
+.biz .list ul li .more {
+    margin: 16px 0 0 0;
+    border: 1px solid #666;
+    border-radius: 50px;
+    padding: 20px 90px 20px 90px;
     display: block;
     display: inline-block;
+}
+.biz .list ul li {
+    width: 297px;
+}
+.biz .list ul li a {
+    display: block; /* a태그는 어지간하면 display - block을 주는 것을 습관화 */
+}
+
+.brand {
+    background: url(../images/brand_bg.jpg) no-repeat center center / cover;
+    height: 1240px;
+    margin: 115px 0 0 0;
+    color: #fff;
+}
+.brand strong {
+    display: block;
+    font-size: 38px;
+    font-weight: 700;
+    color: #3E1E87;
+    padding: 725px 0 0 0;
+}
+.brand h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 4px 0 0 0;
+}
+.brand p {
+    font-size: 25px;
+    margin: 27px 0 0 0;
+}
+.brand a {
+    border: 1px solid #fff;
+    border-radius: 50px;
+    padding: 20px 48px 20px 48px;
+    display: inline-block;
+    margin: 28px 0 0 0;
+}
+
+footer {
+    background-color: #1d1d1d;
+    height: 200px;
+    padding: 41px 0 48px 0;
+    color: rgba(255, 255, 255, 0.8);
 }
