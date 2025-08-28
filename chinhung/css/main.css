@@ -132,7 +132,7 @@ footer .f_nav ul {
     display: flex;
     gap: 0 43px;
 }
-footer .f_nav strong {
+footer .f_nav ul li.privacy a {
     font-weight: 700;
 }
 footer .f_info {

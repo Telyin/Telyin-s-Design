@@ -12,3 +12,6 @@ body {
     width: 1260px;
     margin: 0 auto;
 }
+#wrap {
+    min-width: 1320px; /*1260 + 30 + 30 = 1320 */
+}
