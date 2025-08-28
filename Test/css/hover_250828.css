@@ -1,0 +1,42 @@
+@import url(common.css);
+
+.btn {
+    margin: 50px 0 50px 0;
+}
+.btn a {
+    padding: 7px 25px 7px 25px;
+    display: inline-block;
+    border-radius: 50px;
+}
+.item1 a {
+    background-color: #ededed;
+}
+.item1 a:hover {
+    background-color: #4E72FF;
+    color: #fff;
+}
+.item2 a {
+    border: 1px solid #666;
+}
+.item2 a:hover {
+    border-color: #4E72FF;
+    color: #4E72FF;
+}
+.item3 a {
+    background-color: #ededed;
+    border: 5px solid #ededed;
+}
+.item3 a:hover {
+    background-color: #fff;
+    border: 5px solid #4E72FF;
+    color: #4E72FF;
+}
+.item4 a {
+    border: 5px solid #4E72FF;
+    color: #4E72FF;
+}
+.item4 a:hover {
+    background-color: #4E72FF;
+    color: #fff;
+    
+}
