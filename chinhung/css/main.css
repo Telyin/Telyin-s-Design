@@ -125,6 +125,24 @@ header .gnb ul li a {
 footer {
     background-color: #1d1d1d;
     height: 200px;
-    padding: 41px 0 48px 0;
+    padding: 41px 0 80px 0;
     color: rgba(255, 255, 255, 0.8);
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 0 43px;
+}
+footer .f_nav strong {
+    font-weight: 700;
+}
+footer .f_info {
+    margin: 18px 0 18px 0;
+    display: flex;
+    gap: 0 22px;
+}
+footer .f_info strong {
+    font-weight: 700;
+}
+footer .copyright {
+    color: rgba(255, 255, 255, 0.6);
 }
