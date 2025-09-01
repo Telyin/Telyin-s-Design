@@ -1,0 +1,235 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+header {
+    height: 100px;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    display: block;
+    line-height: 100px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1E2124;
+    padding: 0 23px 0 23px;
+    letter-spacing: -0.02em;
+}
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    height: 800px;
+    color: #fff;
+}
+.visual h2 {
+    padding: 253px 0 23px 0;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+}
+
+.biz {
+    margin: 188px 0 0 0;
+}
+.biz .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.biz .txt {
+    width: 511px;
+    margin: 30px 0 0 0;
+}
+.biz .photo {
+    overflow: hidden;
+    width: 600px;
+    height: 513px;
+    border-radius: 30px;
+}
+.biz .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.biz .art,
+.biz .sch {
+    margin: 55px 0 0 0;
+}
+.biz .txt strong {
+    color: #DB0032;
+    display: block;
+}
+.biz .txt h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin: 14px 0 14px 0;
+}
+.biz .txt h2 em {
+    color: #DB0032;
+}
+.biz .txt .sub_tit {
+    font-size: 24px;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px 0;
+}
+.biz .txt .btn_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 45px 0 0 0;
+    gap: 10px 10px;
+}
+.biz .txt .btn_wrap a {
+    display: block;
+    border: 1px solid #DB0032;
+    color: #DB0032;
+    padding: 10px 30px 10px 30px;
+    border-radius: 30px;
+}
+.biz .txt .btn_wrap a:hover {
+    background-color: #DB0032;
+    color: #fff;
+}
+
+.community {
+    background: url(../images/community_bg.jpg) no-repeat center top / auto 910px;
+    margin: 145px 0 0 0;
+    /* height: 910px; - 콘텐츠가 배경보다 더 길어서 배경의 높이를 지정하면 안됨 = background의 높이니까 background의 높이값을 주면 된다 */
+    color: #fff;
+}
+.community .news{
+    padding: 104px 0 0 0;
+}
+.community .news .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.community .news .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin: 32px 0 16px 0;
+}
+.community .news .tit a {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 10px 30px 10px 30px;
+    border-radius: 30px;
+    margin: 46px 0 0 0;
+}
+.community .news .tit a:hover {
+    background-color: #fff;
+    color: #DB0032;
+}
+.community .news .list {
+    width: 832px;
+}
+.community .news .list ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.community .news .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 33px 0 33px 0;
+    align-items: center;
+}
+.community .news .list ul li a h3 {
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    /* 1줄 제한 - 조건 넓이가 제한되어 있어야 함 */
+    width: 680px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.community .news .list ul li a span {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 17px;
+}
+.community .media {
+    margin: 190px 0 0 0;
+}
+.community .media .tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.community .media .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+}
+.community .media .tit a {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 10px 30px 10px 30px;
+    border-radius: 30px;
+}
+.community .media .tit a:hover {
+    background-color: #fff;
+    color: #DB0032;
+}
+.community .media .list {
+    margin: 41px 0 0 0;
+}
+.community .media .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.community .media .list ul li {
+    width: 404px;
+}
+.community .media .list ul li a {
+    display: block;
+}
+.community .media .list ul li a .photo {
+    overflow: hidden;
+    height: 227px;
+    border-radius: 15px;
+    border: 2px solid #DB0032;
+}
+.community .media .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.community .media .list ul li a:hover .photo img {
+    transform: scale3d(1.1, 1.1, 1);
+}
+.community .media .list ul li a h3 {
+    color: #1E2124;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    margin: 21px 0 0 0;
+    /* 2줄 제한 - 조건 : 넓이가 있어야 함 */
+    line-height: 1.4;
+    height: 2.8em; /* 행간 x 줄 갯수 */
+    overflow: hidden;
+    /* webkit << 일부 브라우저에서만 지원하는 일종의 '해킹'툴이다 정식 지원코드가 아니라 css 오류 검사에서 경고를 받을 수 있다 */
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+}
+
+footer {
+    margin: 101px 0 0 0;
+    background-color: #2d2d2d;
+    color: #fff;
+    padding: 76px 0 66px 0;
+}
