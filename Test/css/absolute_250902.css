@@ -1,0 +1,196 @@
+@import url(common.css);
+
+header {
+    background-color: #fff;
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    top: 25px;
+    z-index: 100; /* header를 최상층에 배치하기 위해 일부러 쓸데없이 높은 숫자를 배정(ex100, ex999) */
+    width: calc(100% - 50px);
+    height: 100px;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .gnb ul {
+    display: flex;
+}
+.visual {
+    background: url(../../art/images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+    height: 800px;
+}
+.visual h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    padding: 340px 0 0 0;
+}
+.visual button {
+    display: block;
+    width: 200px;
+    height: 200px;
+    background-color: #FF1919;
+    border-radius: 50%; /* 원형은 50%를 주면 된다 */
+    font-size: 24px;
+    font-weight: 700;
+    position: absolute; /* 디자인 상 요소가 위치하는 곳을 감싸고 있는 태그를 기준으로 정렬한다 ... 지금 같은 경우는 wrapper를 기준으로 정렬했다 */
+    right: -100px;
+    bottom: -100px;
+}
+.visual .wrapper {
+    position: relative; /* 버튼의 정렬 기준을 잡아주기 위함 */
+    height: 800px;
+}
+
+.f_nav {
+    margin: 50px 0 50px 0;
+}
+.f_nav ul {
+    display: flex;
+    gap: 0 51px;
+}
+.f_nav ul li {
+    position: relative; /* before를 li를 기준으로 정렬하려 하는데 position이 선언 되어있어야 함
+                            position 속성 중에서 선언 전후로 상태에 변화가 없는 것이 relative이므로 이를 적용함으로써 기준점을 잡아주는 것 */
+}
+.f_nav ul li::before {
+    content: ""; /* before, after 가상 선택자는 반드시 content라는 속성이 있어야 나타난다 */
+    width: 1px;
+    height: 15px;
+    background-color: #d4d4d4;
+    display: block;
+    position: absolute;
+    left: -25px;
+    top: 4px;
+}
+.f_nav ul li:first-child::before {
+    display: none;
+}
+.btn_svg, .btn_path, .btn_path_ab, .btn_bg, .btn_ico {
+    margin: 50px 0 50px 0;
+}
+.btn_svg h2, .btn_path h2, .btn_path_ab h2, .btn_bg h2, .btn_ico h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 25px 0;
+}
+.btn_svg a {
+    display: inline-block;
+    border-radius: 25px;
+    border: 1px solid #808080;
+    color: #1d1d1d;
+    padding: 9px 55px 9px 25px;
+    position: relative;
+}
+.btn_svg a::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    background: url(../images/btn_arrow.svg) no-repeat center center;
+    transition: 0.5s;
+}
+.btn_svg a:hover {
+    background-color: #00B8C5;
+    border-color: #00B8C5;
+    color: #fff;
+    transition: 0.5s;
+}
+.btn_svg a:hover::after {
+    background-image: url(../images/btn_arrow_w.svg);
+}
+
+.btn_path a {
+    border: 1px solid #00B8C5;
+    padding: 9px 23px 9px 25px;
+    display: inline-flex;
+    border-radius: 25px;
+    gap: 0 21px;
+    align-items: center;
+    transition: 0.4s;
+}
+.btn_path a:hover {
+    border-color: #00B8C5;
+    background-color: #00B8C5;
+    color: #fff;
+}
+.btn_path a:hover svg path {
+    transition: 0.4s;
+    fill: #fff;
+}
+.btn_path_ab a {
+    border: 1px solid #00B8C5;
+    border-radius: 25px;
+    padding: 9px 55px 9px 25px;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.btn_path_ab a svg {
+    position: absolute;
+    right: 20px;
+    top: 11px;
+}
+.btn_path_ab a:hover {
+    border-color: #808080;
+    background-color: #808080;
+    color: #fff;
+}
+.btn_path_ab a:hover svg path {
+    fill: #fff
+}
+.btn_bg a {
+    border: 1px solid #00B8C5;
+    border-radius: 25px;
+    padding: 9px 55px 9px 25px;
+    display: inline-block;
+    position: relative;
+}
+.btn_bg a::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 11px;
+    width: 12px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='20' viewBox='0 0 13 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.025 20L0.25 18.225L8.475 10L0.25 1.775L2.025 0L12.025 10L2.025 20Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+
+}
+.btn_bg a:hover {
+    border-color: #808080;
+    background-color: #808080;
+    color: #fff;
+}
+.btn_bg a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='20' viewBox='0 0 13 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.025 20L0.25 18.225L8.475 10L0.25 1.775L2.025 0L12.025 10L2.025 20Z' fill='%23ffffff'/%3E%3C/svg%3E%0A");;
+}
+.btn_ico a {
+    border: 1px solid #00B8C5;
+    border-radius: 25px;
+    padding: 9px 55px 9px 25px;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.btn_ico a i {
+    position: absolute;
+    right: 20px;
+    top: 9px;
+}
+.btn_ico a:hover {
+    border-color: #808080;
+    background-color: #808080;
+    color: #fff;
+}
+
+body {
+    padding: 0 0 500px 0;
+}

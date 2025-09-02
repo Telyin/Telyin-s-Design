@@ -49,3 +49,13 @@ ol, ul, li {
     width: 1260px;
     margin: 0 auto;
 }
+button {
+    border: none;
+    background: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    cursor: pointer;
+}
