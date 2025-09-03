@@ -103,10 +103,20 @@ header .gnb ul li a {
 }
 
 .community {
-    background: url(../images/community_bg.jpg) no-repeat center top / auto 910px;
     margin: 145px 0 0 0;
     /* height: 910px; - 콘텐츠가 배경보다 더 길어서 배경의 높이를 지정하면 안됨 = background의 높이니까 background의 높이값을 주면 된다 */
     color: #fff;
+    position: relative;
+}
+.community::before {
+    content: ""; /* 가상 선택자 필수값 */
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 910px;
+    background: url(../images/community_bg.jpg) no-repeat center center / cover;
 }
 .community .news{
     padding: 104px 0 0 0;
@@ -114,6 +124,7 @@ header .gnb ul li a {
 .community .news .wrapper {
     display: flex;
     justify-content: space-between;
+    position: relative; /* more 정렬의 기준점 */
 }
 .community .news .tit h2 {
     font-size: 40px;
@@ -122,18 +133,6 @@ header .gnb ul li a {
     line-height: 1.4;
     letter-spacing: -0.02em;
     margin: 32px 0 16px 0;
-}
-.community .news .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 10px 30px 10px 30px;
-    border-radius: 30px;
-    margin: 46px 0 0 0;
-    transition: 0.5s;
-}
-.community .news .tit a:hover {
-    background-color: #fff;
-    color: #DB0032;
 }
 .community .news .list {
     width: 832px;
@@ -166,8 +165,25 @@ header .gnb ul li a {
     color: rgba(255, 255, 255, 0.8);
     font-size: 17px;
 }
+.community .news a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 10px 30px 10px 30px;
+    border-radius: 30px;
+    transition: 0.5s;
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: 0;
+    top: 203px;
+}
+.community .news a.more:hover {
+    background-color: #fff;
+    color: #DB0032;
+}
 .community .media {
     margin: 190px 0 0 0;
+}
+.community .media .wrapper {
+    position: relative;
 }
 .community .media .tit {
     display: flex;
@@ -180,17 +196,6 @@ header .gnb ul li a {
     color: #fff;
     line-height: 1.4;
     letter-spacing: -0.02em;
-}
-.community .media .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 10px 30px 10px 30px;
-    border-radius: 30px;
-    transition: 0.5s;
-}
-.community .media .tit a:hover {
-    background-color: #fff;
-    color: #DB0032;
 }
 .community .media .list {
     margin: 41px 0 0 0;
@@ -234,6 +239,20 @@ header .gnb ul li a {
     -webkit-line-clamp: 2;
     display: -webkit-box;
 }
+.community .media a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 10px 30px 10px 30px;
+    border-radius: 30px;
+    transition: 0.5s;
+    position: absolute;
+    right: 0;
+    top: 7px;
+}
+.community .media a.more:hover {
+    background-color: #fff;
+    color: #DB0032;
+}
 
 footer {
     margin: 101px 0 0 0;
@@ -249,11 +268,37 @@ footer .inner .f_nav ul {
     display: flex;
     gap: 0 43px;
 }
+footer .inner .f_nav ul li {
+    position: relative;
+}
+footer .inner .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -21px;
+    top: 6px;
+    width: 1px;
+    height: 12px;
+    background-color: #fff;
+}
+footer .inner .f_nav ul li:last-child::after {
+    display: none;
+}
 footer .inner .f_nav ul li a {
     display: block;
+    position: relative;
 }
-footer .inner .f_nav ul li a:hover {
-    text-decoration: underline;
+footer .inner .f_nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: .5s;
+}
+footer .inner .f_nav ul li a:hover::after {
+    width: 100%;
 }
 footer .inner .f_info {
     margin: 30px 0 0 0;
@@ -274,4 +319,17 @@ footer .family_site button {
     display: block;
     text-align: left;
     padding: 0 0 0 20px;
+    position: relative; /* after 정렬의 기준 */
+}
+footer .family_site button::after {
+    content: "";
+    position: absolute; /* button을 기준으로 정렬 */
+    width: 10px;
+    height: 10px;
+    transform: rotate(-135deg);
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    border-color:#fff;
+    right: 20px;
+    top: 18px;
 }
