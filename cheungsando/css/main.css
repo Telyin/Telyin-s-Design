@@ -1,0 +1,80 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+header {
+    position: absolute; /* common에서 wrap에 position relative를 기준으로 잡아줬기에 wrap을 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    color: #fff;
+    z-index: 999;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul a {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 80px;
+    padding: 0 20px 0 20px;
+}
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    border-radius: 0 0 200px 0;
+}
+.visual .wrapper {
+    height: 100vh; /* 브라우저 높이를 기준으로 딱 맞추기 */
+    min-height: 650px; /* 최소한 650px 만큼의 높이는 유지 */
+    position: relative; /* life정렬의 기준 */
+}
+.visual h2 {
+    padding: 32vh 0 0 0;
+}
+.visual .life {
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #0044C3;
+    color: #fff;
+    text-align: center;
+    font-size: 34px;
+    line-height: 1.4;
+    padding: 66px 0 0 0;
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.2);
+    position: absolute; /* before정렬의 기준 */
+    right: -100px;
+    bottom: -100px;
+    transition: .2s;
+}
+.visual .life::before {
+    content: "";
+    position: absolute; /* life를 기준으로 정렬 */
+    left: 0;
+    top: 24px;
+    width: 100%; /* 정렬의 기준인 life를 기준으로 100% 설정 */
+    height: 35px;
+    background: url(../images/life_ico.svg) no-repeat center top;
+    transition: .2s;
+}
+.visual .life:hover {
+    background-color: #E4F2F1;
+    color: #1d1d1d;
+}
+.visual .life:hover::before {
+    background: url(../images/life_ico_bk.svg) no-repeat center top;
+}
+
+
+footer {
+    margin: 1000px 0 0 0;
+}
