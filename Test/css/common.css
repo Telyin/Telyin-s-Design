@@ -59,3 +59,13 @@ button {
     line-height: inherit;
     cursor: pointer;
 }
+
+/* html 구조상 구현되어야 하나, 디자인상 숨김 처리가 필요할 때 사용 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}

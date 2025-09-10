@@ -16,4 +16,15 @@ $(document).ready(function(){
     $('footer .right_area .family .open').on('click', function(){
         $('footer .right_area .family').addClass('open')
     })
+    $('footer .right_area .family .close').on('click', function(){
+        $('footer .right_area .family').removeClass('open')
+    })
+    $('footer .right_area .top').on('click', function(){
+        let scrolling = $(window).scrollTop()
+        console.log(scrolling)
+        // $(window).scrollTop(0)
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
 })//document ready
