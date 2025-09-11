@@ -49,6 +49,22 @@ ol, ul, li {
     width: 1260px;
     margin: 0 auto;
 }
+
+
+
+@media screen and (max-width:768px){
+/* 브라우저 사이즈가 768px 이하의 사이즈 에서만 적용되는 css */
+    body {
+                            font-size: 16px;
+    }
+    .wrapper {
+                            width: auto;  /* 모바일 수치 */
+                            margin: 0 16px;
+                        }
+} /* 반응형 꽁다리 */
+
+
+
 button {
     border: none;
     background: none;

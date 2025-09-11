@@ -1,0 +1,188 @@
+@import url(common.css);
+
+.asia {
+    margin: 100px 0 0 0;
+}
+.asia .wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    gap: 0 24px;
+}
+.asia .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 18px 0;
+}
+
+
+@media screen and (max-width:768px){
+    .asia {
+        margin: 70px 0 0 0;
+    }
+    .asia .wrapper {
+        display: block;
+        /* flex-direction: row-reverse;
+        align-items: flex-end;
+        gap: 0 24px; 플렉스가 아니므로 적용되지 않는다 */
+    }
+    .asia .tit h2 {
+        font-size: 28px;
+        color: #1d1d1d;
+        margin: 0 0 11px 0;
+    }
+    .asia .photo {
+        margin: 30px 0 0 0;
+    }
+    .asia .photo img {
+        width: 100%;
+    }
+}/* 모바일 */
+
+
+.photo_wrap {
+    margin: 50px 0 0 0;
+}
+.photo_wrap .photo {
+    overflow: hidden;
+    width: 832px;
+    height: 700px;
+}
+.photo_wrap .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:768px){
+    .photo_wrap {
+        margin: 30px 0 0 0;
+    }
+    .photo_wrap .photo {
+        overflow: hidden;
+        width: auto;
+        height: 363px;
+    }
+}/* 모바일 */
+
+.mission {
+    margin: 174px 0 200px 0;
+    text-align: center;
+}
+.mission strong {
+    color: #1d1d1d;
+}
+.mission h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 16px 0 16px 0;
+}
+.mission h2 br.mo_only {
+    display: none; /* pc버전에선 줄바꿈 비활성 */
+}
+@media screen and (max-width:768px){
+    .mission {
+        margin: 32px 0 100px 0;
+    }
+    .mission h2 {
+        font-size: 24px;
+        margin: 9px 0;
+    }
+    .mission h2 br.mo_only {
+        display: block; /* 모바일 버전에서 줄바꿈 활성화 */
+    }
+    .mission h2 br.pc_only {
+        display: none; /* pc버전 줄바꿈 비활성 */
+    }
+    .mission p br {
+        display: none; /* 모바일에선 알아서 줄바꾸게 */
+    }
+}
+
+.winner {
+    margin: 209px 0 100px 0;
+}
+.winner .tit h2 {
+    font-weight: 700;
+    font-size: 40px;
+    color: #1d1d1d;
+    margin: 16px 0 20px 0;
+}
+.winner .list .swiper-slide a {
+    display: block;
+}
+.winner .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 296px;
+}
+.winner .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.winner .list .swiper-slide a h3 {
+    position: relative;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 17px 0 0 0;
+    padding: 2px 0 2px 20px;
+
+    /* 1줄 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* 1줄 제한시 마침표 추가(2줄일 경우 웹킷박스 필요) */
+    transition: .5s;
+}
+.winner .list .swiper-slide a h3::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #0078DA;
+    transition: .4s;
+}
+.winner .list .swiper-slide a:hover h3 {
+    color: #fff;
+}
+.winner .list .swiper-slide a:hover h3::before {
+    width: 100%;
+}
+
+
+@media screen and (max-width:768px){
+    .winner {
+        margin: 69px 0 100px 0;
+    }
+    .winner .tit h2 {
+        font-size: 24px;
+        margin: 5px 0 12px 0;
+    }
+    .winner .list .swiper-slide {
+        width: 200px;
+    }
+    .winner .list .swiper-slide a {
+        display: block;
+    }
+    .winner .list .swiper-slide a .photo {
+        overflow: hidden;
+        height: 296px;
+    }
+    .winner .list .swiper-slide a h3 {
+        position: relative;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 5px 0 0 0;
+        padding: 0 0 0 8px;
+    
+        /* 1줄 제한 해제 */
+        white-space: wrap;
+        overflow: visible;
+        text-overflow: ellipsis; /* 1줄 제한시 마침표 추가(2줄일 경우 웹킷박스 필요) */
+        transition: .5s;
+    }
+}/* media */
