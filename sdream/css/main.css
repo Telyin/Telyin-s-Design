@@ -2,3 +2,113 @@
 @import url(fonts.css);
 @import url(common.css);
 
+.visual {
+    position: relative;
+}
+.visual .swiper-slide {
+    height: 100vh; /* 브라우저 높이와 동일하게 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+}
+.visual .swiper-slide.bg1 {
+    background-image: url(../images/visual_bg1.jpg);
+}
+.visual .swiper-slide.bg2 {
+    background-image: url(../images/visual_bg2.jpg);
+}
+.visual .swiper-slide.bg3 {
+    background-image: url(../images/visual_bg3.jpg);
+}
+.visual .swiper-slide h3 {
+    font-size: 60px;
+    margin: 0 0 20px 0;
+}
+.visual .swiper-slide h3 br.mob {
+    display: none;
+}
+.visual .swiper-slide p {
+    margin: 0 0 175px 0;
+}
+.visual .swiper-slide p br.mob {
+    display: none;
+}
+.visual .btn_wrap {
+    position: absolute;
+    z-index: 1;
+    left: calc(50% - 630px); /* 절대값인 중앙의 절반값 630 */
+    bottom: 100px;
+    display: flex;
+    gap: 0 10px;
+}
+.visual .btn_wrap button {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+.visual .btn_wrap .btn_prev {
+    background: url(../images/btn_next.svg) no-repeat center center;
+    transform: rotate(180deg);
+}
+.visual .btn_wrap .btn_play {
+    background: url(../images/btn_play.svg) no-repeat center center;
+}
+.visual .btn_wrap .btn_stop {
+    background: url(../images/btn_pause.svg) no-repeat center center;
+}
+.visual .btn_wrap .btn_next {
+    background: url(../images/btn_next.svg) no-repeat center center;
+}
+
+
+@media screen and (max-width:768px){
+    .visual .swiper-slide h3 {
+        font-size: 38px;
+        margin: 0 0 13px 0;
+    }
+    .visual .swiper-slide h3 br.mob {
+        display: block;
+    }
+    .visual .swiper-slide p {
+        margin: 0 0 100px 0;
+    }
+    .visual .swiper-slide p br.mob {
+        display: block;
+    }
+    .visual .swiper-slide.bg1 {
+        background-image: url(../images/visual_mob_bg1.jpg);
+    }
+    .visual .btn_wrap {
+        transform: translateX(-50%); /* btn_wrap(나 자신)의 절반을 왼쪽으로 이동 */
+        bottom: 30px;
+        left: 50% /* visual 넓이의 절반 */
+    }
+    .visual .btn_wrap button {
+        border: 1px solid #fff;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+    }
+    .visual .btn_wrap .btn_prev {
+        background: url(../images/btn_next.svg) no-repeat center center;
+        transform: rotate(180deg);
+    }
+    .visual .btn_wrap .btn_play {
+        background: url(../images/btn_play.svg) no-repeat center center;
+    }
+    .visual .btn_wrap .btn_stop {
+        background: url(../images/btn_pause.svg) no-repeat center center;
+    }
+    .visual .btn_wrap .btn_next {
+        background: url(../images/btn_next.svg) no-repeat center center;
+    }
+}
+
+
+footer {
+    margin: 500px 0 0 0;
+}
