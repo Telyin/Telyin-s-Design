@@ -2,6 +2,83 @@
 @import url(fonts.css);
 @import url(common.css);
 
+header {
+    height: 90px;
+    position: absolute; /* wrap을 기준으로 정렬 */
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+    align-items: center;
+}
+header .logo a {
+    display: block;
+    width: 150px;
+    height: 60px;
+    background: url(../images/logo.svg) no-repeat center center;
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none; /* 모바일에서만 작동 */
+}
+header .gnb .gnb_wrap ul {
+    display: flex;
+    justify-content: space-between;
+}
+header .gnb .gnb_wrap ul li a {
+    display: block;
+    line-height: 90px;
+    padding: 0 29px 0 29px;
+    gap: 0 58px;
+    font-size: 20px;
+    font-weight: 700;
+}
+header .util {
+    display: flex;
+    gap: 0 5px;
+}
+header .util .mypage,
+header .util .lang .lang_open {
+    width: 48px;
+    height: 48px;
+}
+header .util .mypage {
+    background: url(../images/util_mypage.png) no-repeat center center;
+}
+header .util .lang .lang_open {
+    background: url(../images/util_lang.png) no-repeat center center;
+}
+
+@media screen and (max-width:768px){
+
+    header {
+        height: 60px;
+        color: #fff;
+        padding: 0 0 0 16px;
+    }
+    header .logo a {
+        width: 75px;
+        height: 30px;
+        background: url(../images/logo_bk.svg) no-repeat center center / contain;
+    }
+    header .gnb .gnb_open {
+        display: block; /* 모바일에서만 작동 */
+        width: 60px;
+        height: 60px;
+        background: url(../images/gnb_open.svg) no-repeat center center;
+    }
+    header .gnb .gnb_wrap {
+        display: none; /* 모바일에서 숨김 */
+    }
+    header .util {
+        display: none;
+    }
+}
+
 .visual {
     position: relative;
 }
@@ -50,10 +127,6 @@
     width: 45px;
     height: 45px;
     transition: .2s;
-}
-.visual .btn_wrap button:hover {
-    border: 1px solid #004289;
-    background-color: #004289;
 }
 .visual .btn_wrap .btn_prev {
     background: url(../images/btn_next.svg) no-repeat center center;
@@ -147,41 +220,297 @@
     position: relative;
 }
 .biz .list ul li a .photo {
+    position: relative;
     overflow: hidden;
     height: 500px;
     border-radius: 15px;
 }
+.biz .list ul li a .photo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #004289;
+    opacity: 0;
+    transition: .5s;
+}
+
 .biz .list ul li a .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-.biz .list ul li a:hover .photo img {
+    transition: 0.4s;
 }
 .biz .list ul li a .txt {
     position: absolute;
     width: 100%;
-    bottom: 25px;
+    bottom: -50px;
     color: #fff;
     text-align: center;
-    transition: .3s;
-}
-.biz .list ul li a:hover .txt {
-    bottom: 140px;
+    transition: .4s;
 }
 .biz .list ul li a .txt h3 {
     font-size: 32px;
 }
 .biz .list ul li a .txt p {
+    opacity: 0;
+    transition: .5s;
+}
+.biz .list ul li a .txt p .mob {
     display: none;
-    transition: .3s;
 }
-.biz .list ul li a:hover .txt p {
-    display: block;
-}
-.biz .list ul li:nth-child(odd) {
+.biz .list ul li:nth-child(even) {
     transform: translateY(170px);
 }
+@media screen and (min-width:769px){    /* 769이상에서 적용 */
+    .biz .list ul li a:hover .photo::before {
+        opacity: 0.9;
+    }
+    .biz .list ul li a:hover .txt {
+        bottom: 160px;
+    }
+    .biz .list ul li a:hover .txt p {
+        opacity: 1;
+        margin: 13px 0 0 0;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    .visual .btn_wrap button:hover {
+        border: 1px solid #004289;
+        background-color: #004289;
+    }
+    .notice .list ul li a:hover .inner {
+        color: #fff;
+        font-weight: 700;
+    }
+    .notice .list ul li a:hover {
+        background-color: #004289;
+        border: 1px solid #004289;
+    }
+    .notice .list ul li a:hover span {
+        color: #fff;
+    }
+    .notice .more a:hover::after {
+        right: -20px;
+    }
+}
+@media screen and (max-width:768px){    /* 768(포함)이하에 적용 */
+    .biz {
+        margin: 77px 0 0 0;
+    }
+    .biz .wrapper {
+        display: block;
+    }
+    .biz .tit {
+        position: relative;
+        top: auto;
+    }
+    .biz .tit .tit_sub {
+        display: none;
+    }
+    .biz .list {
+        width: auto;
+        padding: 0;
+        margin: 47px 0 0 0;
+    }
+    .biz .list ul {
+        display: flex;
+        flex-wrap: nowrap; /* 여러줄 허용 */
+        flex-direction: column;
+    }
+    .biz .list ul li {
+        border-bottom: 1px solid rgba(29, 29, 29, 0.5);
+        width: auto;
+        padding: 0 0 20px 0;
+    }
+    .biz .list ul li a .photo {
+        position: relative;
+        overflow: hidden;
+        height: 500px;
+        border-radius: 15px;
+        display: none;
+    }
+    .biz .list ul li a .txt {
+        position: relative;
+        width: auto;
+        bottom: auto;
+        color: #1d1d1d;
+        text-align: left;
+    }
+    .biz .list ul li a .txt h3 {
+        position: relative;
+        font-size: 24px;
+        color: #1d1d1d;
+    }
+    .biz .list ul li a .txt h3 span::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 5px;
+        width: 20px;
+        height: 20px;
+        background: url(../images/span_arrow.svg) no-repeat center center;
+    }
+    .biz .list ul li a .txt p {
+        display: block;
+        opacity: 1;
+        color: #555;
+    }
+    .biz .list ul li a .txt p br {
+        display: none;
+    }
+    .biz .list ul li a .txt p .mob {
+        display: block;
+    }
+    .biz .list ul li:nth-child(even) {
+        transform: translateY(0);
+    }
+}
+
+.notice {
+    background-color: #F3F6F9;
+    margin: 110px 0 0 0;
+}
+.notice .wrapper {
+    position: relative;
+}
+.notice .tit {
+    padding: 174px 0 0 0;
+}
+.notice .tit .tit_GMarketSans {
+    color: #1d1d1d;
+    margin: 0 0 43px 0;
+}
+.notice .list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px 0;
+    padding: 0 0 164px 0;
+}
+.notice .list ul li a {
+    display: flex;
+    background-color: #F3F6F9;
+    justify-content: space-between;
+    border: 1px solid #1d1d1d;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+    height: 80px;
+    align-items: center;
+    padding: 0 35px 0 30px;
+    transition: .3s;
+}
+.notice .list ul li a span {
+    transition: .3s;
+}
+.notice .list ul li a .inner {
+    color: #1d1d1d;
+    display: flex;
+    align-items: center;
+    gap: 0 35px;
+    transition: .3s;
+    width: calc(100% - 150px); /* 넓이 100% - 날짜 공간 넓이(150px) = 100% - 150px */
+}
+.notice .list ul li a .inner h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notice .list ul li a .inner strong {
+    display: block;
+    font-weight: 700;
+    color: #fff;
+    background-color: #004289;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+}
+.notice .more a {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1d1d1d;
+    position: absolute;
+    right: 20px;
+    top: 212px;
+    padding: 10px 20px;
+}
+.notice .more a span {
+    display: none;
+}
+.notice .more a::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 19px;
+    width: 20px;
+    height: 20px;
+    background: url(../images/span_arrow.svg) no-repeat center center;
+    transition: .5s;
+}
+
+
+@media screen and (max-width:768px){
+    .notice {
+        background-color: #fff;
+        margin: 160px 0 0 0;
+    }
+    .notice .tit {
+        width: calc(100% - 20px);
+        padding: 0;
+    }
+    .notice .tit .tit_GMarketSans {
+        color: #1d1d1d;
+        margin: 0 0 40px 0;
+    }
+    .notice .list ul {
+        gap: 16px 0;
+        padding: 0;
+    }
+    .notice .list ul li a {
+        background-color: #004289;
+        border: 1px solid #004289;
+        border-radius: 15px;
+        box-shadow: none;
+        align-items: center;
+        padding: 14px 28px 14px 28px;
+        transition: .3s;
+    }
+    .notice .list ul li:last-child {
+        display: none;
+    }
+    .notice .list ul li a span {
+        color: #fff;
+        padding: 0 0 0 100px;
+    }
+    .notice .list ul li a .inner {
+        gap: 0 15px;
+        transition: .3s;
+        width: 100%;
+    }
+    .notice .list ul li a .inner h3 {
+        color: #fff;
+    }
+    .notice .list ul li a .inner strong {
+        display: block;
+        font-weight: 700;
+        color: #fff;
+        border-radius: 0;
+        align-items: center;
+    }
+    .notice .more a {
+        width: 30px;
+        height: 30px;
+    }
+    .notice .more a span {
+        display: none;
+    }
+    .notice .more a::after {
+        right: -15px;
+        top: -176px;
+        width: 100%;
+        height: 100%;
+        background: url(../images/span_arrow.svg) no-repeat center center;
+    }
+}
+
 
 
 footer {
