@@ -49,4 +49,34 @@ $(document).ready(function(){
         }, 500)
     })
 
-})
+
+    $('header').on('mouseenter', function(){
+        $(this).addClass('fixed')
+    })
+    $('header').on('mouseleave', function(){
+        //브라우저 스크롤 값이 0보다 크면 작동하면 안됨 = 0이거나 0보다 작을 때만 실행
+
+        if(scrolling <= 0){
+            $(this).removeClass('fixed')
+            console.log('스크롤 값은 0이거나 0보다 작다')
+        }
+    })
+
+    let scrolling
+    scroll_chk()
+
+    function scroll_chk(){
+        scrolling = $(window).scrollTop()
+        if(scrolling > 0){
+            $('header').addClass('fixed')
+        }else{
+            $('header').removeClass('fixed')
+        }
+    }
+    $(window).scroll(function(){
+        // console.log(scrolling)
+        scroll_chk()
+
+    })//스크롤 할 때마다 1번 실행
+
+}) //문서가 로딩 된 이후 단 1번만 실행

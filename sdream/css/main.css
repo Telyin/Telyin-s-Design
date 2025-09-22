@@ -14,12 +14,14 @@ header {
     justify-content: space-between;
     padding: 0 24px;
     align-items: center;
+    transition: .3s;
 }
 header .logo a {
     display: block;
     width: 150px;
     height: 60px;
     background: url(../images/logo.svg) no-repeat center center;
+    transition: .3s;
 }
 header .gnb .gnb_open,
 header .gnb .gnb_close {
@@ -48,10 +50,32 @@ header .util .lang .lang_open {
 }
 header .util .mypage {
     background: url(../images/util_mypage.png) no-repeat center center;
+    transition: .3s;
 }
 header .util .lang .lang_open {
     background: url(../images/util_lang.png) no-repeat center center;
+    transition: .3s;
 }
+/* header에 fixed 클래스가 추가 되었을 때 */
+header.fixed {
+    position: fixed; /* fixec는 무조건 body에만 정렬한다 */
+    background-color: #fff;
+    color: #1d1d1d;
+    border-bottom: 1px solid #f5f5f5;
+}
+header.fixed .gnb_wrap {
+    color: #1d1d1d;
+}
+header.fixed .logo a {
+    background-image: url(../images/logo_bk2.svg);
+}
+header.fixed .util .mypage {
+    background-image: url(../images/util_mypage_bk.svg);
+}
+header.fixed .util .lang .lang_open {
+    background-image: url(../images/util_lang_bk.svg);
+}
+
 
 @media screen and (max-width:768px){
 
@@ -76,6 +100,9 @@ header .util .lang .lang_open {
     }
     header .util {
         display: none;
+    }
+    header.fixed .gnb .gnb_open {
+        background-image: url(../images/gnb_open.svg);
     }
 }
 
@@ -875,6 +902,7 @@ footer .copyright {
 @media screen and (max-width:768px){
     footer {
         padding: 36px 0 36px 0;
+        margin: 120px 0 0 0;
     }
     footer .top {
         top: -20px;
