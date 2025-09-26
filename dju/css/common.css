@@ -1,0 +1,40 @@
+/* 모든페이지에서 중복되는 스타일 */
+body {
+    font-family: "Pretendard", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #2d2d2d;
+    word-break: keep-all; /* 단어별로 줄바꿈 */
+    word-wrap: break-word; /* 단어가 너무 길어지면 줄바꿈 */
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap {
+    min-width: 1310px;   /* 1260 + 25 + 25 = 1310 */
+    position: relative; /* header정렬의 기준점을 잡아줌 */
+}
+/* html구조상 구현되어야 할 글자를 숨길때 사용 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+@media screen and (max-width:768px){
+    body {
+        font-size: 16px;
+    }
+    .wrapper {
+        width: auto;
+        margin: 0 16px; /* 가운데 정렬 */
+    }
+    #wrap {
+        min-width: 0;
+        position: relative; /* header정렬의 기준점을 잡아줌 */
+    }
+}
