@@ -1,0 +1,259 @@
+@import url(common.css);
+
+
+body {
+    margin: 0 0 200px 0;
+}
+
+
+.plus {
+    margin: 115px 0 0 0;
+}
+.plus .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.plus .tit {
+    width: 40.56%; /* 1260에서 p 넓이 511의 퍼센티지 */
+    margin: 30px 0 0 0;
+}
+.plus .photo {
+    width: 49.04%; /* 1260에서 사진 넓이 618의 퍼센티지 */
+    border-radius: 15px;
+}
+.plus .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.3;
+    margin: 0 0 14px 0;
+}
+.plus .photo img {
+    vertical-align: top; /* 이미지 하단 여백 삭제 */
+}
+
+@media screen and (max-width:1024px){
+    .plus .tit h2 {
+        font-size: 32px;
+    }
+}
+@media screen and (max-width:768px){
+    .plus {
+        margin: 54px 0 0 0;
+    }
+    .plus .wrapper {
+        display: block;
+    }
+    .plus .tit {
+        width: auto; /* 넓이 고정값 삭제, 원래 타이틀이 가져야 할 넓이 지정 */
+        margin: 0 0 23px 0;
+    }
+    .plus .photo {
+        width: auto; /* 넓이 고정값 삭제, 원래 photo가 가져야 할 넓이 지정 */
+        border-radius: 15px;
+    }
+    .plus .tit h2 {
+        font-size: 24px;
+        margin: 0 0 12px 0;
+    }
+} /* plus media */
+
+.support {
+    margin: 50px 0 0 0;
+}
+.support .wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.support .tit {
+    /* 넓이가 고정 */
+    width: 511px;
+    margin: 30px 0 0 0;
+}
+.support .photo {
+    /* tit의 넓이를 뺀 나머지 - 사이즈가 계속 변함 */
+    width: calc(100% - 642px);
+    border-radius: 15px;
+    height: 389px;
+}
+.support .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.3;
+    margin: 0 0 14px 0;
+}
+
+@media screen and (max-width:1024px){
+    .support .tit h2 {
+        font-size: 32px;
+    }
+    .support .tit {
+        width: 511px;
+    }
+    .support .photo {
+        width: calc(100% - 539px);
+    }
+}
+@media screen and (max-width:768px){
+    .support {
+        margin: 72px 0 0 0;
+    }
+    .support .wrapper {
+        display: block;
+    }
+    .support .tit {
+        width: auto;
+        margin: 0 0 23px 0;
+    }
+    .support .photo {
+        width: auto;
+        border-radius: 7px;
+        height: 326px;
+    }
+    .support .tit h2 {
+        font-size: 24px;
+        margin: 0 0 12px 0;
+    }
+} /* support media */
+
+.minus {
+    margin: 50px 0 0 0;
+}
+.minus .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.minus .tit {
+    width: 40%;
+    margin: 30px 0 0 0;
+}
+.minus .photo {
+    width: 50%;
+    height: 389px;
+    border-radius: 15px;
+}
+.minus .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.3;
+    margin: 0 0 14px 0;
+}
+
+@media screen and (max-width:1024px){
+    .minus .tit h2 {
+        font-size: 32px;
+    }
+}
+@media screen and (max-width:768px){
+    .minus .wrapper {
+        display: block;
+    }
+    .minus .tit {
+        width: auto;
+        margin: 0 0 23px 0;
+    }
+    .minus .photo {
+        width: auto;
+        height: 300px;
+        border-radius: 7px;
+    }
+    .minus .tit h2 {
+        font-size: 24px;
+        margin: 0 0 12px 0;
+    }
+} /* minus media */
+
+.service {
+    background-color: #3780FF;
+    color: #fff;
+    padding: 53px 0 53px 0;
+    margin: 125px 0 0 0;
+}
+.service .list ul {
+    display: flex;
+}
+.service .list ul li {
+    width: 16.66% /* li를 감싸고 있는 ul의 넓이 16.66% */
+}
+.service .list ul li a {
+    display: flex;
+    gap: 0 24px;
+    align-items: center;
+}
+.service .list ul li a i {
+    width: 90px;
+    height: 90px;
+    background-color: #fff;
+    border-radius: 50%;
+    /* svg를 가운데로 이동▼ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.service .list ul li a span {
+    font-weight: 700;
+    font-size: 17px;
+}
+@media screen and (max-width:1336px){ /* wrapper 사이즈가 무너지는 시점 - 반응형 시작점 */
+    .service .list ul li a {
+        flex-direction: column; /* a 안의 요소를 중앙 정렬 해야 하는데 i태그를 조절하는 게 쉽지 않음으로 flex를 이용해 중앙 정렬 */
+        gap: 15px 0;
+    }
+    .service .list ul li a span br {
+        display: none; /* 위 아래 변경 후 줄바꿈 삭제 */
+    }
+}
+@media screen and (max-width:1024px){
+    .service .list ul li a span {
+        font-size: 16px;
+        text-align: center;
+    }
+    .service .list ul li a span br {
+        display: block; /* 줄바꿈 다시 허용 */
+    }
+}
+@media screen and (max-width:768px){
+    .service {
+        padding: 47px 0 47px 0;
+        margin: 70px 0 0 0;
+    }
+    .service .list ul {
+        flex-wrap: wrap; /* 여러줄 허용 */
+        gap: 55px 83px;
+        justify-content: center;
+    }
+    .service .list ul li {
+        width: 33.33% /* 3줄 */
+    }
+    .service .list ul li a {
+        gap: 8px 0; /* 아이콘과 글자 사이의 여백 */
+    }
+    .service .list ul li a i {
+        width: 35px;
+        height: 35px;
+        background-color: transparent;
+    }
+    .service .list ul li a i svg {
+        width: 95%;
+        height: 95%;
+        /* svg를 감싸고 있는 영역(i 태그)이 svg에 써있는 사이즈보다 작으면
+           자동으로 사이즈가 줄어든다 */
+    }
+    .service .list ul li a i svg path {
+        fill: #fff;
+        /* 내가 복사 한 svg 코드에 path에 fill이 들어가 있음
+           아이콘을 따로 조치하지 않아도 색상 변경이 간단함 */
+    }
+    .service .list ul li a span br {
+        display: none;
+    }
+}
+@media screen and (max-width:318px){
+    .service .list ul li {
+        width: 50%;
+    }
+}
