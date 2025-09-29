@@ -257,3 +257,84 @@ body {
         width: 50%;
     }
 }
+
+.sdi {
+    margin: 125px 0 0 0;
+}
+.sdi .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.3;
+    margin: 0 0 14px 0;
+}
+.sdi .inner {
+    margin: 41px 0 0 0;
+    display: flex;
+    gap: 0 24px;
+}
+.sdi .inner .item {
+    background-color: #F4F4F4;
+    border-radius: 15px;
+    height: 276px;
+    width: calc(25% - 18px);
+    padding: 22px 25px 0 25px;
+}
+.sdi .inner .item.career {
+    width: calc(50% - 12px);
+    padding: 0;
+}
+.sdi .inner .item h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 9px 0;
+}
+.sdi .inner .career .career_tit {
+    background-color: #3780FF;
+    color: #fff;
+    border-radius: 15px 15px 0 0;
+    padding: 22px 25px 22px 25px;
+    display: flex;
+    gap: 0 30px;
+    align-items: center;
+}
+.sdi .inner .career .career_tit h3 {
+    color: #fff;
+    margin: 0;
+}
+.sdi .inner .career .career_list ul {
+    display: flex;
+    margin: 110px 0 0 0;
+}
+.sdi .inner .career .career_list ul li {
+    width: 33.33%;
+    text-align: center;
+}
+.sdi .inner .career .career_list ul li a {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1d1d1d;
+    display: block;
+}
+.sdi .inner .career .career_list ul li a br {
+    display: none; /* 줄바꿈 pc형에서 안함 */
+}
+
+@media screen and (max-width:1024px){
+    .sdi .inner .career .career_list ul li a br {
+        display: block;
+    }
+}
+@media screen and (max-width:768px){
+    .sdi .inner {
+        flex-wrap: wrap; /* 2줄 허용 */
+        gap: 16px;
+    }
+    .sdi .inner .item {
+        width: calc(50% - 8px);
+    }
+    .sdi .inner .item.career {
+        width: 100%;
+    }
+}
