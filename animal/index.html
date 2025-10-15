@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!--위는 라이브러리, 아래는 컨트롤파일-->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <title>유기동물보호소</title>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <div class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide bg1">
+                            <div class="wrapper">
+                                <div class="tit">
+                                    <strong>Animal Welfare</strong>
+                                    <h3>누군가의 가족이 되어줄 작은 생명에게 <br>다시 따뜻한 품을 선물하세요</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg2">
+                            <div class="wrapper">
+                                <div class="tit">
+                                    <strong>Animal Welfare</strong>
+                                    <h3>헤어진 인연이 다시 이어지고 <br>새로운 사랑이 피어나는 공간</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg3">
+                            <div class="wrapper">
+                                <div class="tit">
+                                    <strong>Animal Welfare</strong>
+                                    <h3>길 위에서 기다리는 작은 생명에게 <br>다시 사랑이 닿을 수 있도록</h3>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn_wrap">
+                    <div class="paging">
+                        <div class="current">현재팝업번호</div>
+                        <div class="bar"><span></span></div>
+                        <div class="total">전체팝업번호</div>
+                    </div>
+                    <button class="stop">
+                        <span class="blind">일시정지</span>
+                        <i>
+                            <svg viewBox="0 0 8 10" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.33333 9.08317C6.0125 9.08317 5.73785 8.96894 5.50938 8.74046C5.2809 8.51199 5.16667 8.23734 5.16667 7.9165V2.08317C5.16667 1.76234 5.2809 1.48768 5.50938 1.25921C5.73785 1.03074 6.0125 0.916504 6.33333 0.916504C6.65417 0.916504 6.92882 1.03074 7.15729 1.25921C7.38576 1.48768 7.5 1.76234 7.5 2.08317V7.9165C7.5 8.23734 7.38576 8.51199 7.15729 8.74046C6.92882 8.96894 6.65417 9.08317 6.33333 9.08317ZM1.66667 9.08317C1.34583 9.08317 1.07118 8.96894 0.842708 8.74046C0.614236 8.51199 0.5 8.23734 0.5 7.9165V2.08317C0.5 1.76234 0.614236 1.48768 0.842708 1.25921C1.07118 1.03074 1.34583 0.916504 1.66667 0.916504C1.9875 0.916504 2.26215 1.03074 2.49063 1.25921C2.7191 1.48768 2.83333 1.76234 2.83333 2.08317V7.9165C2.83333 8.23734 2.7191 8.51199 2.49063 8.74046C2.26215 8.96894 1.9875 9.08317 1.66667 9.08317Z" fill="#1D1D1D"/>
+                            </svg>
+                        </i>
+                    </button>
+                    <button class="play">
+                        <span class="blind">재생</span>
+                        <i>
+                            <svg viewBox="0 0 7 8" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.31025 4.49587C6.39775 4.43753 6.46338 4.36462 6.50713 4.27712C6.55088 4.18962 6.57275 4.09725 6.57275 4.00003C6.57275 3.90281 6.55088 3.81045 6.50713 3.72295C6.46338 3.63545 6.39775 3.56253 6.31025 3.5042L1.55609 0.485449C1.50748 0.456283 1.45643 0.434408 1.40296 0.419824C1.34949 0.405241 1.29845 0.397949 1.24984 0.397949C1.09428 0.397949 0.958171 0.453852 0.841504 0.565658C0.724838 0.677463 0.666504 0.816005 0.666504 0.981283V7.01878C0.666504 7.18406 0.724838 7.3226 0.841504 7.43441C0.958171 7.54621 1.09428 7.60212 1.24984 7.60212C1.29845 7.60212 1.34949 7.59482 1.40296 7.58024C1.45643 7.56566 1.50748 7.54378 1.55609 7.51462L6.31025 4.49587Z" fill="#1D1D1D"/>
+                            </svg>
+                        </i>
+                    </button>
+                </div>
+            </section><!--visual-->
+            <section class="find"></section><!--find-->
+            <section class="slogan"></section><!--slogan-->
+            <section class="adopt"></section><!--adopt-->
+            <section class="review"></section><!--review-->
+        </div>
+        <footer></footer>
+    </div>
+</body>
+</html>

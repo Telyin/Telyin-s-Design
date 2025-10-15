@@ -1,0 +1,153 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+
+.visual {
+    position: relative; /* button_wrap 정렬의 기준 */
+}
+.visual .swiper-slide {
+    height: 100dvh; /* 브라우저 높이 최대치 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-white);
+
+    display: flex; /* wrapper를 바닥으로 내리기 위해 */
+    align-items: flex-end;
+}
+.visual .swiper-slide.bg1 {
+    background-image: url(../images/visual_01.jpg);
+}
+.visual .swiper-slide.bg2 {
+    background-image: url(../images/visual_02.jpg);
+}
+.visual .swiper-slide.bg3 {
+    background-image: url(../images/visual_03.jpg);
+}
+.visual .swiper-slide .tit {
+    margin: 0 0 calc(18vh + 92px) 0;
+}
+.visual .swiper-slide strong {
+    font-size: 24px;
+    color: var(--main-color);
+    transition: .8s;
+    transition-delay: .5s;
+    transform: translate(0, 40px);
+    opacity: 0;
+}
+.visual .swiper-slide h3 {
+    font-size: 60px;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-title);
+    transition: .8s;
+    transition-delay: 0.7s;
+    opacity: 0;
+}
+.visual .swiper-slide.swiper-slide-active strong,
+.visual .swiper-slide.swiper-slide-active h3 {
+    opacity: 1;
+}
+.visual .btn_wrap {
+    position: absolute;
+    left: calc(50% - 630px);
+    bottom: 18vh;
+    z-index: 1;
+    color: var(--color-white);
+    display: flex;
+    gap: 0 18px;
+}
+.visual .btn_wrap .paging {
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+    color: var(--color-white);
+    font-weight: var(--font-weight-bold);
+    font-family: "pretendard";
+}
+.visual .btn_wrap .paging .bar {
+    width: 200px;
+    height: 5px;
+    background-color: var(--color-white30);
+    position: relative;
+}
+.visual .btn_wrap .paging .bar span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--color-white);
+}
+.visual .btn_wrap .stop,
+.visual .btn_wrap .play {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.visual .btn_wrap i {
+    margin: 6px 0 0 0;
+}
+.visual .btn_wrap .stop i {
+    display: block;
+    width: 12px;
+}
+.visual .btn_wrap .play i {
+    display: block;
+    width: 12px;
+}
+.visual .btn_wrap .play {
+    display: none;
+}
+@media screen and (max-width:1320px){
+    .visual .btn_wrap {
+        left: 30px;
+    }
+}
+@media screen and (max-width:768px){
+    .visual .btn_wrap {
+        left: 16px;
+    }
+
+    .visual .swiper-slide {
+        height: 800px; /* 브라우저 높이 최대치 */
+    }
+    .visual .swiper-slide.bg1 {
+        background-image: url(../images/mobbg_01.jpg);
+    }
+    .visual .swiper-slide.bg2 {
+        background-image: url(../images/mobbg_02.jpg);
+    }
+    .visual .swiper-slide.bg3 {
+        background-image: url(../images/mobbg_03.jpg);
+    }
+    .visual .swiper-slide .tit {
+        margin: 0 0 153px 0;
+    }
+    .visual .swiper-slide strong {
+        font-size: 16px;
+    }
+    .visual .swiper-slide h3 {
+        font-size: 24px;
+    }
+    .visual .btn_wrap {
+        bottom: 13px;
+        gap: 0 8px;
+    }
+    .visual .btn_wrap .paging {
+        gap: 0 8px;
+    }
+    .visual .btn_wrap .paging .bar {
+        width: 120px;
+        height: 3px;
+    }
+}
+
+
+footer {
+    margin: 200px 0 0 0;
+}

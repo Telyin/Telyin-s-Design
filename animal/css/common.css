@@ -1,0 +1,84 @@
+/* 모든페이지에서 중복되는 스타일 */
+:root {
+    --font-size-basic : 17px;
+    --font-size-title : 40px;
+    --font-size-title2 : 38px;
+    --font-weight-basic : 400;
+    --font-weight-bold : 700;
+    --line-height-title : 1.4;
+    --line-height-basic : 1.5;
+    --background-color : #2f2f2f;
+    --font-color-main : #1d1d1d;
+    --font-color-basic : #222222;
+    --main-color : #FF9D47;
+    --main-color2 : #47DDFF;
+    --line-color : #ccc;
+    --header-height : 90px;
+    --color-white : #ffffff;
+    --color-white80 : rgba(255, 255, 255, 0.8);
+    --color-white60 : rgba(255, 255, 255, 0.6);
+    --color-white30 : rgba(255, 255, 255, 0.3);
+}
+@media screen and (max-width:768px){
+    :root {
+        --font-size-basic : 16px;
+        --font-size-title : 24px;
+        --font-size-title2 : 22px;
+        --header-height : 56px;
+    }
+}
+
+body {
+    font-family: "ImHyeMin", "Pretendard", sans-serif;
+    font-size: var(--font-size-basic);
+    font-weight: var(--font-weight-basic);
+    line-height: var(--line-height-basic);
+    color: var(--font-color-basic);
+    word-break: keep-all; /* 단어별로 줄바꿈 */
+    word-wrap: break-word; /* 단어가 너무 길어지면 줄바꿈 */
+}
+p, span, strong {
+    font-family: "pretendard";
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap {
+    position: relative; /* header정렬의 기준점을 잡아줌 */
+    /* overflow: hidden; */
+}
+/* html구조상 구현되어야 할 글자를 숨길때 사용 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+
+
+/*
+    좌우여백 50px : 1260 + 50 + 50 = 1360
+    좌우여백 30px : 1260 + 30 + 30 = 1320
+    좌우여백 5% : 1260 + (1260*0.05=63) = 1386
+    좌우여백 3% : 1260 + (1260*0.03=37.8) = 1335.6
+*/
+@media screen and (max-width:1320px){
+    .wrapper {
+        width: auto;
+        margin: 0 30px; /* 가운데 정렬 */
+    }
+}
+@media screen and (max-width:1024px){
+    .wrapper {
+        margin: 0 20px; /* 가운데 정렬 */
+    }
+}
+@media screen and (max-width:768px){
+    .wrapper {
+        margin: 0 16px; /* 가운데 정렬 */
+    }
+}
