@@ -3,6 +3,201 @@
 @import url(common.css);
 
 
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: var(--header-height);
+    color: var(--color-white);
+    fill: var(--color-white); /* svg 아이콘 색상 */
+    display: flex; /* logo- gnb- util 좌우배치 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--wrapper-white-space);
+    transition: .4s;
+}
+header .logo a {
+    display: block;
+    width: 221px;
+    height: 36px;
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
+    transition: 0.4s;
+}
+header .util {
+    display: flex;
+}
+header .util .search .sch_open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+}
+header .util .search .sch_open i {
+    display: block;
+    width: 25px;
+    margin: 3px 0 0 0;
+}
+header .util .mypage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+}
+header .util .mypage i {
+    display: block;
+    width: 22.67px;
+    margin: 2px 0 0 0;
+}
+/******************* 시작 : pc메뉴 ****************************/
+@media screen and (min-width:1025px){ /* 1024사이즈 이하부터 메뉴가 접힘 = 1025이상일 때 스타일 */
+    header .gnb .gnb_wrap .gnb_logo,
+    header .gnb .gnb_wrap .gnb_close,
+    header .gnb .gnb_open {
+        display: none; /* 모바일에서만 보임 */
+    }
+    header .gnb {
+        padding: 0 20px;
+    }
+    header .gnb .gnb_wrap ul.depth1 {
+        display: flex; /* 메뉴들을 좌우 배치 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li {
+        position: relative; /* depth2 정렬의 기준 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        display: block;
+        font-size: 24px;
+        font-weight: var(--font-weight-bold);
+        line-height: var(--header-height);
+        padding: 0 1em;
+        white-space: nowrap;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        position: absolute; /* li를 기준으로 정렬 */
+        left: 50%; /* li넓이의 절반 */
+        transform: translate(-50%); /* depth2 넓이의 절반 */
+        top: var(--header-height);
+        background-color: #0F4C81;
+        border-radius: 0 0 0.5882em 0.5882em;
+        color: var(--color-white60);
+        min-width: 100%; /* 최소 넓이는 li의 넓이만큼 */
+        padding: 0.7059em 1.7647em;
+        display: none; /* hover 했을때만 나타남 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+        display: block;
+        padding: 6px 0;
+        white-space: nowrap;
+        text-align: center;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a span {
+        position: relative;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a span::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 1px;
+        background-color: var(--color-white60);
+        transition: .3s;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover span::before {
+        width: 100%;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
+        font-weight: var(--font-weight-bold);
+        color: var(--color-white);
+    }
+
+    /* menu에 오버 했을 때 */
+
+    header.menu_pc {
+        background-color: #fff;
+        color: var(--font-color-main);
+        fill: var(--font-color-main);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    }
+    header.menu_pc .logo a {
+        background: url(../images/logo.svg);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a {
+        color: var(--main-color3);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a > span {
+        position: relative;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a:hover > span::before {
+        display: block;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
+        display: block;
+    }
+    
+}
+/* 1025이상에서 1280이하 그 사이에서만 적용되는 스타일 */
+@media screen and (min-width:1025px) and (max-width:1280px){
+    header .logo a {
+        width: 180px;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        font-size: 20px;
+    }
+}
+/******************* 끝 : pc메뉴 ****************************/
+/******************* 시작 : 모바일 ****************************/
+@media screen and (max-width:1024px){
+    header {
+        padding-right: 0;
+        transition: .4s;
+    }
+    header .logo a {
+        /* width: 142.81px;
+        height: 23.41px;
+        transition: 0.4s; */
+        width: clamp(142.81px, 18vw, 221px); /* 최솟값 - 평균값*100vw가 브라우저 최대값임 - 최댓값 */
+    }
+    header .util {
+        display: none;
+    }
+    header .gnb .gnb_open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--header-height);
+        height: var(--header-height);
+        background-color: #0F4C81;
+    }
+    header .gnb .gnb_open i {
+        display: block;
+        width: 31.6%;
+    }
+    header .gnb .gnb_wrap {
+        display: none;
+        position: absolute; /* header를 기준으로 정렬 */
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100dvh;
+        background-color: var(--color-white);
+        color: var(--font-color-main);
+        fill: var(--font-color-main);
+    }
+
+    /* 메뉴가 열렸을 때 */
+    header.menu_mo .gnb .gnb_wrap {
+        display: block;
+    }
+}
+header {
+    border-bottom: 1px solid red;
+}
+
 .visual {
     position: relative; /* button_wrap 정렬의 기준 */
 }
@@ -29,7 +224,8 @@
     margin: 0 0 calc(18vh + 92px) 0;
 }
 .visual .swiper-slide strong {
-    font-size: 24px;
+    /* font-size: 24px; */
+    font-size: clamp(16px, 2vw, 24px);
     color: var(--main-color);
     transition: .8s;
     transition-delay: .5s;
@@ -37,7 +233,8 @@
     opacity: 0;
 }
 .visual .swiper-slide h3 {
-    font-size: 60px;
+    /* font-size: 60px; */
+    font-size: clamp(24px, 5vw, 60px);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-title);
     transition: .8s;
@@ -149,5 +346,5 @@
 
 
 footer {
-    margin: 200px 0 0 0;
+    margin: 2200px 0 0 0;
 }

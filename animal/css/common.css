@@ -12,12 +12,20 @@
     --font-color-basic : #222222;
     --main-color : #FF9D47;
     --main-color2 : #47DDFF;
+    --main-color3 : #0F4C81;
     --line-color : #ccc;
     --header-height : 90px;
     --color-white : #ffffff;
     --color-white80 : rgba(255, 255, 255, 0.8);
     --color-white60 : rgba(255, 255, 255, 0.6);
     --color-white30 : rgba(255, 255, 255, 0.3);
+    --color-white10 : rgba(255, 255, 255, 0.1);
+    --wrapper-white-space : 30px;
+}
+@media screen and (max-width:1024px){
+    :root {
+        --wrapper-white-space : 20px;
+    }
 }
 @media screen and (max-width:768px){
     :root {
@@ -25,6 +33,7 @@
         --font-size-title : 24px;
         --font-size-title2 : 22px;
         --header-height : 56px;
+        --wrapper-white-space : 16px;
     }
 }
 
@@ -69,16 +78,16 @@ p, span, strong {
 @media screen and (max-width:1320px){
     .wrapper {
         width: auto;
-        margin: 0 30px; /* 가운데 정렬 */
+        margin: 0 var(--wrapper-white-space);
     }
 }
 @media screen and (max-width:1024px){
     .wrapper {
-        margin: 0 20px; /* 가운데 정렬 */
+        margin: 0 var(--wrapper-white-space);
     }
 }
 @media screen and (max-width:768px){
     .wrapper {
-        margin: 0 16px; /* 가운데 정렬 */
+        margin: 0 var(--wrapper-white-space);
     }
 }

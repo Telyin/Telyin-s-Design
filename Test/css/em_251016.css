@@ -1,0 +1,63 @@
+@import url(common.css);
+
+
+@media screen and (max-width:768px){
+    html, body {
+        font-size: 12px;
+    }
+}
+
+.btn1 {
+    margin: 50px 0 50px 0;
+}
+.btn1 button {
+    background-color: #E88700;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    padding: 12px 20px 12px 24px;
+    border-radius: 30px;
+    gap: 0 18px;
+}
+.btn1 button i {
+    display: block;
+    width: 14px; /* 아이콘은 넓이나 높이값 하나만 주면 나머지는 알아서 들어감 */
+}
+
+
+.btn2 {
+    margin: 50px 0 50px 0;
+}
+.btn2 button {
+    font-size: 25px;
+    background-color: #E88700;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    padding: 0.7059em 1.1765em 0.7059em 1.4118em;
+    border-radius: 1.7647em;
+    gap: 0 1.0588em;
+}
+.btn2 button i {
+    display: block;
+    width: 0.8235em; /* 아이콘은 넓이나 높이값 하나만 주면 나머지는 알아서 들어감 */
+}
+
+
+.btn3 {
+    margin: 50px 0 50px 0;
+}
+.btn3 button {
+    font-size: 1.5rem;
+    background-color: #E88700;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    padding: 0.7059rem 1.1765rem 0.7059rem 1.4118rem;
+    border-radius: 1.7647rem;
+    gap: 0 1.0588rem;
+}
+.btn3 button i {
+    display: block;
+    width: 0.8235rem; /* 아이콘은 넓이나 높이값 하나만 주면 나머지는 알아서 들어감 */
+}
