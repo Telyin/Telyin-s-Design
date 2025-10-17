@@ -49,12 +49,17 @@ $(document).ready(function(){
         if(device_status == 'PC'){ //pc일때만 실행
             $('header').addClass('menu_pc')
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+            $('header .gnb .gnb_wrap .depth1 > li > ul.depth2').hide()
             $(this).addClass('over')
+            $(this).find('.depth2').slideDown()
         }
         
     })
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
-        $(this).removeClass('over')
+        if(device_status == 'PC'){ //pc일때만 실행
+            $(this).removeClass('over')
+            $(this).find('.depth2').hide()
+        }
     })
     $('header').on('mouseleave', function(){
         $(this).removeClass('menu_pc')
@@ -64,6 +69,64 @@ $(document).ready(function(){
     })
 
     //pc ver. menu over end
+
+    //mobile ver. menu over start
+
+    //닫혀있는 메뉴를 클릭하면, 기존에 열려 있던 메뉴를 닫고, 클릭한 자신만 열림(li에 open 클래스 추가)
+    //열려있는 메뉴를 클릭하면, 나 자신을 닫고 끝(open 클래스 제거)
+    //열린메뉴와 닫힌메뉴의 구별법은 open클래스의 유무
+    //1차 메뉴 a에 링크 이동을 못하게 막아야 함
+
+    $('header .gnb .gnb_wrap .depth1 > li > a').on('click', function(e){
+        if(device_status == 'Mobile')
+            e.preventDefault();
+            if($(this).parent().hasClass('open') == true){ //열려있는 메뉴를 다시 클릭 했을 때
+                $(this).parent().removeClass('open')
+                $(this).next().slideUp() //2차 메뉴 슬라이드로 닫기
+
+            }else{ //열려있는 메뉴가 아닌 다른 메뉴를 눌렀을 때
+                $('header .gnb .gnb_wrap .depth1 > li').removeClass('open') //모든 li의 클래스 삭제
+                $('header .gnb .gnb_wrap .depth1 > li > ul.depth2').slideUp() //모든 2차 메뉴 닫기
+                $(this).parent().addClass('open')
+                $(this).next().slideDown() //2차 메뉴 슬라이드로 열기
+            }
+    })
+
+    //모바일버전 메뉴 열기 닫기
+    //열기를 클릭하면 header에 menu_mo 클래스 추가
+    //닫기를 클릭하면 header에 menu_mo 클래스 제거
+    
+    
+    $('header .gnb .gnb_open').on('click', function(){
+        $('header').addClass('menu_mo')
+    })
+    $('header .gnb .gnb_wrap .gnb_close').on('click', function(){
+        $('header').removeClass('menu_mo')
+    })
+
+
+    //mobile ver. menu over end
+    //header fixed start
+    //pc와 모바일 둘 다 추가
+    //스크롤이 조금만 되어도 fixed 클래스 추가
+    //탑 버튼을 누르던 스크롤을 올리던 꼭대기로 가면 fixed 클래스 삭제
+
+    let scrolling //브라우저가 스크롤 된 값
+
+    function scroll_chk(){
+        scrolling = $(window).scrollTop()//현재 스크롤 된 값
+        if(scrolling > 0){
+            $('header').addClass('fixed')
+        }else{
+            $('header').removeClass('fixed')
+        }
+    }
+    scroll_chk() //문서가 로딩 되고 나서 단 한 번 실행
+    $(window).scroll(function(){
+        scroll_chk() //스크롤 될 때 마다 실행
+    })
+
+    //header fixed end
 
 
 
@@ -122,5 +185,44 @@ $(document).ready(function(){
         updateCurrent();
     });
     //visual swiper end
+
+    //find swiper start
+
+    const find1_swiper = new Swiper('.find .item1 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            768: {    /* 768px 이상일때 적용 */
+                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+        },
+        //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        
+        navigation: {
+            nextEl: '.find .item1 .next',
+            prevEl: '.find .item1 .prev',
+        }
+    });
+
+    const find2_swiper = new Swiper('.find .item2 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            768: {    /* 768px 이상일때 적용 */
+                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+        },
+        //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        
+        navigation: {
+            nextEl: '.find .item2 .next',
+            prevEl: '.find .item2 .prev',
+        }
+    });
+    //find swiper end
 
 })

@@ -15,6 +15,7 @@
     --main-color3 : #0F4C81;
     --line-color : #ccc;
     --header-height : 90px;
+    --header-var : clamp(56px, 8vw, 90px);
     --color-white : #ffffff;
     --color-white80 : rgba(255, 255, 255, 0.8);
     --color-white60 : rgba(255, 255, 255, 0.6);
