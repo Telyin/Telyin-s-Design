@@ -189,11 +189,15 @@ $(document).ready(function(){
     //find swiper start
 
     const find1_swiper = new Swiper('.find .item1 .swiper', { /* 팝업을 감싼는 요소의 class명 */
-        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
             768: {    /* 768px 이상일때 적용 */
                 slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+            1025: {    /* 1025px 이상일때 적용 */
+                slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                 spaceBetween: 24,
             },
         },
@@ -207,11 +211,15 @@ $(document).ready(function(){
     });
 
     const find2_swiper = new Swiper('.find .item2 .swiper', { /* 팝업을 감싼는 요소의 class명 */
-        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
             768: {    /* 768px 이상일때 적용 */
                 slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+            1025: {    /* 1025px 이상일때 적용 */
+                slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                 spaceBetween: 24,
             },
         },
@@ -224,5 +232,53 @@ $(document).ready(function(){
         }
     });
     //find swiper end
+    //find 탭 기능 start
+    //find .tap_list ul li를 클릭 했을 때, 1번째를 클릭하면
+    //li에서 어떤 tap_item이 보이게 해야 하는지, 단서를 제공해야 함
+    //find .tap_content .tap_item에 1번째 요소에 active 클래스를 추가
+
+    let tap_name
+    $('.find .tap_list ul li').on('click', function(){
+        //클릭한 li의 버튼에 active 클래스 추가
+        $('.find .tap_list ul li').removeClass('active')
+        $(this).addClass('active')
+        //클릭한 li의 버튼에 선택됨 글자 써 주는것
+        $('.find .tap_list ul li button span').text('')// '' <<은 공백 설정임
+        $(this).find('button span').text('선택됨')
+
+        //클릭한 li에 관련된 tap_item에 active 클래스 추가
+        tap_name = $(this).attr('data-tap')
+        $('.find .tap_content .tap_item').removeClass('active')
+        //find로 찾을 땐 class명일 경우 '.'이 추가되어야 함, 하지만 data는 .이 없음, 추가해야 함
+        $('.find .tap_content').find('.' + tap_name).addClass('active')
+
+        //선택된 tap_item의 title 속성값으로 '선택됨'이라고 추가해주기
+        $('.find .tap_content .tap_item').attr('title', '')
+        $('.find .tap_content').find('.' + tap_name).attr('title', '선택됨')
+    })
+
+    //find 탭 기능 end
+
+    //adopt swiper start
+    const adopt_swiper = new Swiper('.adopt .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            769: {    /* 640px 이상일때 적용 */
+                slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+        },
+        centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        
+        navigation: {
+            nextEl: '.adopt .next',
+            prevEl: '.adopt .prev',
+        },
+    });
+
+
+    //adopt swiper end
 
 })

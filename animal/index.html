@@ -162,12 +162,17 @@
                     <div class="tap_list">
                         <ul><!--선택된 탭에는 active 클래스 추가
                                 button안에 span 태그에 선택됨 글자 추가-->
-                            <li><button>반려동물을 <span class="blind">선택됨</span></button></li>
-                            <li class="active"><button>주인을 <span class="blind"></span></button></li>
+                            <li class="item1 active" data-tap="item1"><button>반려동물을 <span class="blind">선택됨</span></button></li>
+                            <li class="item2" data-tap="item2"><button>주인을 <span class="blind"></span></button></li>
                         </ul>
                     </div>
                     <div class="tap_content">
-                        <!--선택된 tap_item은 active클래스 추가, title에 선택됨이라고 써 줌-->
+                        <!--선택된 tap_item은 active클래스 추가, title에 선택됨이라고 써 줌
+                            각자의 li에 클릭하면 보일 tap_item의 이름을 써 주는 게 좋음
+                            나(li)를 클릭하면 tap_item 중에 item1을 활성화 하라는 명령을 기록해 놓는게 좋다
+                            하지만 class값은 중복이 많기 때문에 다양한 값이 들어가 class값을 명령어로 하기엔 어려움
+                            그래서 별도의 속성을 지정하는데 그게 data-속성이다
+                            이는 css에서 공식으로 지정되어있는 속성 값이 아닌, 퍼블리셔가 임의로 만든 속성값이다-->
                         <div class="tap_item item1 active" title="선택됨">
                             <h3 class="blind">반려동물을</h3>
                             <div class="list">
@@ -351,7 +356,7 @@
                                 </i>
                             </a>
                         </div>
-                        <div class="tap_item item2">
+                        <div class="tap_item item2" >
                             <h3 class="blind">주인을</h3>
                             <div class="list">
                                 <div class="swiper">
@@ -537,8 +542,140 @@
                     </div>
                 </div><!--wrapper-->
             </section><!--find-->
-            <section class="slogan"></section><!--slogan-->
-            <section class="adopt"></section><!--adopt-->
+            <section class="slogan">
+                <div class="wrapper">
+                    <h2>공공장소<strong class="place"></strong>에서<br class="mo_only"> 주인 없이 떠도는<br> 
+                        동물<strong class="animal"></strong>을 발견한 경우<br>
+                        관할 시군구청 또는<br class="mo_only"> 동물보호센터<strong class="center"></strong>에<br> 
+                        신고<strong class="call"></strong>하시기<br class="mo_only"> 바랍니다</h2>
+                    <p>소유자를 알 수 없는 동물을 신고하지 않고 알선·구매하는 경우, 포획하여 팔거나 판매하거나 죽일 목적으로 포획하는 경우에는<br> 
+                        동물보호법 제10조제3항제1호·제3호·제4호를 위반하여 2년 이하 징역이나 2천만원 이하 벌금이 부과됩니다.</p>
+                </div>
+            </section><!--slogan-->
+            <section class="adopt">
+                <div class="tit">
+                    <div class="wrapper"><h2>가족이 되어주세요</h2></div>
+                </div>
+                <div class="list">
+                    <div class="swiper">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt_01.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>노바</h3>
+                                    <p>노바 스코샤 덕 톨링 리트리버 <br> 2살 애교많고 활발해요</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt_02.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>휴지</h3>
+                                    <p>비숑 프리제 <br>2개월령 1차 접종 완료</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt_03.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>토토</h3>
+                                    <p>도메스틱 숏헤어<br> 4개월령 2차 접종 완료</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt_04.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>악토르</h3>
+                                    <p>스코티시 폴드<br> 1살 중성화 완료, 애교많아요</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt_05.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>비캄</h3>
+                                    <p>셰퍼드 믹스<br> 3살 중성화 완료, 점잖아요</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt_06.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>도담</h3>
+                                    <p>믹스견<br> 1살이에요, 1차 접종 완료</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt_07.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>테론</h3>
+                                    <p>도메스틱 숏헤어<br> 개냥이에요, 뚱냥이에요</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt_08.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>종구</h3>
+                                    <p>비글<br> 비글다운 활발함을 가지고 있어요</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt_09.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>헤이젤</h3>
+                                    <p>아프간 리트리버 믹스<br> 애교많고 응석쟁이에요</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt_10.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>젠비</h3>
+                                    <p>말티푸<br> 아직 소심해요, 겁이 많아요</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                    <div class="ctn_btn">
+                        <button class="prev">
+                            <span class="blind">이전팝업보기</span>
+                            <i>
+                                <svg viewBox="0 0 11 18" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.76042 8.82708L9.93542 15.0021C10.2257 15.2924 10.3708 15.6618 10.3708 16.1104C10.3708 16.559 10.2257 16.9285 9.93542 17.2188C9.64514 17.509 9.27569 17.6542 8.82708 17.6542C8.37847 17.6542 8.00903 17.509 7.71875 17.2188L0.435417 9.93542C0.277083 9.77708 0.164931 9.60556 0.0989583 9.42083C0.0329861 9.23611 0 9.03819 0 8.82708C0 8.61597 0.0329861 8.41806 0.0989583 8.23333C0.164931 8.04861 0.277083 7.87708 0.435417 7.71875L7.71875 0.435417C8.00903 0.145139 8.37847 0 8.82708 0C9.27569 0 9.64514 0.145139 9.93542 0.435417C10.2257 0.725694 10.3708 1.09514 10.3708 1.54375C10.3708 1.99236 10.2257 2.36181 9.93542 2.65208L3.76042 8.82708Z"/>
+                                </svg>
+                            </i>
+                        </button>
+                        <button class="next">
+                            <span class="blind">다음팝업보기</span>
+                            <i>
+                                <svg viewBox="0 0 11 18" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.61019 8.82708L0.435189 15.0021C0.144912 15.2924 -0.000227928 15.6618 -0.000227928 16.1104C-0.000227928 16.559 0.144912 16.9285 0.435189 17.2188C0.725467 17.509 1.09491 17.6542 1.54352 17.6542C1.99213 17.6542 2.36158 17.509 2.65186 17.2188L9.93519 9.93542C10.0935 9.77708 10.2057 9.60556 10.2716 9.42083C10.3376 9.23611 10.3706 9.03819 10.3706 8.82708C10.3706 8.61597 10.3376 8.41806 10.2716 8.23333C10.2057 8.04861 10.0935 7.87708 9.93519 7.71875L2.65186 0.435417C2.36158 0.145139 1.99213 0 1.54352 0C1.09491 0 0.725467 0.145139 0.435189 0.435417C0.144912 0.725694 -0.000227928 1.09514 -0.000227928 1.54375C-0.000227928 1.99236 0.144912 2.36181 0.435189 2.65208L6.61019 8.82708Z"/>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                <div class="more">
+                    <a href="#n">
+                        <span>더보기</span>
+                        <i>
+                            <svg viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.00081 5.34271L0.263314 9.08021C0.0876193 9.2559 -0.000227928 9.47951 -0.000227928 9.75104C-0.000227928 10.0226 0.0876193 10.2462 0.263314 10.4219C0.439008 10.5976 0.662619 10.6854 0.934147 10.6854C1.20567 10.6854 1.42929 10.5976 1.60498 10.4219L6.01331 6.01354C6.10915 5.91771 6.17703 5.81389 6.21696 5.70208C6.25689 5.59028 6.27686 5.47049 6.27686 5.34271C6.27686 5.21493 6.25689 5.09514 6.21696 4.98333C6.17703 4.87153 6.10915 4.76771 6.01331 4.67188L1.60498 0.263542C1.42929 0.0878472 1.20567 0 0.934147 0C0.662619 0 0.439008 0.0878472 0.263314 0.263542C0.0876193 0.439236 -0.000227928 0.662847 -0.000227928 0.934375C-0.000227928 1.2059 0.0876193 1.42951 0.263314 1.60521L4.00081 5.34271Z"/>
+                            </svg>
+                        </i>
+                    </a>
+                </div><!--more-->
+                <!--글자를 감싸고 있는 rolling은 브라우저 넓이와 동일해야 함
+                    p태그는 rolling안에서 글자 넓이 그대로를 유지해야 함-->
+                <div class="rolling">
+                    <p>DON'T BUY IT. ADOPT IT. DON'T BUY IT. ADOPT IT. DON'T BUY IT. ADOPT IT. DON'T BUY IT. ADOPT IT.</p>
+                </div>
+            </section><!--adopt-->
             <section class="review"></section><!--review-->
         </div>
         <footer></footer>
