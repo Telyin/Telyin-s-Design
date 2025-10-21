@@ -58,7 +58,7 @@ p, span, strong {
 }
 #wrap {
     position: relative; /* header정렬의 기준점을 잡아줌 */
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 /* html구조상 구현되어야 할 글자를 숨길때 사용 */
 .blind {
