@@ -134,6 +134,518 @@
             }
 }/*@media*/
 
+
+.biz {
+    margin: 128px 0 0 0;
+}
+section .tit strong {
+    color: #12255B;
+}
+section .tit strong .only_mo {
+    display: none;
+}
+section .tit h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-title);
+    margin: 20px 0 0 0;
+}
+section .tit h2 span {
+    color: var(--color-main);
+}
+.biz .list {
+    margin: 4.8rem 0 0 0;
+}
+.biz .list ul {
+    display: flex;
+}
+.biz .list ul li {
+    width: 25%;
+    height: 650px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../images/main/biz_01.jpg);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0 2% 4% 2%;
+    position: relative;
+    transition: width .5s;
+    overflow: hidden;
+}
+.biz .list ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6));
+}
+.biz .list ul li .txt {
+    position: relative;
+    z-index: 10; /* 그래디언트를 아래로 깔기 위함 */
+}
+.biz .list ul li.biz02 {
+    background-image: url(../images/main/biz_02.jpg);
+}
+.biz .list ul li.biz03 {
+    background-image: url(../images/main/biz_03.jpg);
+}
+.biz .list ul li.biz04 {
+    background-image: url(../images/main/biz_04.jpg);
+}
+.biz .list ul li .txt h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.biz .list ul li .txt a:hover {
+    background-color: var(--color-main);
+    border: 1px solid var(--color-main);
+}
+
+@media screen and (min-width:1025px){ /* pc버전 */
+    .biz .list ul li.active {
+        width: 100%;
+    }
+    .biz .list ul li .txt {
+        transform: translateY(140px);
+        transition: transform 0.3s;
+    }
+    .biz .list ul li.active .txt {
+        transform: translateY(0);
+    }
+    .biz .list ul li .txt p {
+        margin: 11px 0 0 0;
+        opacity: 0;
+        white-space: nowrap;
+    }
+    .biz .list ul li .txt a {
+        opacity: 0;
+        border: 1px solid #fff;
+        border-radius: 25px;
+        padding: 4px 32px 0 19px;
+        display: inline-block;
+        margin: 16px 0 0 0;
+        position: relative;
+    }
+    .biz .list ul li .txt a::after {
+        content: "";
+        position: absolute;
+        right: 1rem;
+        top: 0.6rem;
+        width: 16px;
+        height: 16px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_16_604' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='16' height='16'%3E%3Crect width='16' height='16' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_16_604)'%3E%3Cpath d='M10.7665 8.66684H3.33317C3.14428 8.66684 2.98595 8.60295 2.85817 8.47517C2.73039 8.34739 2.6665 8.18906 2.6665 8.00017C2.6665 7.81128 2.73039 7.65295 2.85817 7.52517C2.98595 7.39739 3.14428 7.3335 3.33317 7.3335H10.7665L8.8665 5.4335C8.73317 5.30017 8.66928 5.14462 8.67484 4.96684C8.68039 4.78906 8.74428 4.6335 8.8665 4.50017C8.99984 4.36684 9.15817 4.29739 9.3415 4.29184C9.52484 4.28628 9.68317 4.35017 9.8165 4.4835L12.8665 7.5335C12.9332 7.60017 12.9804 7.67239 13.0082 7.75017C13.0359 7.82795 13.0498 7.91128 13.0498 8.00017C13.0498 8.08906 13.0359 8.17239 13.0082 8.25017C12.9804 8.32795 12.9332 8.40017 12.8665 8.46684L9.8165 11.5168C9.68317 11.6502 9.52484 11.7141 9.3415 11.7085C9.15817 11.7029 8.99984 11.6335 8.8665 11.5002C8.74428 11.3668 8.68039 11.2113 8.67484 11.0335C8.66928 10.8557 8.73317 10.7002 8.8665 10.5668L10.7665 8.66684Z' /%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+    .biz .list ul li.active .txt a {
+        opacity: 1;
+    }
+    .biz .list ul li.active .txt a:hover {
+        background-color: var(--color-main);
+        border: 1px solid var(--color-main);
+    }
+    .biz .list ul li.active .txt p {
+        opacity: 1;
+    }
+    .biz .list ul li.active .txt h3 {
+        font-size: 4rem;
+    }
+    .biz .list ul li .txt h3 {
+        transition: font-size .2s;
+    }
+    .biz .list.over ul li:not(.active) {
+        /* li중에서 active 클래스가 없는 나머지 li 전부 */
+        color: rgba(255, 255, 255, 0.8);
+    }
+    .biz .list.over ul li:not(.active)::before {
+        height: 100%;
+        background: rgba(0,0,0,0.3);
+        /* 그래디언트 효과를 제거하고 전체적으로 어두운 색을 깔아줌 */
+    }
+}
+/* 모바일 */
+@media screen and (max-width:1024px){
+    section .tit strong {
+        color: #12255B;
+    }
+    section .tit strong .only_mo {
+        display: none;
+    }
+    section .tit h2 {
+        font-size: 3rem;
+    }
+    section .tit h2 span {
+        color: var(--color-main);
+    }
+}
+@media screen and (max-width:1024px){
+    .biz {
+        margin: 80px 0 0 0;
+    }
+    .biz .tit strong .only_mo {
+        display: block;
+    }
+    .biz .tit h2 {
+        font-size: 3rem;
+        margin: 14px 0 0 0;
+    }
+    .biz .list {
+        margin: 2.8rem 20px 0 20px;
+        overflow-x: auto;
+    }
+    .biz .list ul {
+        gap: 0 8px;
+        width: 1024px;
+    }
+    .biz .list ul li {
+        width: 250px;
+        height: 360px;
+        padding: 0 13px 20px 13px;
+        border-radius: 7px;
+    }
+    .biz .list ul li .txt h3 {
+        font-size: 2.8rem;
+    }
+    .biz .list ul li .txt p {
+        display: none;
+    }
+    .biz .list ul li .txt a {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .biz .list ul li .txt a span {
+        display: none;
+    }
+}/* 태블릿 */
+@media screen and (max-width:768px){
+    section .tit strong {
+        color: #12255B;
+    }
+    section .tit strong .only_mo {
+        display: none;
+    }
+    section .tit h2 {
+        font-size: 2.4rem;
+    }
+    section .tit h2 span {
+        color: var(--color-main);
+    }
+}
+@media screen and (max-width:768px){
+    .biz {
+        margin: 58px 0 0 0;
+    }
+    .biz .tit strong .only_mo {
+        display: block;
+    }
+    .biz .tit h2 {
+        font-size: 2.4rem;
+        margin: 10px 0 0 0;
+    }
+    .biz .list {
+        margin: 2.8rem 16px 0 16px;
+        overflow-x: auto;
+    }
+    .biz .list ul {
+        gap: 0 8px;
+        width: 1024px;
+    }
+    .biz .list ul li {
+        width: 250px;
+        height: 360px;
+        padding: 0 13px 20px 13px;
+        border-radius: 7px;
+    }
+    .biz .list ul li .txt h3 {
+        font-size: 2.2rem;
+        white-space: wrap;
+    }
+    .biz .list ul li .txt p {
+        display: none;
+    }
+    .biz .list ul li .txt a {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .biz .list ul li .txt a span {
+        display: none;
+    }
+}/* 모바일 */
+
+.news {
+    margin: 130px 0 0 0;
+}
+.news .tit {
+    text-align: center;
+}
+.news .list {
+    margin: 85px 0 0 0;
+}
+.news .list .swiper-slide {
+    width: 250px;
+}
+.news .list .swiper-slide a {
+    display: block;
+    border-top: 1px solid #ccc;
+    position: relative;
+}
+.news .list .swiper-slide a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 0;
+    height: 3px;
+    border-radius: 6px;
+    background-color: var(--color-main);
+    transition: .3s;
+}
+.news .list .swiper-slide a:hover::before {
+    width: 100%;
+}
+.news .list .swiper-slide a .date {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-title);
+    margin: 30px 0 20px 0;
+    display: block;
+}
+.news .list .swiper-slide a h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--color-title);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.news .list .swiper-slide a p {
+    margin: 12px 0 30px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-all; /* 단어별 줄바꿈 해제 */
+}
+.news .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 200px;
+}
+.news .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s;
+}
+.news .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.05, 1.05, 1);
+}
+.news .ctrl_wrap {
+    margin: 47px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.news .ctrl_wrap .scrollbar {
+    width: calc(100% - 153px);
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 10px;
+}
+.news .ctrl_wrap .scrollbar .swiper-scrollbar-drag {
+    height: 8px;
+    background-color: var(--color-main);
+    top: -1px;
+}
+.news .ctrl_wrap .more a {
+    display: block;
+    border: 1px solid var(--color-title);
+    border-radius: 25px;
+    padding: 4px 39px 0 20px;
+    position: relative;
+    transition: .2s;
+}
+.news .ctrl_wrap .more a::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 8' fill='%231d1d1d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.1 4.37533H0.666667C0.477778 4.37533 0.319444 4.31144 0.191667 4.18367C0.0638889 4.05589 0 3.89756 0 3.70867C0 3.51978 0.0638889 3.36144 0.191667 3.23367C0.319444 3.10589 0.477778 3.042 0.666667 3.042H8.1L6.2 1.142C6.06667 1.00867 6.00278 0.853111 6.00833 0.675333C6.01389 0.497556 6.07778 0.342 6.2 0.208667C6.33333 0.0753333 6.49167 0.00588889 6.675 0.000333333C6.85833 -0.00522222 7.01667 0.0586667 7.15 0.192L10.2 3.242C10.2667 3.30867 10.3139 3.38089 10.3417 3.45867C10.3694 3.53644 10.3833 3.61978 10.3833 3.70867C10.3833 3.79756 10.3694 3.88089 10.3417 3.95867C10.3139 4.03644 10.2667 4.10867 10.2 4.17533L7.15 7.22533C7.01667 7.35867 6.85833 7.42256 6.675 7.417C6.49167 7.41144 6.33333 7.342 6.2 7.20867C6.07778 7.07533 6.01389 6.91978 6.00833 6.742C6.00278 6.56422 6.06667 6.40867 6.2 6.27533L8.1 4.37533Z' /%3E%3C/svg%3E%0A");
+    transition: .2s;
+}
+.news .ctrl_wrap .more a:hover {
+    border: 1px solid var(--color-main);
+    background-color: var(--color-main);
+    color: #fff;
+}
+.news .ctrl_wrap .more a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 8' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.1 4.37533H0.666667C0.477778 4.37533 0.319444 4.31144 0.191667 4.18367C0.0638889 4.05589 0 3.89756 0 3.70867C0 3.51978 0.0638889 3.36144 0.191667 3.23367C0.319444 3.10589 0.477778 3.042 0.666667 3.042H8.1L6.2 1.142C6.06667 1.00867 6.00278 0.853111 6.00833 0.675333C6.01389 0.497556 6.07778 0.342 6.2 0.208667C6.33333 0.0753333 6.49167 0.00588889 6.675 0.000333333C6.85833 -0.00522222 7.01667 0.0586667 7.15 0.192L10.2 3.242C10.2667 3.30867 10.3139 3.38089 10.3417 3.45867C10.3694 3.53644 10.3833 3.61978 10.3833 3.70867C10.3833 3.79756 10.3694 3.88089 10.3417 3.95867C10.3139 4.03644 10.2667 4.10867 10.2 4.17533L7.15 7.22533C7.01667 7.35867 6.85833 7.42256 6.675 7.417C6.49167 7.41144 6.33333 7.342 6.2 7.20867C6.07778 7.07533 6.01389 6.91978 6.00833 6.742C6.00278 6.56422 6.06667 6.40867 6.2 6.27533L8.1 4.37533Z' /%3E%3C/svg%3E%0A");
+}
+
+@media screen and (max-width:1024px){
+    .news {
+        margin: 80px 0 0 0;
+    }
+    .news .tit {
+        text-align: left;
+    }
+    .news .list {
+        margin: 42px 0 0 0;
+    }
+    .news .list .swiper-slide a .date {
+        font-size: 3rem;
+        margin: 15px 0 10px 0;
+    }
+    .news .list .swiper-slide a h2 {
+        font-size: 2.4rem;
+    }
+    .news .ctrl_wrap {
+        margin: 28px 0 0 0;
+        gap: 28px 0;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .news .ctrl_wrap .scrollbar {
+        height: 3px;
+    }
+    .news .ctrl_wrap .scrollbar .swiper-scrollbar-drag {
+        height: 5px;
+    }
+}
+@media screen and (max-width:768px){
+    .news {
+        margin: 58px 0 0 0;
+    }
+    .news .list {
+        margin: 32px 0 0 0;
+    }
+    .news .list .swiper-slide a .date {
+        font-size: 2.4rem;
+        margin: 10px 0 10px 0;
+    }
+    .news .list .swiper-slide a h2 {
+        font-size: 2.2rem;
+    }
+    .news .list .swiper-slide a p {
+        margin: 10px 0 21px 0;
+    }
+}
+
+.service {
+    margin: 130px 0 0 0;
+}
+.service .list {
+    background: url(../images/main/service_01.jpg) no-repeat center center / cover;
+    color: #fff;
+    transition: .3s;
+}
+/* 대괄호[] << 지정한 data 속성값을 타겟팅해서 다이렉트로 불러들이는 css 명령어 */
+.service .list[data-bg="bg1"] {
+    background-image: url(../images/main/service_02.jpg);
+}
+.service .list[data-bg="bg2"] {
+    background-image: url(../images/main/service_03.jpg);
+}
+.service .list[data-bg="bg3"] {
+    background-image: url(../images/main/service_04.jpg);
+}
+.service .list ul {
+    display: flex;
+}
+.service .list ul li {
+    width: 33.33%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.service .list ul li::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 122px;
+    width: 1px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.service .list ul li:last-child::after {
+    display: none;
+}
+.service .list ul li a {
+    display: block;
+    padding: 30px 30px;
+}
+.service .list ul li a h3 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 13px 0 17px 0;
+}
+.service .list ul li a .more {
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    padding: 4px 39px 0 19px;
+    position: relative;
+}
+.service .list ul li a .more::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 8' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.1 4.37533H0.666667C0.477778 4.37533 0.319444 4.31144 0.191667 4.18367C0.0638889 4.05589 0 3.89756 0 3.70867C0 3.51978 0.0638889 3.36144 0.191667 3.23367C0.319444 3.10589 0.477778 3.042 0.666667 3.042H8.1L6.2 1.142C6.06667 1.00867 6.00278 0.853111 6.00833 0.675333C6.01389 0.497556 6.07778 0.342 6.2 0.208667C6.33333 0.0753333 6.49167 0.00588889 6.675 0.000333333C6.85833 -0.00522222 7.01667 0.0586667 7.15 0.192L10.2 3.242C10.2667 3.30867 10.3139 3.38089 10.3417 3.45867C10.3694 3.53644 10.3833 3.61978 10.3833 3.70867C10.3833 3.79756 10.3694 3.88089 10.3417 3.95867C10.3139 4.03644 10.2667 4.10867 10.2 4.17533L7.15 7.22533C7.01667 7.35867 6.85833 7.42256 6.675 7.417C6.49167 7.41144 6.33333 7.342 6.2 7.20867C6.07778 7.07533 6.01389 6.91978 6.00833 6.742C6.00278 6.56422 6.06667 6.40867 6.2 6.27533L8.1 4.37533Z' /%3E%3C/svg%3E%0A");
+}
+.service .list ul li a:hover .more {
+    border: 1px solid var(--color-main);
+    background-color: var(--color-main);
+    color: #fff;
+}
+.service .list ul li a:hover .more::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 8' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.1 4.37533H0.666667C0.477778 4.37533 0.319444 4.31144 0.191667 4.18367C0.0638889 4.05589 0 3.89756 0 3.70867C0 3.51978 0.0638889 3.36144 0.191667 3.23367C0.319444 3.10589 0.477778 3.042 0.666667 3.042H8.1L6.2 1.142C6.06667 1.00867 6.00278 0.853111 6.00833 0.675333C6.01389 0.497556 6.07778 0.342 6.2 0.208667C6.33333 0.0753333 6.49167 0.00588889 6.675 0.000333333C6.85833 -0.00522222 7.01667 0.0586667 7.15 0.192L10.2 3.242C10.2667 3.30867 10.3139 3.38089 10.3417 3.45867C10.3694 3.53644 10.3833 3.61978 10.3833 3.70867C10.3833 3.79756 10.3694 3.88089 10.3417 3.95867C10.3139 4.03644 10.2667 4.10867 10.2 4.17533L7.15 7.22533C7.01667 7.35867 6.85833 7.42256 6.675 7.417C6.49167 7.41144 6.33333 7.342 6.2 7.20867C6.07778 7.07533 6.01389 6.91978 6.00833 6.742C6.00278 6.56422 6.06667 6.40867 6.2 6.27533L8.1 4.37533Z' /%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:1024px){
+    .service .list ul li a {
+        display: block;
+        padding: 20px 20px;
+    }
+    .service .list ul li a strong {
+        font-size: 1.4rem;
+    }
+    .service .list ul li a h3 {
+        font-size: 2.4rem;
+    }
+}
+
 footer {
     margin: 1500px 0 0 0;
 }
