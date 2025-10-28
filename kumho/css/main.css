@@ -554,98 +554,158 @@ section .tit h2 span {
     }
 }
 
-.service {
-    margin: 130px 0 0 0;
-}
-.service .list {
-    background: url(../images/main/service_01.jpg) no-repeat center center / cover;
-    color: #fff;
-    transition: .3s;
-}
-/* 대괄호[] << 지정한 data 속성값을 타겟팅해서 다이렉트로 불러들이는 css 명령어 */
-.service .list[data-bg="bg1"] {
-    background-image: url(../images/main/service_02.jpg);
-}
-.service .list[data-bg="bg2"] {
-    background-image: url(../images/main/service_03.jpg);
-}
-.service .list[data-bg="bg3"] {
-    background-image: url(../images/main/service_04.jpg);
-}
-.service .list ul {
-    display: flex;
-}
-.service .list ul li {
-    width: 33.33%;
-    height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-}
-.service .list ul li::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 122px;
-    width: 1px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0.8);
-}
-.service .list ul li:last-child::after {
-    display: none;
-}
-.service .list ul li a {
-    display: block;
-    padding: 30px 30px;
-}
-.service .list ul li a h3 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    line-height: 1.4;
-    margin: 13px 0 17px 0;
-}
-.service .list ul li a .more {
-    display: inline-block;
-    border: 1px solid #fff;
-    border-radius: 25px;
-    padding: 4px 39px 0 19px;
-    position: relative;
-}
-.service .list ul li a .more::after {
-    content: "";
-    position: absolute;
-    right: 15px;
-    top: 6px;
-    width: 16px;
-    height: 16px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 16px;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 8' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.1 4.37533H0.666667C0.477778 4.37533 0.319444 4.31144 0.191667 4.18367C0.0638889 4.05589 0 3.89756 0 3.70867C0 3.51978 0.0638889 3.36144 0.191667 3.23367C0.319444 3.10589 0.477778 3.042 0.666667 3.042H8.1L6.2 1.142C6.06667 1.00867 6.00278 0.853111 6.00833 0.675333C6.01389 0.497556 6.07778 0.342 6.2 0.208667C6.33333 0.0753333 6.49167 0.00588889 6.675 0.000333333C6.85833 -0.00522222 7.01667 0.0586667 7.15 0.192L10.2 3.242C10.2667 3.30867 10.3139 3.38089 10.3417 3.45867C10.3694 3.53644 10.3833 3.61978 10.3833 3.70867C10.3833 3.79756 10.3694 3.88089 10.3417 3.95867C10.3139 4.03644 10.2667 4.10867 10.2 4.17533L7.15 7.22533C7.01667 7.35867 6.85833 7.42256 6.675 7.417C6.49167 7.41144 6.33333 7.342 6.2 7.20867C6.07778 7.07533 6.01389 6.91978 6.00833 6.742C6.00278 6.56422 6.06667 6.40867 6.2 6.27533L8.1 4.37533Z' /%3E%3C/svg%3E%0A");
-}
-.service .list ul li a:hover .more {
-    border: 1px solid var(--color-main);
-    background-color: var(--color-main);
-    color: #fff;
-}
-.service .list ul li a:hover .more::after {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 8' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.1 4.37533H0.666667C0.477778 4.37533 0.319444 4.31144 0.191667 4.18367C0.0638889 4.05589 0 3.89756 0 3.70867C0 3.51978 0.0638889 3.36144 0.191667 3.23367C0.319444 3.10589 0.477778 3.042 0.666667 3.042H8.1L6.2 1.142C6.06667 1.00867 6.00278 0.853111 6.00833 0.675333C6.01389 0.497556 6.07778 0.342 6.2 0.208667C6.33333 0.0753333 6.49167 0.00588889 6.675 0.000333333C6.85833 -0.00522222 7.01667 0.0586667 7.15 0.192L10.2 3.242C10.2667 3.30867 10.3139 3.38089 10.3417 3.45867C10.3694 3.53644 10.3833 3.61978 10.3833 3.70867C10.3833 3.79756 10.3694 3.88089 10.3417 3.95867C10.3139 4.03644 10.2667 4.10867 10.2 4.17533L7.15 7.22533C7.01667 7.35867 6.85833 7.42256 6.675 7.417C6.49167 7.41144 6.33333 7.342 6.2 7.20867C6.07778 7.07533 6.01389 6.91978 6.00833 6.742C6.00278 6.56422 6.06667 6.40867 6.2 6.27533L8.1 4.37533Z' /%3E%3C/svg%3E%0A");
-}
-@media screen and (max-width:1024px){
+@media screen and (min-width:1025px){
+    .service {
+        margin: 130px 0 0 0;
+    }
+    .service .list {
+        background: url(../images/main/service_01.jpg) no-repeat center center / cover;
+        color: #fff;
+        transition: .3s;
+    }
+    /* 대괄호[] << 지정한 data 속성값을 타겟팅해서 다이렉트로 불러들이는 css 명령어 */
+    .service .list[data-bg="bg1"] {
+        background-image: url(../images/main/service_02.jpg);
+    }
+    .service .list[data-bg="bg2"] {
+        background-image: url(../images/main/service_03.jpg);
+    }
+    .service .list[data-bg="bg3"] {
+        background-image: url(../images/main/service_04.jpg);
+    }
+    .service .list ul {
+        display: flex;
+    }
+    .service .list ul li {
+        width: 33.33%;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+    }
+    .service .list ul li::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 122px;
+        width: 1px;
+        height: 100px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    .service .list ul li:last-child::after {
+        display: none;
+    }
     .service .list ul li a {
         display: block;
-        padding: 20px 20px;
-    }
-    .service .list ul li a strong {
-        font-size: 1.4rem;
+        padding: 30px 30px;
     }
     .service .list ul li a h3 {
-        font-size: 2.4rem;
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 1.4;
+        margin: 13px 0 17px 0;
+    }
+    .service .list ul li a .more {
+        display: inline-block;
+        border: 1px solid #fff;
+        border-radius: 25px;
+        padding: 4px 39px 0 19px;
+        position: relative;
+        transition: .3s;
+    }
+    .service .list ul li a .more::after {
+        content: "";
+        position: absolute;
+        right: 15px;
+        top: 6px;
+        width: 16px;
+        height: 16px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 16px;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 8' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.1 4.37533H0.666667C0.477778 4.37533 0.319444 4.31144 0.191667 4.18367C0.0638889 4.05589 0 3.89756 0 3.70867C0 3.51978 0.0638889 3.36144 0.191667 3.23367C0.319444 3.10589 0.477778 3.042 0.666667 3.042H8.1L6.2 1.142C6.06667 1.00867 6.00278 0.853111 6.00833 0.675333C6.01389 0.497556 6.07778 0.342 6.2 0.208667C6.33333 0.0753333 6.49167 0.00588889 6.675 0.000333333C6.85833 -0.00522222 7.01667 0.0586667 7.15 0.192L10.2 3.242C10.2667 3.30867 10.3139 3.38089 10.3417 3.45867C10.3694 3.53644 10.3833 3.61978 10.3833 3.70867C10.3833 3.79756 10.3694 3.88089 10.3417 3.95867C10.3139 4.03644 10.2667 4.10867 10.2 4.17533L7.15 7.22533C7.01667 7.35867 6.85833 7.42256 6.675 7.417C6.49167 7.41144 6.33333 7.342 6.2 7.20867C6.07778 7.07533 6.01389 6.91978 6.00833 6.742C6.00278 6.56422 6.06667 6.40867 6.2 6.27533L8.1 4.37533Z' /%3E%3C/svg%3E%0A");
+        transition: .3s;
+    }
+    .service .list ul li a:hover .more {
+        border: 1px solid var(--color-main);
+        background-color: var(--color-main);
+        color: #fff;
+    }
+    .service .list ul li a:hover .more::after {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 8' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.1 4.37533H0.666667C0.477778 4.37533 0.319444 4.31144 0.191667 4.18367C0.0638889 4.05589 0 3.89756 0 3.70867C0 3.51978 0.0638889 3.36144 0.191667 3.23367C0.319444 3.10589 0.477778 3.042 0.666667 3.042H8.1L6.2 1.142C6.06667 1.00867 6.00278 0.853111 6.00833 0.675333C6.01389 0.497556 6.07778 0.342 6.2 0.208667C6.33333 0.0753333 6.49167 0.00588889 6.675 0.000333333C6.85833 -0.00522222 7.01667 0.0586667 7.15 0.192L10.2 3.242C10.2667 3.30867 10.3139 3.38089 10.3417 3.45867C10.3694 3.53644 10.3833 3.61978 10.3833 3.70867C10.3833 3.79756 10.3694 3.88089 10.3417 3.95867C10.3139 4.03644 10.2667 4.10867 10.2 4.17533L7.15 7.22533C7.01667 7.35867 6.85833 7.42256 6.675 7.417C6.49167 7.41144 6.33333 7.342 6.2 7.20867C6.07778 7.07533 6.01389 6.91978 6.00833 6.742C6.00278 6.56422 6.06667 6.40867 6.2 6.27533L8.1 4.37533Z' /%3E%3C/svg%3E%0A");
     }
 }
-
-footer {
-    margin: 1500px 0 0 0;
+/* 모바일 */
+@media screen and (max-width:1024px){
+    .service {
+        margin: 100px 0 0 0;
+    }
+    .service .list {
+        background: url(../images/main/service_mo.jpg) no-repeat center center / cover;
+        color: #fff;
+        transition: .3s;
+        padding: 57px var(--wrapper-margin) 57px var(--wrapper-margin);
+    }
+    .service .list ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        gap: clamp(16px, 7vw, 50px) 0;
+        padding: 41px 0 36px 0;
+    }
+    .service .list ul li {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        width: 100%;
+        height: clamp(80px, 12vw, 110px);
+    }
+    .service .list ul li a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 36px 20px 36px;
+        margin: clamp(10px, 2.5vw, 22px) 0 0 0;
+    }
+    .service .list ul li a .more {
+        display: block;
+        border: 1px solid #fff;
+        border-radius: 25px;
+        padding: 3px 28px 0 14px;
+        position: relative;
+    }
+    .service .list ul li a .more::after {
+        content: "";
+        position: absolute;
+        right: 9px;
+        top: 7px;
+        width: 12px;
+        height: 12px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 7 5' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.0625 2.73458H0.416667C0.298611 2.73458 0.199653 2.69465 0.119792 2.61479C0.0399306 2.53493 0 2.43597 0 2.31792C0 2.19986 0.0399306 2.1009 0.119792 2.02104C0.199653 1.94118 0.298611 1.90125 0.416667 1.90125H5.0625L3.875 0.71375C3.79167 0.630417 3.75174 0.533194 3.75521 0.422083C3.75868 0.310972 3.79861 0.21375 3.875 0.130417C3.95833 0.0470833 4.05729 0.00368056 4.17188 0.000208333C4.28646 -0.00326389 4.38542 0.0366667 4.46875 0.12L6.375 2.02625C6.41667 2.06792 6.44618 2.11306 6.46354 2.16167C6.4809 2.21028 6.48958 2.26236 6.48958 2.31792C6.48958 2.37347 6.4809 2.42556 6.46354 2.47417C6.44618 2.52278 6.41667 2.56792 6.375 2.60958L4.46875 4.51583C4.38542 4.59917 4.28646 4.6391 4.17188 4.63562C4.05729 4.63215 3.95833 4.58875 3.875 4.50542C3.79861 4.42208 3.75868 4.32486 3.75521 4.21375C3.75174 4.10264 3.79167 4.00542 3.875 3.92208L5.0625 2.73458Z' /%3E%3C/svg%3E%0A");
+    }
+    .service .list ul li a strong {
+        display: none;
+    }
+    .service .list ul li a h3 {
+        font-size: 2.2rem;
+        font-weight: 700;
+    }
+}
+@media screen and (max-width:768px){
+    .service {
+        margin: 58px 0 0 0;
+    }
+    .service .list ul li a h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+    .service .list ul li a h3 span {
+        display: none;
+    }
 }
