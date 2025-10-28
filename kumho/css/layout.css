@@ -475,7 +475,7 @@ footer .inner .copyright {
     }
     footer .wrapper {
         display: block;
-        gap: 0 auto;
+        gap: 0 0;
     }
     footer .f_logo {
         width: 161px;
