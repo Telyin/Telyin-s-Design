@@ -11,7 +11,7 @@ $(document).ready(function(){
         }else{
             device_status = 'mobile'
         }
-        console.log(device_status)
+        // console.log(device_status)
     }
 
     device_chk()//문서가 로딩 되었을때 한번 실행
@@ -70,7 +70,7 @@ $(document).ready(function(){
         prev_scroll = scrolling
         scrolling = $(window).scrollTop()
         diff_scroll = prev_scroll - scrolling
-        console.log(diff_scroll)
+        // console.log(diff_scroll)
         if(diff_scroll < 0){ //스크롤을 아래로 내렸을 때
             $('header').addClass('up')
         }else{ //아래로 스크롤 할 때
