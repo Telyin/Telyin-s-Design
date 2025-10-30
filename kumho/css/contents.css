@@ -5,3 +5,113 @@
 * 설  명 : 연혁, 인사말 등의 각페이지에만 들어가는 스타일들을 모두 모음..
            이 파일에 있는 css를 수정하면 그 페이지 한개에만 영향을 끼침
 *********************/
+
+/* 회사소개 > CEO인사말 */
+.ctn_ceo .ceo_head {
+    height: 300dvh; /* 스크롤 애니메이션 효과를 줄 때는 브라우저 길이보다 훨씬 길어야함 */
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.ctn_ceo .ceo_head .ceo_photo {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+}
+.ctn_ceo .ceo_head .ceo_photo[data-status="end"] {
+    top: auto;
+    bottom: 0;
+}
+.ctn_ceo .ceo_head .ceo_photo[data-status="ing"] {
+    position: fixed;
+}
+.ctn_ceo .ceo_head .ceo_photo .ceo_img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background: url(../images/contents/ceo_img01.jpg) no-repeat center center / cover;
+    transition: width .05s, height .05s;
+}
+.ctn_ceo .ceo_head .ceo_photo .ceo_img .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .4;
+}
+.ctn_ceo .ceo_head .ceo_txt {
+    height: 70dvh;
+    display: flex;
+    justify-content: center;
+}
+.ctn_ceo .ceo_head .ceo_txt p {
+    color: #fff;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-top: 60px;
+}
+.ctn_ceo .ceo_cont {
+    margin: 69px 0 126px 0;
+}
+.ctn_ceo .ceo_cont h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-title);
+}
+.ctn_ceo .ceo_cont p {
+    margin: 40px 0 89px 0;
+}
+.ctn_ceo .ceo_cont .ceo_sign {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0 50px;
+}
+.ctn_ceo .ceo_cont .ceo_sign strong {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-title);
+}
+.ctn_ceo .ceo_cont .ceo_sign .sign_img {
+    display: block;
+    width: 188px;
+    height: 90px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../images/contents/ceo_sign.jpg);
+}
+
+@media screen and (max-width:1024px){
+    .ctn_ceo .ceo_head .ceo_txt p {
+        font-size: 2.8rem;
+    }
+    .ctn_ceo .ceo_cont h3 {
+        font-size: 2.4rem;
+    }
+    .ctn_ceo .ceo_cont p {
+        margin: 20px 0 52px 0;
+    }
+    .ctn_ceo .ceo_head .ceo_photo .ceo_img {
+        background: url(../images/contents/ceo_bgmo.jpg) no-repeat center center / cover;
+    }
+    .ctn_ceo .ceo_cont .ceo_sign {
+        display: block;
+    }
+    .ctn_ceo .ceo_cont .ceo_sign strong {
+        display: block;
+        margin: 0 0 22px 0;
+    }
+}
