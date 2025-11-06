@@ -1,0 +1,224 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+#fp-nav.fp-left {
+    left: 30px;
+}
+/*
+    <li>
+        <a></a> --- span 덮는 용도
+        <span class="fp-tooltip"></span>
+    </li>
+*/
+#fp-nav ul li {
+    width: auto;
+    height: auto;
+    margin: 10px 0 10px 0;
+}
+#fp-nav ul li:last-child {
+    display: none; /* footer 툴팁 삭제 */
+}
+#fp-nav ul li a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* border: 1px solid red; */
+}
+#fp-nav ul li a span {
+    display: none;
+}
+/* 라이브러리를 쓸 때, 내가 준 스타일과 라이브러리 스타일이 충돌될때, 내 스타일을 우선시 하려면
+   1. !importent를 줘서 무조건 작동하게
+   2. 선택자를 조작 - 선택자 앞에 body를 붙여주면, 웬만해선 무조건 우선순위로 땡겨 올릴 수 있음
+   3. 브라우저에서 최우선 선택자를 복사한 뒤, 조금 더 디테일하게 선택자를 명칭해줌 */
+body #fp-nav ul li .fp-tooltip {
+    position: relative;
+    top: auto;
+    left: auto;
+    color: rgba(255,255,255,0.6);
+    font-size: inherit;
+    font-family: inherit;
+    max-width: 100%;
+    overflow: visible;
+    opacity: 1;
+    width: auto;
+    border-radius: 30px;
+    padding: 5px 21px 5px 25px;
+}
+body #fp-nav ul li .fp-tooltip::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 13px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.8);
+}
+body #fp-nav ul li a.active + .fp-tooltip {
+    border: 1px solid #fff;
+    color: #fff;
+    display: inline-block;
+}
+body #fp-nav ul li a.active + .fp-tooltip::before {
+    border-color: #fff;
+    background-color: #fff;
+}
+body #fp-nav ul li .fp-tooltip.fp-left {
+    left: auto;
+}
+/* #fp-nav에 dark 클래스가 추가 되었을 때 */
+body #fp-nav.dark ul li .fp-tooltip {
+    color: #1d1d1d;
+}
+body #fp-nav.dark ul li a.active + .fp-tooltip {
+    border-color: #1d1d1d;
+    color: #1d1d1d;
+}
+body #fp-nav.dark ul li a.active + .fp-tooltip::before {
+    border-color: #1d1d1d;
+    background-color: #1d1d1d;
+}
+body #fp-nav.hide {
+    display: none;
+}
+
+h2 {
+    font-size: 60px;
+    font-weight: 800;
+    text-align: center;
+}
+.visual .swiper {
+    width: 100%;
+    height: 100%; /* visual의 높이를 계승받기 위함 */
+}
+.visual .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.visual .swiper-slide .photo,
+.visual .swiper-slide .video {
+    position: absolute; /* swiper-slide를 기준으로 정렬 */
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.visual .swiper-slide .photo img,
+.visual .swiper-slide .video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .swiper-slide .photo img {
+    transition: transform 4s;
+    transform: scale3d(1.1, 1.1, 1);
+}
+.visual .swiper-slide.swiper-slide-active .photo img {
+    transform: scale3d(1, 1, 1);
+}
+.visual .swiper-slide .txt {
+    color: #fff;
+    text-align: center;
+    margin: calc(var(--header-h) + 30px) 0 40px 0;
+}
+.visual .swiper-slide .txt strong {
+    display: block;
+    transition: .8s;
+    transition-delay: .2s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+.visual .swiper-slide.swiper-slide-active .txt strong {
+    opacity: 1;
+    transform: translateY(0);
+}
+.visual .swiper-slide .txt h3 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 20px 0;
+    transition: .8s;
+    transition-delay: .3s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+.visual .swiper-slide.swiper-slide-active .txt h3 {
+    opacity: 1;
+    transform: translateY(0);
+}
+.visual .swiper-slide .txt a {
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 10px 38px 10px 23px;
+    position: relative;
+    transition: .8s;
+    transition-delay: .4s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+.visual .swiper-slide.swiper-slide-active .txt a {
+    opacity: 1;
+    transform: translateY(0);
+}
+.visual .swiper-slide .txt a::after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 12px;
+    height: 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 8px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 7 12' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.175 5.575L0.275 1.675C0.0916667 1.49167 0 1.25833 0 0.975C0 0.691667 0.0916667 0.458333 0.275 0.275C0.458333 0.0916667 0.691667 0 0.975 0C1.25833 0 1.49167 0.0916667 1.675 0.275L6.275 4.875C6.375 4.975 6.44583 5.08333 6.4875 5.2C6.52917 5.31667 6.55 5.44167 6.55 5.575C6.55 5.70833 6.52917 5.83333 6.4875 5.95C6.44583 6.06667 6.375 6.175 6.275 6.275L1.675 10.875C1.49167 11.0583 1.25833 11.15 0.975 11.15C0.691667 11.15 0.458333 11.0583 0.275 10.875C0.0916667 10.6917 0 10.4583 0 10.175C0 9.89167 0.0916667 9.65833 0.275 9.475L4.175 5.575Z'/%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:1320px){
+    .visual .swiper-slide .txt h3 {
+        font-size: 32px;
+    }
+}
+@media screen and (max-width:768px){
+    .visual .swiper-slide {
+        height: 600px;
+    }
+    .visual .swiper-slide .txt h3 {
+        font-size: 28px;
+        margin: 18px 0 20px 0;
+    }
+}
+.visual .paging {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    font-size: 24px;
+}
+.visual .paging ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.tree {
+    
+}
+.work {
+    background-color: tomato;
+    color: #fff;
+}
+.news {
+    
+}
+footer {
+    background-color: var(--color-title);
+    color: #fff;
+}
+
