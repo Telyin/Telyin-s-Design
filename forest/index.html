@@ -8,6 +8,7 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/count.js"></script>
     <!-- 외부 라이브러리 파일 -->
 
     <!-- 내가 직접 작성하는 파일 -->
@@ -97,26 +98,29 @@
             </div><!--swiper-->
             <div class="paging">
                 <ul>
-                    <li>
-                        <button><span>2022 울진 산불 이후의 변화</span></button>
-                    </li>
-                    <li>
-                        <button><span>2025 생명의숲 후원의달</span></button>
-                    </li>
-                    <li>
-                        <button><span>서울 마이 트리</span></button>
-                    </li>
-                    <li>
-                        <button><span>우리가 지켜야 할 고목나무 이야기</span></button>
-                    </li>
+                    <!-- <li><span>문구</span></li> -->
                 </ul>
             </div>
         </section><!--visual-->
         <section class="tree section fp-auto-height-responsive">
-            <h2>tree</h2>
+            <div class="wrapper">
+                <div class="tit">
+                    <h2>
+                        <strong data-start="0" data-end="102302">1</strong>
+                        <span>그루</span>
+                    </h2>
+                    <p>생명의숲이 함께 심은 나무 102,302그루가 <br>숲에 새로운 숨을 불어넣었습니다 </p>
+                </div>
+                <div class="photo">
+                    <img src="images/main/tree01.png" alt="" class="tree_img">
+                    <img src="images/main/cloud01.png" alt="" class="cloud01">
+                    <img src="images/main/cloud02.png" alt="" class="cloud02">
+                    <img src="images/main/sun 1.png" alt="" class="sun">
+                </div>
+            </div><!--wrapper-->
         </section>
         <section class="work section fp-auto-height-responsive">
-            <h2>work<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>2work<br>1<br>2work<br>1<br>2work<br>1<br>2work<br>1<br>2work<br>1<br>2work<br>1<br>2</h2>
+            <h2>work</h2>
         </section>
         <section class="news section fp-auto-height-responsive">
             <h2>news</h2>
@@ -125,5 +129,17 @@
             <h2>footer</h2>
         </footer>
     </div><!--fullpage-->
+    <aside class="quick">
+        <button class="quick_open" title="열기"><span class="blind">퀵 메뉴 열기</span></button>
+        <div class="quick_wrap">
+            <ul>
+                <li class="kakao"><a href="#n"><span>같이가치</span></a></li>
+                <li class="naver"><a href="#n"><span>해피빈</span></a></li>
+                <li class="green"><a href="#n"><span>그린짐</span></a></li>
+                <li class="top"><a href="#Main"><span>TOP</span></a></li>
+            </ul>
+        </div>
+        <button class="quick_close" title="닫기"><span class="blind">퀵 메뉴 닫기</span></button>
+    </aside>
 </body>
 </html>

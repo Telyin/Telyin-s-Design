@@ -83,11 +83,10 @@ body #fp-nav.dark ul li a.active + .fp-tooltip::before {
 body #fp-nav.hide {
     display: none;
 }
-
-h2 {
-    font-size: 60px;
-    font-weight: 800;
-    text-align: center;
+@media screen and (max-width:1600px){
+    #fp-nav {
+        display: none !important;
+    }
 }
 .visual .swiper {
     width: 100%;
@@ -179,11 +178,59 @@ h2 {
     background-size: 8px;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 7 12' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.175 5.575L0.275 1.675C0.0916667 1.49167 0 1.25833 0 0.975C0 0.691667 0.0916667 0.458333 0.275 0.275C0.458333 0.0916667 0.691667 0 0.975 0C1.25833 0 1.49167 0.0916667 1.675 0.275L6.275 4.875C6.375 4.975 6.44583 5.08333 6.4875 5.2C6.52917 5.31667 6.55 5.44167 6.55 5.575C6.55 5.70833 6.52917 5.83333 6.4875 5.95C6.44583 6.06667 6.375 6.175 6.275 6.275L1.675 10.875C1.49167 11.0583 1.25833 11.15 0.975 11.15C0.691667 11.15 0.458333 11.0583 0.275 10.875C0.0916667 10.6917 0 10.4583 0 10.175C0 9.89167 0.0916667 9.65833 0.275 9.475L4.175 5.575Z'/%3E%3C/svg%3E%0A");
 }
+.visual .paging {
+    position: absolute; /* visual을 기준으로 정렬 */
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+}
+.visual .paging ul {
+    display: flex;
+    align-items: flex-end;
+}
+.visual .paging ul li.swiper-pagination-bullet {
+    margin: 0;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    opacity: 1;
+    color: rgba(255,255,255,0.5);
+    font-size: 20px;
+    position: relative;
+}
+.visual .paging ul li.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    color: #fff;
+}
+.visual .paging ul li.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 8px;
+    background-color: #225544;
+    animation: paging 6s linear 1 forwards
+    /* 애니메이션 이름, 시간, 애니메이션 가속도, 1번 실행, 끝나면 100% */
+}
+@keyframes paging {
+    0% {width: 0%;}
+    100% {width: 100%;}
+}
+
 @media screen and (max-width:1320px){
     .visual .swiper-slide .txt h3 {
         font-size: 32px;
     }
 }
+
 @media screen and (max-width:768px){
     .visual .swiper-slide {
         height: 600px;
@@ -192,24 +239,130 @@ h2 {
         font-size: 28px;
         margin: 18px 0 20px 0;
     }
+    .visual .paging {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 30px;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+    }
+    .visual .paging ul {
+        gap: 0 8px;
+    }
+    .visual .paging ul li.swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        display: block;
+        border-radius: 5px;
+        background: #fff;
+        backdrop-filter: none;
+    }
+    .visual .paging ul li.swiper-pagination-bullet span {
+        display: none;
+    }
+    .visual .paging ul li.swiper-pagination-bullet.swiper-pagination-bullet-active {
+        width: 38px;
+    }
+    .visual .paging ul li.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+        display: none;
+    }
 }
-.visual .paging {
-    position: absolute;
-    z-index: 2;
-    left: 0;
-    bottom: 0;
-    color: #fff;
-    font-size: 24px;
-}
-.visual .paging ul {
+
+
+.tree .wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-top: calc(var(--header-h) + 30px);
+    margin-bottom: calc(var(--header-h) + 15px);
+}
+.tree .tit h2 {
+    color: #225544;
+    line-height: 1;
+    display: flex;
+    gap: 0 5px;
+    align-items: flex-start;
+    margin: 0 0 20px 0;
+}
+.tree .tit h2 strong {
+    font-size: 80px;
+    font-weight: 700;
+}
+.tree .tit h2 span {
+    margin-top: 8px;
+}
+.tree .photo {
+    position: relative; /* img 정렬의 기준 */
+    width: 60%;
+    max-width: 702px;
+    min-width: 300px;
+    text-align: center;
+}
+.tree .photo .tree_img {
+    width: 90%;
+    position: relative;
+    z-index: 2;
+}
+.tree .photo .cloud01 {
+    position: absolute;
+    z-index: 1;
+    left: 1%;
+    top: 2%;
+    width: 45%;
+    animation: tree_cloud01 8s linear infinite;
+}
+@keyframes tree_cloud01 {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(10%);}
+    100% {transform: translateY(0);} /* 왔다갔다 하는 왕복 애니메이션은 0%와 100%의 값이 같아야 함 */
+}
+.tree .photo .cloud02 {
+    position: absolute;
+    z-index: 2;
+    right: 8%;
+    top: 18%;
+    width: 35%;
+    animation: tree_cloud02 5s linear infinite;
+}
+@keyframes tree_cloud02 {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(13%);}
+    100% {transform: translateY(0);} /* 왔다갔다 하는 왕복 애니메이션은 0%와 100%의 값이 같아야 함 */
+}
+.tree .photo .sun {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: -8%;
+    width: 30%;
+    animation: tree_sun 60s linear infinite;
+}
+@keyframes tree_sun {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+@media screen and (max-width:1024px){
+    .tree .wrapper {
+        flex-direction: column;
+        gap: 80px 0;
+        text-align: center;
+    }
+    .tree .tit h2 {
+        line-height: 1.2;
+        justify-content: center;
+    }
+    .tree .tit h2 strong {
+        font-size: 60px;
+    }
+}
+@media screen and (max-width:768px){
+    .tree .tit h2 strong {
+        font-size: 50px;
+    }
 }
 
 
-.tree {
-    
-}
 .work {
     background-color: tomato;
     color: #fff;
@@ -222,3 +375,85 @@ footer {
     color: #fff;
 }
 
+aside.quick {
+    position: fixed;
+    z-index: 99;
+    right: 30px;
+    top: 50%;
+}
+aside.quick .quick_open,
+aside.quick .quick_close {
+    display: block;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #091F5B;
+    color: #fff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 18 12' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 12C0.716667 12 0.479167 11.9042 0.2875 11.7125C0.0958333 11.5208 0 11.2833 0 11C0 10.7167 0.0958333 10.4792 0.2875 10.2875C0.479167 10.0958 0.716667 10 1 10H17C17.2833 10 17.5208 10.0958 17.7125 10.2875C17.9042 10.4792 18 10.7167 18 11C18 11.2833 17.9042 11.5208 17.7125 11.7125C17.5208 11.9042 17.2833 12 17 12H1ZM1 7C0.716667 7 0.479167 6.90417 0.2875 6.7125C0.0958333 6.52083 0 6.28333 0 6C0 5.71667 0.0958333 5.47917 0.2875 5.2875C0.479167 5.09583 0.716667 5 1 5H17C17.2833 5 17.5208 5.09583 17.7125 5.2875C17.9042 5.47917 18 5.71667 18 6C18 6.28333 17.9042 6.52083 17.7125 6.7125C17.5208 6.90417 17.2833 7 17 7H1ZM1 2C0.716667 2 0.479167 1.90417 0.2875 1.7125C0.0958333 1.52083 0 1.28333 0 1C0 0.716667 0.0958333 0.479167 0.2875 0.2875C0.479167 0.0958333 0.716667 0 1 0H17C17.2833 0 17.5208 0.0958333 17.7125 0.2875C17.9042 0.479167 18 0.716667 18 1C18 1.28333 17.9042 1.52083 17.7125 1.7125C17.5208 1.90417 17.2833 2 17 2H1Z' /%3E%3C/svg%3E%0A");
+}
+aside.quick .quick_close {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.575 7.975L1.675 12.875C1.49167 13.0583 1.25833 13.15 0.975 13.15C0.691667 13.15 0.458333 13.0583 0.275 12.875C0.0916667 12.6917 0 12.4583 0 12.175C0 11.8917 0.0916667 11.6583 0.275 11.475L5.175 6.575L0.275 1.675C0.0916667 1.49167 0 1.25833 0 0.975C0 0.691667 0.0916667 0.458333 0.275 0.275C0.458333 0.0916667 0.691667 0 0.975 0C1.25833 0 1.49167 0.0916667 1.675 0.275L6.575 5.175L11.475 0.275C11.6583 0.0916667 11.8917 0 12.175 0C12.4583 0 12.6917 0.0916667 12.875 0.275C13.0583 0.458333 13.15 0.691667 13.15 0.975C13.15 1.25833 13.0583 1.49167 12.875 1.675L7.975 6.575L12.875 11.475C13.0583 11.6583 13.15 11.8917 13.15 12.175C13.15 12.4583 13.0583 12.6917 12.875 12.875C12.6917 13.0583 12.4583 13.15 12.175 13.15C11.8917 13.15 11.6583 13.0583 11.475 12.875L6.575 7.975Z' /%3E%3C/svg%3E%0A");
+    display: none;
+}
+aside.quick.open .quick_open {
+    display: none;
+}
+aside.quick.open .quick_close {
+    display: block;
+}
+aside.quick .quick_wrap {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 69px;
+    display: none;
+}
+aside.quick .quick_wrap ul {
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+}
+aside.quick .quick_wrap ul li a {
+    display: block;
+    width: 100%;
+    height: 65px;
+    background-color: #344EAD;
+    border-radius: 50%;
+    padding-top: 33px;
+    position: relative;
+    margin-top: 4px;
+}
+aside.quick .quick_wrap ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 100%;
+    height: 26px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+aside.quick .quick_wrap ul li.kakao a::before {
+    background-size: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 18' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 17.675C9.76667 17.675 9.52917 17.6333 9.2875 17.55C9.04583 17.4667 8.83333 17.3333 8.65 17.15L6.925 15.575C5.15833 13.9583 3.5625 12.3542 2.1375 10.7625C0.7125 9.17083 0 7.41667 0 5.5C0 3.93333 0.525 2.625 1.575 1.575C2.625 0.525 3.93333 0 5.5 0C6.38333 0 7.21667 0.1875 8 0.5625C8.78333 0.9375 9.45 1.45 10 2.1C10.55 1.45 11.2167 0.9375 12 0.5625C12.7833 0.1875 13.6167 0 14.5 0C16.0667 0 17.375 0.525 18.425 1.575C19.475 2.625 20 3.93333 20 5.5C20 7.41667 19.2917 9.175 17.875 10.775C16.4583 12.375 14.85 13.9833 13.05 15.6L11.35 17.15C11.1667 17.3333 10.9542 17.4667 10.7125 17.55C10.4708 17.6333 10.2333 17.675 10 17.675Z'/%3E%3C/svg%3E%0A");
+}
+aside.quick .quick_wrap ul li.naver a::before {
+    background-size: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 15.5C10.5667 15.5 11.1 15.3958 11.6 15.1875C12.1 14.9792 12.5667 14.6833 13 14.3C13.15 14.1667 13.225 13.9917 13.225 13.775C13.225 13.5583 13.15 13.3833 13 13.25C12.85 13.1167 12.6708 13.05 12.4625 13.05C12.2542 13.05 12.0667 13.1167 11.9 13.25C11.6167 13.4667 11.3167 13.6417 11 13.775C10.6833 13.9083 10.35 13.975 10 13.975C9.65 13.975 9.31667 13.9083 9 13.775C8.68333 13.6417 8.38333 13.4667 8.1 13.25C7.93333 13.1167 7.74583 13.05 7.5375 13.05C7.32917 13.05 7.15 13.1167 7 13.25C6.85 13.3833 6.775 13.5583 6.775 13.775C6.775 13.9917 6.85 14.1667 7 14.3C7.43333 14.6667 7.9 14.9583 8.4 15.175C8.9 15.3917 9.43333 15.5 10 15.5ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20ZM10 18C12.2333 18 14.125 17.225 15.675 15.675C17.225 14.125 18 12.2333 18 10C18 7.76667 17.225 5.875 15.675 4.325C14.125 2.775 12.2333 2 10 2C7.76667 2 5.875 2.775 4.325 4.325C2.775 5.875 2 7.76667 2 10C2 12.2333 2.775 14.125 4.325 15.675C5.875 17.225 7.76667 18 10 18ZM6.5 10C7.03333 10 7.5125 9.83333 7.9375 9.5C8.3625 9.16667 8.69167 8.75833 8.925 8.275C9.00833 8.05833 9.0125 7.84583 8.9375 7.6375C8.8625 7.42917 8.71667 7.3 8.5 7.25C8.31667 7.2 8.13333 7.22083 7.95 7.3125C7.76667 7.40417 7.63333 7.54167 7.55 7.725C7.43333 7.94167 7.2875 8.125 7.1125 8.275C6.9375 8.425 6.73333 8.5 6.5 8.5C6.26667 8.5 6.05833 8.42083 5.875 8.2625C5.69167 8.10417 5.55 7.91667 5.45 7.7C5.36667 7.51667 5.23333 7.38333 5.05 7.3C4.86667 7.21667 4.68333 7.2 4.5 7.25C4.28333 7.3 4.1375 7.42917 4.0625 7.6375C3.9875 7.84583 4 8.05833 4.1 8.275C4.3 8.775 4.61667 9.1875 5.05 9.5125C5.48333 9.8375 5.96667 10 6.5 10ZM13.5 10C14.0333 10 14.5125 9.83333 14.9375 9.5C15.3625 9.16667 15.6917 8.75833 15.925 8.275C16.0083 8.05833 16.0125 7.84583 15.9375 7.6375C15.8625 7.42917 15.7167 7.3 15.5 7.25C15.3167 7.2 15.1333 7.22083 14.95 7.3125C14.7667 7.40417 14.6333 7.54167 14.55 7.725C14.4333 7.94167 14.2875 8.125 14.1125 8.275C13.9375 8.425 13.7333 8.5 13.5 8.5C13.2667 8.5 13.0583 8.42083 12.875 8.2625C12.6917 8.10417 12.55 7.91667 12.45 7.7C12.3667 7.51667 12.2333 7.38333 12.05 7.3C11.8667 7.21667 11.6833 7.2 11.5 7.25C11.2833 7.3 11.1375 7.42917 11.0625 7.6375C10.9875 7.84583 11 8.05833 11.1 8.275C11.3 8.775 11.6167 9.1875 12.05 9.5125C12.4833 9.8375 12.9667 10 13.5 10Z'/%3E%3C/svg%3E%0A");
+}
+aside.quick .quick_wrap ul li.green a::before {
+    background-size: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 20' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 18V14H5C3.61667 14 2.4375 13.5125 1.4625 12.5375C0.4875 11.5625 0 10.3833 0 9C0 8 0.275 7.07917 0.825 6.2375C1.375 5.39583 2.11667 4.78333 3.05 4.4C3.2 3.15 3.74583 2.10417 4.6875 1.2625C5.62917 0.420833 6.73333 0 8 0C9.26667 0 10.3708 0.420833 11.3125 1.2625C12.2542 2.10417 12.8 3.15 12.95 4.4C13.8833 4.78333 14.625 5.39583 15.175 6.2375C15.725 7.07917 16 8 16 9C16 10.3833 15.5125 11.5625 14.5375 12.5375C13.5625 13.5125 12.3833 14 11 14H9V18H14C14.2833 18 14.5208 18.0958 14.7125 18.2875C14.9042 18.4792 15 18.7167 15 19C15 19.2833 14.9042 19.5208 14.7125 19.7125C14.5208 19.9042 14.2833 20 14 20H2C1.71667 20 1.47917 19.9042 1.2875 19.7125C1.09583 19.5208 1 19.2833 1 19C1 18.7167 1.09583 18.4792 1.2875 18.2875C1.47917 18.0958 1.71667 18 2 18H7ZM5 12H11C11.8333 12 12.5417 11.7083 13.125 11.125C13.7083 10.5417 14 9.83333 14 9C14 8.4 13.8292 7.85 13.4875 7.35C13.1458 6.85 12.7 6.48333 12.15 6.25L11.1 5.8L10.95 4.65C10.85 3.9 10.5208 3.27083 9.9625 2.7625C9.40417 2.25417 8.75 2 8 2C7.25 2 6.59583 2.25417 6.0375 2.7625C5.47917 3.27083 5.15 3.9 5.05 4.65L4.9 5.8L3.85 6.25C3.3 6.48333 2.85417 6.85 2.5125 7.35C2.17083 7.85 2 8.4 2 9C2 9.83333 2.29167 10.5417 2.875 11.125C3.45833 11.7083 4.16667 12 5 12Z' /%3E%3C/svg%3E%0A");
+}   
+aside.quick .quick_wrap ul li.top a::before {
+    background-size: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 13' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.575 8.4L1.675 12.275C1.49167 12.4583 1.2625 12.5542 0.9875 12.5625C0.7125 12.5708 0.475 12.475 0.275 12.275C0.0916667 12.0917 0 11.8583 0 11.575C0 11.2917 0.0916667 11.0583 0.275 10.875L4.875 6.275C4.975 6.175 5.08333 6.10417 5.2 6.0625C5.31667 6.02083 5.44167 6 5.575 6C5.70833 6 5.83333 6.02083 5.95 6.0625C6.06667 6.10417 6.175 6.175 6.275 6.275L10.875 10.875C11.0583 11.0583 11.1542 11.2875 11.1625 11.5625C11.1708 11.8375 11.075 12.075 10.875 12.275C10.6917 12.4583 10.4583 12.55 10.175 12.55C9.89167 12.55 9.65833 12.4583 9.475 12.275L5.575 8.4ZM5.575 2.4L1.675 6.275C1.49167 6.45833 1.2625 6.55417 0.9875 6.5625C0.7125 6.57083 0.475 6.475 0.275 6.275C0.0916667 6.09167 0 5.85833 0 5.575C0 5.29167 0.0916667 5.05833 0.275 4.875L4.875 0.275C4.975 0.175 5.08333 0.104167 5.2 0.0625C5.31667 0.0208333 5.44167 0 5.575 0C5.70833 0 5.83333 0.0208333 5.95 0.0625C6.06667 0.104167 6.175 0.175 6.275 0.275L10.875 4.875C11.0583 5.05833 11.1542 5.2875 11.1625 5.5625C11.1708 5.8375 11.075 6.075 10.875 6.275C10.6917 6.45833 10.4583 6.55 10.175 6.55C9.89167 6.55 9.65833 6.45833 9.475 6.275L5.575 2.4Z' /%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:768px){
+    aside.quick {
+        display: none;
+    }
+}

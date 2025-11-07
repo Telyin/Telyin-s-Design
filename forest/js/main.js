@@ -19,6 +19,7 @@ $(document).ready(function(){
                 $('#fp-nav').removeClass('hide')
 				$('header').addClass('dark')
 				$('#fp-nav').addClass('dark')
+				$('.tree .tit h2 strong').counterUp();
 			}else if(destination.index == 4){
 				$('#fp-nav').addClass('hide')
 			}else{
@@ -32,6 +33,7 @@ $(document).ready(function(){
         responsiveHeight: 500
 	}); //fullpage
 
+	let visual_name = ['2022 울진 산불 이후의 변화', '2025 생명의숲 후원의달', '서울 마이 트리', '우리가 지켜야 할 고목나무 이야기']
 	const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
 		autoplay: {  /* 팝업 자동 실행 */
@@ -44,13 +46,27 @@ $(document).ready(function(){
 		loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
 
 		pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-			el: '.swiper-pagination', /* 해당 요소의 class명 */
+			el: '.visual .paging ul', /* 해당 요소의 class명 */
 			clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
-			type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
+			// type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
 			renderBullet: function (index, className) {   /* paging에 특정 코드 넣기 */
-				return '<span class="' + className + '">' + (index + 1) + "</span>";
+				return '<li class="'+ className +'"><span>'+ visual_name[index] +'</span></li>';
 			},
 		},
 		
 	});
+
+	//퀵메뉴 열고 닫기
+	//aside.quick //aside.quick .quick_wrap
+	$('aside.quick .quick_open').on('click', function(){
+		$('aside.quick').addClass('open')
+		$('aside.quick .quick_wrap').slideDown()
+	})
+	$('aside.quick .quick_close').on('click', function(){
+		$('aside.quick').removeClass('open')
+		$('aside.quick .quick_wrap').slideUp()
+	})
+
+
+
 })//맨끝
