@@ -1,0 +1,427 @@
+/***********************
+* 파일명 : contents.css 
+* 작성자 : 문미영
+* 작성일 : 25-10-23
+* 설  명 : 연혁, 인사말 등의 각페이지에만 들어가는 스타일들을 모두 모음..
+           이 파일에 있는 css를 수정하면 그 페이지 한개에만 영향을 끼침
+*********************/
+
+/* 회사소개 > CEO인사말 */
+.ctn_ceo .ceo_head {
+    height: 300dvh; /* 스크롤 애니메이션 효과를 줄 때는 브라우저 길이보다 훨씬 길어야함 */
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.ctn_ceo .ceo_head .ceo_photo {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+}
+.ctn_ceo .ceo_head .ceo_photo[data-status="end"] {
+    top: auto;
+    bottom: 0;
+}
+.ctn_ceo .ceo_head .ceo_photo[data-status="ing"] {
+    position: fixed;
+}
+.ctn_ceo .ceo_head .ceo_photo .ceo_img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background: url(../images/contents/ceo_img01.jpg) no-repeat center center / cover;
+    transition: width .05s, height .05s;
+}
+.ctn_ceo .ceo_head .ceo_photo .ceo_img .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .4;
+}
+.ctn_ceo .ceo_head .ceo_txt {
+    height: 70dvh;
+    display: flex;
+    justify-content: center;
+}
+.ctn_ceo .ceo_head .ceo_txt p {
+    color: #fff;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-top: 60px;
+}
+.ctn_ceo .ceo_cont {
+    margin: 69px 0 126px 0;
+}
+.ctn_ceo .ceo_cont h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-title);
+}
+.ctn_ceo .ceo_cont p {
+    margin: 40px 0 89px 0;
+}
+.ctn_ceo .ceo_cont .ceo_sign {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0 50px;
+}
+.ctn_ceo .ceo_cont .ceo_sign strong {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-title);
+}
+.ctn_ceo .ceo_cont .ceo_sign .sign_img {
+    display: block;
+    width: 188px;
+    height: 90px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../images/contents/ceo_sign.jpg);
+}
+
+@media screen and (max-width:1024px){
+    .ctn_ceo .ceo_head .ceo_txt p {
+        font-size: 2.8rem;
+    }
+    .ctn_ceo .ceo_cont h3 {
+        font-size: 2.4rem;
+    }
+    .ctn_ceo .ceo_cont p {
+        margin: 20px 0 52px 0;
+    }
+    .ctn_ceo .ceo_head .ceo_photo .ceo_img {
+        background: url(../images/contents/ceo_bgmo.jpg) no-repeat center center / cover;
+    }
+    .ctn_ceo .ceo_cont .ceo_sign {
+        display: block;
+    }
+    .ctn_ceo .ceo_cont .ceo_sign strong {
+        display: block;
+        margin: 0 0 22px 0;
+    }
+}
+
+/* 회사소개 - 찾아오시는길 */
+
+.ctn_map {
+    margin: 0 0 100px 0;
+}
+.ctn_map .map_area {
+    height: 600px;
+}
+.ctn_map .map_area iframe {
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+.ctn_map .map_info {
+    margin-top: -120px;
+    position: relative;
+    z-index: 10;
+}
+.ctn_map .map_info .info_wrap {
+    background-color: var(--color-main);
+    color: #fff;
+    padding: 72px 45px 78px 45px;
+}
+.ctn_map .map_info .info_wrap h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 42px 0;
+}
+.ctn_map .map_info .info_wrap .group {
+    display: flex;
+    gap: 0 78px;
+}
+.ctn_map .map_info .info_wrap .group .item {
+    position: relative; /* before 정렬의 기준 */
+    padding: 0 0 0 66px;
+}
+.ctn_map .map_info .info_wrap .group .item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #FF6347;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+.ctn_map .map_info .info_wrap .group .item.add::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 48 48' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M32 48L16 42.4L3.6 47.2C2.71111 47.5556 1.88889 47.4556 1.13333 46.9C0.377778 46.3444 0 45.6 0 44.6667V7.33333C0 6.75556 0.166667 6.24444 0.5 5.8C0.833333 5.35556 1.28889 5.02222 1.86667 4.8L16 0L32 5.6L44.4 0.8C45.2889 0.444444 46.1111 0.544444 46.8667 1.1C47.6222 1.65556 48 2.4 48 3.33333V40.6667C48 41.2444 47.8333 41.7556 47.5 42.2C47.1667 42.6444 46.7111 42.9778 46.1333 43.2L32 48ZM29.3333 41.4667V10.2667L18.6667 6.53333V37.7333L29.3333 41.4667ZM34.6667 41.4667L42.6667 38.8V7.2L34.6667 10.2667V41.4667ZM5.33333 40.8L13.3333 37.7333V6.53333L5.33333 9.2V40.8Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_map .map_info .info_wrap .group .item.tel::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 48 48' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M45.2 48C39.6444 48 34.1556 46.7889 28.7333 44.3667C23.3111 41.9444 18.3778 38.5111 13.9333 34.0667C9.48889 29.6222 6.05556 24.6889 3.63333 19.2667C1.21111 13.8444 0 8.35556 0 2.8C0 2 0.266667 1.33333 0.8 0.8C1.33333 0.266667 2 0 2.8 0H13.6C14.2222 0 14.7778 0.211111 15.2667 0.633333C15.7556 1.05556 16.0444 1.55556 16.1333 2.13333L17.8667 11.4667C17.9556 12.1778 17.9333 12.7778 17.8 13.2667C17.6667 13.7556 17.4222 14.1778 17.0667 14.5333L10.6 21.0667C11.4889 22.7111 12.5444 24.3 13.7667 25.8333C14.9889 27.3667 16.3333 28.8444 17.8 30.2667C19.1778 31.6444 20.6222 32.9222 22.1333 34.1C23.6444 35.2778 25.2444 36.3556 26.9333 37.3333L33.2 31.0667C33.6 30.6667 34.1222 30.3667 34.7667 30.1667C35.4111 29.9667 36.0444 29.9111 36.6667 30L45.8667 31.8667C46.4889 32.0444 47 32.3667 47.4 32.8333C47.8 33.3 48 33.8222 48 34.4V45.2C48 46 47.7333 46.6667 47.2 47.2C46.6667 47.7333 46 48 45.2 48ZM8.06667 16L12.4667 11.6L11.3333 5.33333H5.4C5.62222 7.15556 5.93333 8.95556 6.33333 10.7333C6.73333 12.5111 7.31111 14.2667 8.06667 16ZM31.9333 39.8667C33.6667 40.6222 35.4333 41.2222 37.2333 41.6667C39.0333 42.1111 40.8444 42.4 42.6667 42.5333V36.6667L36.4 35.4L31.9333 39.8667Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_map .map_info .info_wrap .group .item h4 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+.ctn_map .map_info .info_wrap .group .item p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 32px;
+}
+
+@media screen and (max-width:1024px){
+    .ctn_map .map_area {
+        height: 350px;
+    }
+    .ctn_map .map_info {
+        margin-top: -60px;
+    }
+    .ctn_map .map_info .info_wrap {
+        padding: 35px 22px 36px 22px;
+    }
+    .ctn_map .map_info .info_wrap h3 {
+        font-size: 2.4rem;
+        margin: 0 0 21px 0;
+    }
+    .ctn_map .map_info .info_wrap .group {
+        flex-direction: column;
+        gap: 20px 0;
+    }
+    .ctn_map .map_info .info_wrap .group .item {
+        padding: 0 0 0 66px;
+    }
+    .ctn_map .map_info .info_wrap .group .item::before {
+        width: 50px;
+        height: 50px;
+        background-size: 20px;
+    }
+    .ctn_map .map_info .info_wrap .group .item h4 {
+        font-size: 2.2rem;
+        margin-bottom: 5px;
+    }
+    .ctn_map .map_info .info_wrap .group .item p {
+        gap: 15px 25px;
+    }
+}
+
+/* 홍보센터 - 금호역사관 */
+
+.ctn_pr05 .search {
+    max-width: 760px;
+    margin: 0 auto; /* 좌우 auto값은 가운데 정렬 */
+}
+.ctn_pr05 .search .sch_wrap {
+    border: 3px solid var(--color-main);
+    border-radius: 40px;
+    height: 64px;
+    padding: 0 18px 0 51px;
+    display: flex; /* 검색어 입력과 버튼의 좌우 배치 */
+    justify-content: space-between;
+    align-items: center;
+}
+.ctn_pr05 .search .sch_wrap label {
+    display: none; /* 접근성 때문에 label태그는 필수 */
+}
+.ctn_pr05 .search .sch_wrap input[type="text"] {
+    height: 53px;
+    width: calc(100% - 63px);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-title);
+    border: none;
+    outline: none; /* 글을 입력할때 생기는 검은색 테두리 - 못생겨서 없애는 편인데, 원래 없애면 안됨... */
+}
+.ctn_pr05 .search .sch_wrap input[type="text"]::placeholder {
+    font-weight: 400;
+    color: #767676;
+}
+.ctn_pr05 .search .sch_wrap input[type="submit"] {
+    width: 53px;
+    height: 53px;
+    background-color: transparent;
+    border: 0;
+    /* font-size: 0; */
+    color: transparent; /* 글자 투명 - 폰트 사이즈 0은 하면 안됨 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 25 25' fill='%23C01E1E' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.0556 25L14.3056 16.25C13.6111 16.8056 12.8125 17.2454 11.9097 17.5694C11.0069 17.8935 10.0463 18.0556 9.02778 18.0556C6.50463 18.0556 4.36921 17.1817 2.62153 15.434C0.873843 13.6863 0 11.5509 0 9.02778C0 6.50463 0.873843 4.36921 2.62153 2.62153C4.36921 0.873843 6.50463 0 9.02778 0C11.5509 0 13.6863 0.873843 15.434 2.62153C17.1817 4.36921 18.0556 6.50463 18.0556 9.02778C18.0556 10.0463 17.8935 11.0069 17.5694 11.9097C17.2454 12.8125 16.8056 13.6111 16.25 14.3056L25 23.0556L23.0556 25ZM9.02778 15.2778C10.7639 15.2778 12.2396 14.6701 13.4549 13.4549C14.6701 12.2396 15.2778 10.7639 15.2778 9.02778C15.2778 7.29167 14.6701 5.81597 13.4549 4.60069C12.2396 3.38542 10.7639 2.77778 9.02778 2.77778C7.29167 2.77778 5.81597 3.38542 4.60069 4.60069C3.38542 5.81597 2.77778 7.29167 2.77778 9.02778C2.77778 10.7639 3.38542 12.2396 4.60069 13.4549C5.81597 14.6701 7.29167 15.2778 9.02778 15.2778Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_pr05 .join {
+    margin: 0 0 86px 0;
+}
+.ctn_pr05 .join h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-title);
+    margin: 103px 0 28px 0;
+}
+.ctn_pr05 .join .agree .agree_box {
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 36px 44px 36px 44px;
+    height: 532px;
+    overflow-y: auto; /* 세로 스크롤바 허용 */
+}
+.ctn_pr05 .join .agree .agree_box p {
+    white-space: pre-line;
+}
+.ctn_pr05 .join .agree .agree_box::-webkit-scrollbar {
+    width: 10px;
+}
+
+.ctn_pr05 .join .agree .agree_box::-webkit-scrollbar-thumb {
+    height: 42px;
+    background: #999;
+    border-radius: 10px;
+}
+
+.ctn_pr05 .join .agree .agree_box::-webkit-scrollbar-track {
+    border-radius: 0 6px 6px 0;
+    background-color: transparent;
+}
+.ctn_pr05 .join .agree .agree_btn {
+    margin: 25px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 0 50px;
+    font-weight: 700;
+}
+.ctn_pr05 .join .agree .agree_btn input[type="radio"] {
+    display: none; /*input은 스타일을 적용하기 어렵다, 해서 label 태그가 대신 한다*/
+}
+.ctn_pr05 .join .agree .agree_btn label {
+    padding: 0 0 0 51px; /* 체크표시 + 여백 사이즈 */
+    position: relative; /* before정렬의 기준 */
+    cursor: pointer; /* 마우스 오버시 클릭커서로 변경 */
+}
+.ctn_pr05 .join .agree .agree_btn label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -12px;
+    width: 36px;
+    height: 36px;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 17 13' fill='%23CCCCCC' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.2822 1.4248L5.69922 12.0068L0.0175781 6.3252L1.4248 4.91699L5.7002 9.19238L14.875 0.0175781L16.2822 1.4248Z' stroke='%23CCCCCC' stroke-width='0.025'/%3E%3C/svg%3E%0A");
+}
+/*
+    <input type="radio" name="agree" id="yes"> <label for="yes">동의함</label>
+    input 뒤에 label이 왔을때 input + label
+    이때 input이 체크되면 = input[type="radio"]:checked
+*/
+.ctn_pr05 .join .agree .agree_btn input[type="radio"]:checked + label {
+    color: var(--color-main);
+    font-weight: 700;
+}
+.ctn_pr05 .join .agree .agree_btn input[type="radio"]:checked + label::before {
+    border-color: var(--color-main);
+    background-color: var(--color-main);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 17 13' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.2822 1.4248L5.69922 12.0068L0.0175781 6.3252L1.4248 4.91699L5.7002 9.19238L14.875 0.0175781L16.2822 1.4248Z' stroke='%23CCCCCC' stroke-width='0.025'/%3E%3C/svg%3E%0A");
+}
+.ctn_pr05 .join .join_info {
+    border-top: 2px solid #1d1d1d;
+    border-bottom: 1px solid #1d1d1d;
+    padding: 21px 0 8px 0;
+}
+.ctn_pr05 .join .join_info .item {
+    display: flex;
+    justify-content: space-between;
+    margin: 18px 0;
+}
+.ctn_pr05 .join .join_info .item label {
+    font-weight: 700;
+    padding: 4px 0 0 0;
+}
+.ctn_pr05 .join .join_info .item select,
+.ctn_pr05 .join .join_info .item input[type="text"],
+.ctn_pr05 .join .join_info .item textarea {
+    width: calc(100% - 91px);
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 15px;
+    outline: 0;
+}
+.ctn_pr05 .join .join_info .item textarea {
+    height: 340px;
+    resize: none;
+    padding: 15px;
+}
+.ctn_pr05 .join .join_btn {
+    margin: 18px 0 0 0;
+    display: flex;
+    justify-content: right;
+    gap: 0 28px;
+}
+.ctn_pr05 .join .join_btn input,
+.ctn_pr05 .join .join_btn a,
+.ctn_pr05 .join .join_btn button {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    width: 110px;
+    height: 50px;
+    line-height: 47px; /* 행간값과 padding값의 합이 높이와 같아야 한다 */
+    padding-top: 3px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #434343;
+    border: 0;
+}
+.ctn_pr05 .join .join_btn input.ok,
+.ctn_pr05 .join .join_btn a.ok,
+.ctn_pr05 .join .join_btn button.ok {
+    background-color: var(--color-main);
+}
+
+@media screen and (max-width:768px){
+    .ctn_pr05 .join .join_info .item {
+        flex-direction: column;
+        gap: 5px 0;
+    }
+    .ctn_pr05 .join .join_info .item select,
+    .ctn_pr05 .join .join_info .item input[type="text"],
+    .ctn_pr05 .join .join_info .item textarea {
+        width: 100%;
+    }
+}
+
+/* IR > 재무정보 */
+.ctn_ir03 .table_wrap {
+    padding: 0 0 80px 0;
+}
+.ctn_ir03 h3 {
+    margin: 60px 0 25px 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-title);
+}
+@media screen and (max-width:768px){
+    /* 모바일에서 너무 오래된 정보 숨김처리 */
+    .ctn_ir03 .table_wrap.money table col:last-child,
+    .ctn_ir03 .table_wrap.money table th:last-child,
+    .ctn_ir03 .table_wrap.money table td:last-child {
+        display: none;
+    }
+}

@@ -1,0 +1,1 @@
+//header, footer 스타일 지정

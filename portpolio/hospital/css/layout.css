@@ -1,0 +1,53 @@
+/***********************
+* 파일명 : layout.css 
+* 작성자 : 김영상
+* 작성일 : 25-11-11
+* 설  명 : header/footer 스타일을 선언함
+*********************/
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: var(--header-h);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--wrapper-margin);
+}
+header .logo a {
+    display: block;
+    width: 191px;
+    height: 41px;
+    background: url(../images/common/logo_w.svg) no-repeat center center / contain;
+}
+
+@media screen and (min-width:1025px){ /* pc 버전 */
+    header .gnb .gnb_open,
+    header .gnb .gnb_wrap .gnb_logo,
+    header .gnb .gnb_wrap .gnb_close {
+        display: none; /* 모바일에서만 보임 */
+    }
+    header .gnb .gnb_wrap .depth1 {
+        display: flex;
+    }
+    header .gnb .gnb_wrap .depth1 > li {
+        position: relative; /* 하위메뉴 정렬 기준 */
+    }
+    header .gnb .gnb_wrap .depth1 > li > a {
+        display: block;
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: var(--header-h);
+        padding: 0 4rem;
+    }
+}/* pc 버전 끝 */
+
+
+
+footer {
+    margin: 200px 0 0 0;
+}
