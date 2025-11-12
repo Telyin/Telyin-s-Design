@@ -144,3 +144,43 @@
     background-size: 15px;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 9' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.34615 5.30892L7.15385 7.61433C7 7.77611 6.92628 7.96486 6.93269 8.18057C6.9391 8.39628 7.01282 8.58503 7.15385 8.74681C7.30769 8.90859 7.49038 8.99286 7.70192 8.9996C7.91346 9.00634 8.09615 8.92882 8.25 8.76703L11.7692 5.06624C11.9231 4.90446 12 4.71571 12 4.5C12 4.28429 11.9231 4.09554 11.7692 3.93376L8.25 0.232968C8.09615 0.0711846 7.91346 -0.00633651 7.70192 0.000404458C7.49038 0.00714543 7.30769 0.0914075 7.15385 0.253191C7.01282 0.414974 6.9391 0.603721 6.93269 0.819432C6.92628 1.03514 7 1.22389 7.15385 1.38567L9.34615 3.69108H0.769231C0.551283 3.69108 0.36859 3.76861 0.221154 3.92365C0.073719 4.07869 0 4.27081 0 4.5C0 4.72919 0.073719 4.92131 0.221154 5.07635C0.36859 5.2314 0.551283 5.30892 0.769231 5.30892H9.34615Z' /%3E%3C/svg%3E%0A");
 }
+@media screen and (max-width:1024px){ /* visual 모바일 시작 */
+    .visual .swiper-slide {
+        height: 500px; /* 브라우저 높이에 꽉 채움 */
+        min-height: auto;
+    }
+    .visual .swiper-slide .tit {
+        margin-bottom: 25dvh;
+    }
+    .visual .swiper-slide .tit strong {
+        display: none;
+    }
+    .visual .swiper-slide.swiper-slide-active .tit h3 {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .visual .swiper .ctrl_btn {
+        bottom: 5dvh;
+        gap: 0 8px;
+    }
+    .visual .ctrl_btn .paging {
+        bottom: auto;
+        left: auto;
+        width: auto;
+        display: flex;
+        gap: 0 15px;
+        align-items: center;
+    }
+    .visual .swiper .ctrl_btn .btn_prev {
+        display: none;
+    }
+    .visual .swiper .ctrl_btn .btn_stop {
+        display: none;
+    }
+    .visual .swiper .ctrl_btn .btn_play {
+        display: none; /* 일시정지 버튼을 누른 후에 나타남 */
+    }
+    .visual .swiper .ctrl_btn .btn_next {
+        display: none;
+    }
+} /* visual 모바일 끝 */
