@@ -97,4 +97,12 @@ $(document).ready(function(){
     $(window).scroll(function(){
         scroll_chk() //스크롤 할 때 마다 실행
     })
+
+    $('footer .top button').on('click', function(e){
+        e.preventDefault() //기본 동작 막기
+    
+        $('html, body').stop().animate({
+            scrollTop: 0 //스크롤 위치를 최상단(0)으로 이동
+        }, 600) //0.6초 동안 부드럽게 스크롤
+    })
 })
