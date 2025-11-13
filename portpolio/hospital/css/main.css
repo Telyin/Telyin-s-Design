@@ -1094,7 +1094,7 @@
         left: 8%;
         bottom: 20%;
         font-size: 1.6rem;
-        max-width: auto;
+        max-width: 150px;
     }
     .profess .swiper-slide a {
         right: auto;
