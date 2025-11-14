@@ -549,7 +549,7 @@
     height: 100%;
     object-fit: cover;
 }
-@media screen and (max-width:1024px){ /* res 모바일 시작 */
+@media screen and (max-width:1280px){ /* res 모바일 시작 */
     .res {
         padding: 70px 0 78px 0;
     }
@@ -568,25 +568,33 @@
     }
     .res .res_inner .fast {
         border-radius: 7px;
+        background-image: none;
         width: 326px;
-        height: 266px;
+        height: 100px;
     }
     .res .res_inner .fast a span {
         font-size: 2.4rem;
-        border-radius: 0 15px 0 7px;
-        padding: 23px 56px 23px 21px;
+        text-align: center;
+        color: var(--color-title);
+        box-shadow: 1px 2px 2px 0 rgba(0,0,0,0.1);
+        border-radius: 7px;
+        width: 100%;
+        padding: 30px 0 30px 0;
+    }
+    .res .res_inner .fast a span:hover {
+        background-color: #fff;
+        color: var(--color-title);
     }
     .res .res_inner .fast a span::after {
-        right: 25px;
-        top: 32px;
-        width: 8px;
-        height: 14px;
+        display: none;
     }
     .res .res_inner .num {
         gap: 16px 0;
         margin-top: 32px;
     }
     .res .res_inner .num .num_come {
+        background-color: var(--color-main);
+        backdrop-filter: none;
         width: 326px;
         height: 94px;
         border-radius: 7px;
@@ -625,10 +633,9 @@
     }
     .res .res_inner .num .num_come p {
         font-size: 1.5rem;
+        font-weight: 700;
         opacity: 1;
         transform: translateY(0);
-        transition: .5s;
-        white-space: nowrap;
     }
     .res .res_inner .num .num_come:hover p {
         transform: translateY(0);
@@ -645,6 +652,8 @@
     
     
     .res .res_inner .num .num_phone {
+        background-color: var(--color-main);
+        backdrop-filter: none;
         width: 326px;
         height: 94px;
         border-radius: 7px;
@@ -687,6 +696,133 @@
         transform: translateY(0);
     }
     .res .res_inner .num .num_phone ul {
+        display: none;
+    }
+    .res .photo {
+        display: none;
+    }
+}
+@media screen and (max-width:1280px) and (min-width:769px){
+    .res .tit h2 {
+        font-size: 3.6rem;
+        font-weight: 700;
+    }
+    .res .res_inner .fast {
+        background-image: none;
+        width: 100%;
+        height: 120px;
+    }
+    .res .res_inner .fast a span {
+        font-size: 4rem;
+        text-align: center;
+        color: var(--color-title);
+        box-shadow: 1px 2px 2px 0 rgba(0,0,0,0.1);
+        border-radius: 15px;
+        width: 100%;
+        padding: 30px 0 30px 0;
+        transition: .2s;
+        position: relative; /* after 정렬의 기준 */
+    }
+    .res .res_inner .fast a span:hover {
+        background-color: #fff;
+        color: var(--color-title);
+    }
+    .res .res_inner .fast a span::after {
+        display: none;
+    }
+    .res .res_inner .num {
+        width: 100%;
+    }
+    .res .res_inner .num .num_come {
+        background-color: var(--color-main);
+        width: 100%;
+        height: 160px;
+        backdrop-filter: blur(8px);
+        border-radius: 15px;
+        margin-left: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 0 42px 0;
+    }
+    .res .res_inner .num .num_come::before {
+        display: none;
+    }
+    .res .res_inner .num .num_come:hover::before {
+        opacity: 1;
+    }
+    .res .res_inner .num .num_come a.co {
+        font-size: 3.2rem;
+        transform: translateY(0);
+    }
+    .res .res_inner .num .num_come:hover a.co {
+        transform: translateY(0);
+    }
+    .res .res_inner .num .num_come:hover a.co span::after {
+        content: "";
+        position: absolute;
+        right: -35px;
+        top: 15px;
+        width: 25px;
+        height: 25px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M38 35.5C38 37.9853 35.9853 40 33.5 40H4.5C2.01472 40 0 37.9853 0 35.5V6.5C6.34505e-08 4.01472 2.01472 2 4.5 2H16.6426C18.0233 2 19.1426 3.11929 19.1426 4.5C19.1426 5.88071 18.0233 7 16.6426 7H5V35H33V23.3574C33 21.9767 34.1193 20.8574 35.5 20.8574C36.8807 20.8574 38 21.9767 38 23.3574V35.5Z' fill='%23ffffff'/%3E%3Cpath d='M40 14.25C40 15.6307 38.8807 16.75 37.5 16.75C36.1193 16.75 35 15.6307 35 14.25V8.53516L22.0352 21.5C21.059 22.4762 19.4762 22.4762 18.5 21.5C17.5238 20.5238 17.5238 18.9411 18.5 17.9648L31.4648 5H25.75C24.3693 5 23.25 3.88071 23.25 2.5C23.25 1.11929 24.3693 0 25.75 0H37C38.6569 0 40 1.34315 40 3V14.25Z' fill='%23ffffff'/%3E%3C/svg%3E%0A");
+    }
+    .res .res_inner .num .num_come p {
+        font-size: 2.4rem;
+        font-weight: 700;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .res .res_inner .num .num_come:hover p {
+        transform: translateY(0);
+        font-size: 2.4rem;
+    }
+    .res .res_inner .num .num_come .inner_nav {
+        display: none;
+    }
+    
+    .res .res_inner .num .num_phone {
+        background-color: var(--color-main);
+        width: 100%;
+        height: 160px;
+        backdrop-filter: blur(8px);
+        border-radius: 15px;
+        margin-left: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 0 42px 0;
+    }
+    .res .res_inner .num .num_phone:hover {
+        background-color: var(--color-main);
+    }
+    .res .res_inner .num .num_phone::before {
+        display: none;
+    }
+    .res .res_inner .num .num_phone h3 {
+        font-size: 3.2rem;
+        transform: translateY(0);
+    }
+    .res .res_inner .num .num_phone:hover h3 {
+        transform: translateY(0);
+    }
+    .res .res_inner .num .num_phone p {
+        font-size: 2.4rem;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .res .res_inner .num .num_phone:hover p {
+        transform: translateY(0);
+    }
+    .res .res_inner .num .num_phone ul {
+        display: none;
+    }
+    .res .photo {
         display: none;
     }
 }/* res 모바일 끝 */
