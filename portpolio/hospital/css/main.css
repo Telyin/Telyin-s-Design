@@ -229,6 +229,11 @@
     height: 61px;
     background-color: rgba(255, 255, 255, 0.3);
 }
+@media screen and (max-width:768px){
+    aside.tail {
+        display: none;
+    }
+}
 @media screen and (max-width:1230px){
     .visual .floating {
         display: none;
