@@ -1,0 +1,192 @@
+/***********************
+* 파일명 : main.css 
+* 작성자 : 김영상
+* 작성일 : 25-11-20
+* 설  명 : index파일 (메인페이지)에서만 호출하는 css
+          메인페이지 (index)의 스타일이 이 페이지에서 선언됨 (header/footer 제외)
+          default.css (태그의 초기화 - 브라우저가 주는 기본 스타일 삭제)
+          common.css (wrapper, blind 처럼 모든 페이지에서 반복되는 기본 스타일 
+          - 변수도 여기서 선언, 변수가 너무 많으면 variable이라는 파일을 분리도 함)
+          layout.css (문서의 구조에 영향을 끼치는 요소 - header/footer가 들어감)
+*********************/
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+
+.visual {
+    position: relative;
+}
+.visual .swiper-slide {
+    height: 100dvh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.visual .swiper-slide.pop1 {
+    background-image: url(../images/main/visual01.JPG);
+}
+.visual .swiper-slide.pop2 {
+    background-image: url(../images/main/visual02.JPG);
+}
+.visual .swiper-slide.pop3 {
+    background-image: url(../images/main/visual03.JPG);
+}
+.visual .swiper-slide h3 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+.visual .swiper .ctrl_btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0 30px;
+    z-index: 10;
+    left: calc(50% - 630px);
+    bottom: 34dvh;
+    color: #fff;
+}
+@media screen and (max-width: 1320px) {
+    .visual .swiper .ctrl_btn {
+        left: var(--wrapper-margin);
+    }
+}
+.visual .ctrl_btn .btn_prev {
+    position: relative;
+}
+.visual .ctrl_btn .btn_prev::after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: -10px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 16' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16L0 8L8 0L9.86667 1.86667L3.73333 8L9.86667 14.1333L8 16Z' /%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 13px;
+    width: 16px;
+    height: 18px;
+}
+.visual .ctrl_btn .paging {
+    display: flex;
+    align-items: center;
+    gap: 0 8px;
+}
+.visual .ctrl_btn .paging .bar {
+    width: 120px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    position: relative;
+}
+.visual .ctrl_btn .paging .bar span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 1);
+}
+.visual .ctrl_btn .btn_stop,
+.visual .ctrl_btn .btn_play {
+    position: relative;
+}
+.visual .ctrl_btn .btn_stop::after,
+.visual .ctrl_btn .btn_play::after {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: -8px;
+    width: 15px;
+    height: 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+}
+.visual .ctrl_btn .btn_stop::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 12' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.33333 11.0833V0H9.5V11.0833H6.33333ZM0 11.0833V0H3.16667V11.0833H0Z' /%3E%3C/svg%3E%0A");
+}
+.visual .ctrl_btn .btn_play::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 14' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.70704 0.000713444C2.03762 -0.00941304 2.32339 0.0901957 2.52833 0.176495C2.7655 0.276372 3.04332 0.426285 3.33301 0.580792L11.25 4.80247H11.249C11.2502 4.80307 11.2518 4.80382 11.2529 4.80442C11.5744 4.97588 11.8775 5.13608 12.1084 5.28782C12.3031 5.4158 12.5658 5.61079 12.7471 5.91478L12.8193 6.05149L12.8916 6.23314C13.0359 6.66388 13.0117 7.13666 12.8193 7.55345C12.6422 7.93737 12.3303 8.17061 12.1074 8.31712C11.8759 8.46933 11.5728 8.6313 11.25 8.80345L3.33301 13.0251C3.04293 13.1798 2.76467 13.3296 2.52735 13.4294C2.29264 13.5281 1.95344 13.6439 1.56251 13.5935C1.06804 13.5297 0.621878 13.2625 0.332038 12.8552C0.103187 12.5334 0.0456988 12.1789 0.0224677 11.9255C-0.00102744 11.6693 6.77081e-06 11.3537 6.77081e-06 11.0251V2.58079C6.77081e-06 2.2523 -0.00100012 1.93673 0.0224677 1.6804C0.0456632 1.42721 0.103123 1.07263 0.332038 0.750713C0.621827 0.343268 1.06786 0.0762396 1.56251 0.0124322L1.70704 0.000713444ZM2.00001 11.0251C2.00001 11.2071 1.99914 11.3497 2.00098 11.4646C2.10344 11.4121 2.23039 11.3465 2.39161 11.2605L10.3086 7.03782C10.4891 6.94156 10.6312 6.86572 10.7451 6.80247C10.6319 6.73964 10.4906 6.66458 10.3115 6.56907V6.5681L10.3086 6.56712L2.39161 2.34544C2.23002 2.25926 2.10362 2.192 2.00098 2.13939C1.99912 2.25469 2.00001 2.39787 2.00001 2.58079V11.0251Z'/%3E%3C/svg%3E%0A");
+    background-size: 15px;
+}
+.visual .ctrl_btn .btn_play {
+    display: none;
+}
+.visual .ctrl_btn .btn_next {
+    position: relative;
+}
+.visual .ctrl_btn .btn_next::after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: -11px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 16' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16L0 8L8 0L9.86667 1.86667L3.73333 8L9.86667 14.1333L8 16Z' /%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 13px;
+    transform: rotate(180deg);
+    width: 16px;
+    height: 18px;
+}
+@media screen and (max-width:1024px){ /* 1024이하 */
+    .visual .swiper-slide h3 {
+        font-size: 32px;
+    }
+    .visual .swiper .ctrl_btn {
+        left: var(--wrapper-margin);
+    }
+    .visual .ctrl_btn .btn_prev {
+        display: none;
+    }
+    .visual .ctrl_btn .paging {
+        display: flex;
+        align-items: center;
+        gap: 0 8px;
+    }
+    .visual .ctrl_btn .paging .bar {
+        width: 100px;
+    }
+    .visual .ctrl_btn .btn_next {
+        display: none;
+    }
+}
+@media screen and (max-width:768px){ /* 768이하 */
+    .visual .swiper-slide {
+        height: 500px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .visual .swiper-slide h3 {
+        font-size: 24px;
+        text-align: center;
+    }
+    .visual .swiper-slide strong {
+        display: block;
+        text-align: center;
+    }
+    .visual .swiper .ctrl_btn {
+        position: relative;
+        left: 50%;
+        justify-content: center;
+        transform: translateX(-50%);
+        bottom: 8dvh;
+        color: #fff;
+    }
+    .visual .ctrl_btn .paging .bar {
+        width: 80px;
+    }
+}
