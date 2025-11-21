@@ -28,13 +28,13 @@
     justify-content: center;
 }
 .visual .swiper-slide.pop1 {
-    background-image: url(../images/main/visual01.JPG);
+    background-image: url(../images/main/visual01.jpg);
 }
 .visual .swiper-slide.pop2 {
-    background-image: url(../images/main/visual02.JPG);
+    background-image: url(../images/main/visual02.jpg);
 }
 .visual .swiper-slide.pop3 {
-    background-image: url(../images/main/visual03.JPG);
+    background-image: url(../images/main/visual03.jpg);
 }
 .visual .swiper-slide h3 {
     font-size: 60px;
