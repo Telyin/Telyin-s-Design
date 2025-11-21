@@ -1,6 +1,6 @@
 //header, footer 스타일 지정
 $(document).ready(function(){
-    let mobile_size = 1024
+    let mobile_size = 1279
     let window_w
     let device_status
 
@@ -88,4 +88,27 @@ $(document).ready(function(){
     $(window).scroll(function(){
         scroll_chk() //스크롤 할 때 마다 실행
     })
+
+    // 스크롤 위치 저장 변수
+    let scrolling_top;
+
+    // TOP 버튼 클릭 시
+    function scrollToTop() {
+        // 부드럽게 0 위치까지 스크롤
+        $('html, body').animate({
+            scrollTop: 0
+        }, 400); // 400ms 동안 이동
+    }
+
+    // 문서 준비 시 이벤트 연결
+    $(document).ready(function() {
+        // TOP 버튼 클릭 이벤트
+        $('footer .top').click(function(e) {
+            e.preventDefault(); // 링크일 경우 기본 동작 막기
+            scrollToTop();
+        });
+    });
+
+    
+
 })
