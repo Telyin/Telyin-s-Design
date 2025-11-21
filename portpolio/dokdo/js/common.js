@@ -89,6 +89,23 @@ $(document).ready(function(){
         scroll_chk() //스크롤 할 때 마다 실행
     })
 
+    $(function(){
+        // lang 버튼 클릭 시
+        $('header .gnb_util .lang').click(function(e){
+            e.preventDefault(); // a 태그 기본 동작 방지
+            $(this).find('.lang_depth').stop(true, true).slideToggle(200); // 200ms 슬라이드
+            $(this).toggleClass('active');
+        });
+    
+        // 버튼 외부 클릭 시 닫기
+        $(document).click(function(e){
+            if(!$(e.target).closest('.gnb_util').length){
+                $('header .gnb_util .lang .lang_depth').slideUp(200);
+            }
+        });
+    });
+    
+
     // 스크롤 위치 저장 변수
     let scrolling_top;
 

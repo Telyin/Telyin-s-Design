@@ -126,48 +126,72 @@ header .logo a {
         height: 280px;
         padding-top: 18px;
     }
-    header .gnb_util .lang {
-        font-weight: 700;
+    header .gnb_util {
         position: relative;
+    }
+    
+    header .gnb_util .lang {
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        overflow: visible;
     }
     header .gnb_util .lang strong {
         border: 1px solid var(--color-title);
-        padding: 5px 35px 5px 23px;
         border-radius: 30px;
+        padding: 5px 35px 5px 25px;
+        font-weight: 700;
         position: relative;
     }
+
     header .gnb_util .lang strong::after {
         content: "";
         position: absolute;
-        right: 10px;
-        top: 6px;
-        width: 18px;
-        height: 18px;
+        right: 5px;
+        top: 3px;
+        transform: rotate(0deg);
+        transition: .3s;
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: 11px;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 6' fill='%23222222' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 5.55L0 1.05L1.05 0L4.5 3.45L7.95 0L9 1.05L4.5 5.55Z' /%3E%3C/svg%3E%0A");
+        background-size: 13px;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 5.55L0 1.05L1.05 0L4.5 3.45L7.95 0L9 1.05L4.5 5.55Z' fill='%23222222'/%3E%3C/svg%3E%0A");
+        width: 24px;
+        height: 24px;
     }
+    header .gnb_util .lang.active strong::after {
+        transform: rotate(180deg);
+    }
+    
     header .gnb_util .lang .lang_depth {
+        display: none; /* 처음에는 숨김 */
         position: absolute;
+        z-index: 1;
+        top: 150%;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -105px;
-        width: 80px;
-        padding-top: 20px;
-        background-color: #fff;
-        border-radius: 0 0 8px 8px;
-        display: none;
-        /* 일단 나중에 건드려 봐야 할 것 같음 */
+        background: #fff;
+        border-radius: 0 0 5px 5px;
+        list-style: none;
+        padding: 5px 0;
+        margin: 0;
+        width: 100%; /* 필요에 따라 조절 */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 10;
     }
+    
     header .gnb_util .lang .lang_depth li {
-        padding: 8px 0;
-        text-decoration: overline;
+        padding: 5px 10px;
     }
-    header .gnb_util .lang .lang_depth li.non_active {
-        color: rgba(0, 0, 0, 0.6);
-        text-decoration: none;
+    
+    header .gnb_util .lang .lang_depth li a {
+        color: var(--color-title);
     }
+    
+    header .gnb_util .lang .lang_depth li.non_active a {
+        color: rgba(0, 0, 0, 0.3);
+    }
+    
 }
 
 
