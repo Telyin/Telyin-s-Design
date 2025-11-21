@@ -90,20 +90,38 @@ $(document).ready(function(){
     })
 
     $(function(){
-        // lang 버튼 클릭 시
+        // lang 버튼 클릭 시 메뉴 슬라이드
         $('header .gnb_util .lang').click(function(e){
-            e.preventDefault(); // a 태그 기본 동작 방지
-            $(this).find('.lang_depth').stop(true, true).slideToggle(200); // 200ms 슬라이드
-            $(this).toggleClass('active');
+            e.preventDefault();
+    
+            var $depth = $(this).siblings('.lang_depth'); // 버튼 바로 아래 ul 선택
+            $depth.stop(true, true).slideToggle(200);     // 슬라이드 토글
+            $(this).toggleClass('active');                // 화살표 회전용 active 토글
+        });
+    
+        // 언어 선택 시 버튼 글자 변경
+        $('header .gnb_util .lang_depth li a').click(function(e){
+            e.preventDefault();
+            var selected = $(this).text(); // 선택한 언어
+            var $btn = $(this).closest('header .gnb_util').find('.lang');
+    
+            $btn.find('strong').text(selected);    // 버튼 글자 변경
+            $btn.siblings('header .gnb_util .lang_depth').slideUp(200); // 메뉴 닫기
+    
+            // 선택 표시
+            $(this).closest('header .gnb_util .lang_depth').find('li').removeClass('active');
+            $(this).parent().addClass('active');
         });
     
         // 버튼 외부 클릭 시 닫기
         $(document).click(function(e){
-            if(!$(e.target).closest('.gnb_util').length){
-                $('header .gnb_util .lang .lang_depth').slideUp(200);
+            if(!$(e.target).closest('header .gnb_util').length){
+                $('header .gnb_util .lang_depth').slideUp(200);
+                $('header .gnb_util .lang').removeClass('active'); // 화살표 원래 상태로
             }
         });
     });
+    
     
 
     // 스크롤 위치 저장 변수

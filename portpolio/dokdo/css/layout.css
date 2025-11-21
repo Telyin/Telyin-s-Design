@@ -163,7 +163,7 @@ header .logo a {
         transform: rotate(180deg);
     }
     
-    header .gnb_util .lang .lang_depth {
+    header .gnb_util .lang_depth {
         display: none; /* 처음에는 숨김 */
         position: absolute;
         z-index: 1;
@@ -177,18 +177,19 @@ header .logo a {
         margin: 0;
         width: 100%; /* 필요에 따라 조절 */
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        text-align: center;
         z-index: 10;
     }
     
-    header .gnb_util .lang .lang_depth li {
+    header .gnb_util .lang_depth li {
         padding: 5px 10px;
     }
     
-    header .gnb_util .lang .lang_depth li a {
+    header .gnb_util .lang_depth li a {
         color: var(--color-title);
     }
     
-    header .gnb_util .lang .lang_depth li.non_active a {
+    header .gnb_util .lang_depth li.non_active a {
         color: rgba(0, 0, 0, 0.3);
     }
     
