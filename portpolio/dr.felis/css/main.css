@@ -1,0 +1,104 @@
+/***********************
+* 파일명 : main.css 
+* 작성자 : 김영상
+* 작성일 : 25-11-20
+* 설  명 : index파일 (메인페이지)에서만 호출하는 css
+          메인페이지 (index)의 스타일이 이 페이지에서 선언됨 (header/footer 제외)
+          default.css (태그의 초기화 - 브라우저가 주는 기본 스타일 삭제)
+          common.css (wrapper, blind 처럼 모든 페이지에서 반복되는 기본 스타일 
+          - 변수도 여기서 선언, 변수가 너무 많으면 variable이라는 파일을 분리도 함)
+          layout.css (문서의 구조에 영향을 끼치는 요소 - header/footer가 들어감)
+*********************/
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+
+.visual {
+    position: relative;
+}
+.visual .swiper-slide {
+    height: 100dvh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff
+}
+.visual .swiper-slide h3 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+.visual .swiper-slide.bg1 {
+    background-image: url(../images/main/visual01.jpg);
+}
+.visual .swiper-slide.bg2 {
+    background-image: url(../images/main/visual02.jpg);
+}
+.visual .swiper-slide.bg3 {
+    background-image: url(../images/main/visual03.jpg);
+}
+.visual .swiper-slide.bg4 {
+    background-image: url(../images/main/visual04.jpg);
+}
+.visual .swiper-slide .visual_photo {
+    overflow: hidden;
+}
+.visual .swiper-slide .visual_photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .swiper .paging {
+    position: absolute;
+    display: inline-block;
+    z-index: 11;
+    left: 100%;
+    transform: translateX(-50%);
+    bottom: 10dvh;
+}
+.visual .swiper .paging .swiper-pagination-bullet {
+    background-color: #FEA500;
+    width: 10px;
+    height: 10px;
+    position: relative;
+}
+.visual .swiper .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #FEA500;
+    border-radius: 50%;
+}
+.visual .swiper .visual_prev,
+.visual .swiper .visual_next {
+    position: absolute;
+    left: 45%;
+    transform: translateY(-50%);
+    bottom: 8dvh;
+    z-index: 30;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #FEA500;
+    border-radius: 50%;
+    background-color: #FEA500;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 18 12' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12L0 6L6 0L7.4 1.4L3.8 5H18V7H3.8L7.4 10.6L6 12Z'/%3E%3C/svg%3E%0A");
+}
+.visual .swiper .visual_next {
+    left: auto;
+    right: 40%;
+    bottom: 9.65dvh;
+    transform: rotate(180deg);
+}
