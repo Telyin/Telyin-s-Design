@@ -1,0 +1,194 @@
+/***********************
+* 파일명 : main.css 
+* 작성자 : 김영상
+* 작성일 : 25-11-20
+* 설  명 : index파일 (메인페이지)에서만 호출하는 css
+          메인페이지 (index)의 스타일이 이 페이지에서 선언됨 (header/footer 제외)
+          default.css (태그의 초기화 - 브라우저가 주는 기본 스타일 삭제)
+          common.css (wrapper, blind 처럼 모든 페이지에서 반복되는 기본 스타일 
+          - 변수도 여기서 선언, 변수가 너무 많으면 variable이라는 파일을 분리도 함)
+          layout.css (문서의 구조에 영향을 끼치는 요소 - header/footer가 들어감)
+*********************/
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+
+.main {
+    padding: 30px 0 70px 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../images/배경.jpg);
+}
+.main .wrapper {
+    position: relative;
+}
+.container .top_wrap ul {
+    display: flex;
+    justify-content: space-between;
+}
+.container .top_wrap ul li {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+}
+.main .mid_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 258px;
+}
+.main .mid_wrap .mid_left span {
+    font-size: 80px;
+    font-weight: 700;
+    color: #111;
+    display: block;
+}
+.main .mid_wrap .mid_left strong {
+    font-size: 120px;
+    font-weight: 700;
+    color: #111;
+}
+.main .mid_wrap .mid_right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: right;
+}
+.main .mid_wrap .mid_right span {
+    font-size: 40px;
+    font-weight: 700;
+    color: #111;
+}
+.main .mid_wrap .mid_right p {
+    font-weight: 700;
+    color: #111;
+    margin-top: 18px;
+}
+.main .photo {
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+}
+.main .photo img {
+    width: 551px;
+    height: 532px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+.main .bot {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 100px;
+}
+.main .bot ul li {
+    margin-top: 15px;
+    font-weight: 700;
+    color: #111;
+}
+.second {
+    margin: 30px 24px 0 24px;
+}
+.second .second_wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 78px;
+}
+.second .second_wrap .iam {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0 24px;
+}
+.second .second_wrap .iam .photo {
+    overflow: hidden;
+    width: 404px;
+    height: 404px;
+    border-radius: 15px;
+}
+.second .second_wrap .iam .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.second .second_wrap .iam .kim {
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0;
+}
+.second .second_wrap .iam .kim strong {
+    font-size: 40px;
+    font-weight: 700;
+    color: #111;
+}
+.second .second_wrap .iam .kim span.bold {
+    font-weight: 700;
+    color: #111;
+}
+.second .second_wrap .edu p {
+    font-size: 40px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 15px;
+}
+.second .second_wrap .edu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px 0;
+}
+.second .second_wrap .edu ul li.bold {
+    font-weight: 700;
+    color: #111;
+}
+.second .second_wrap .skill strong {
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    color: #111;
+    padding-left: 130px;
+    margin-bottom: 15px;
+}
+.second .second_wrap .skill .skill_list {
+    display: flex;
+    gap: 0 65px;
+}
+.second .second_wrap .skill .skill_list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 35px 65px;
+}
+.second .second_wrap .skill .skill_list ul li {
+    margin-top: 15px;
+}
+.second .second_wrap .skill ul li span {
+    position: relative;
+}
+.second .second_wrap .skill ul li span::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    left: -60px;
+    top: -15px;
+    width: 50px;
+    height: 50px;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+.second .second_wrap .skill ul li.fig span::before{ background-image: url(../images/figma.svg);}
+.second .second_wrap .skill ul li.pho span::before{ background-image: url(../images/pho.svg); }
+.second .second_wrap .skill ul li.ill span::before{ background-image: url(../images/ill.svg); }
+.second .second_wrap .skill ul li.ind span::before{ background-image: url(../images/ind.svg); }
+.second .second_wrap .skill ul li.xd span::before{ background-image: url(../images/xd.svg); }
+.second .second_wrap .skill ul li.fus span::before{ background-image: url(../images/fus.svg); }
+.second .second_wrap .skill ul li.git span::before{ background-image: url(../images/git.svg); }
+.second .second_wrap .skill ul li.blen span::before{ background-image: url(../images/blen.svg); }
+.second .second_wrap .skill ul li.h5 span::before{ background-image: url(../images/h5.svg); }
+.second .second_wrap .skill ul li.css span::before{ background-image: url(../images/css.svg); }
+.second .second_wrap .skill ul li.vsc span::before{ background-image: url(../images/vsc.svg); }
+.second .second_wrap .skill ul li.Pre span::before{ background-image: url(../images/pre.svg); }
