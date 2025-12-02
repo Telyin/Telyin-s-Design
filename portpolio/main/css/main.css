@@ -232,11 +232,8 @@
 =============================== */
 
 .third {
-    margin-bottom: 200px;
-}
-
-.third .top_wrap {
-    margin-top: 180px;
+    padding: 60px 0 80px 0;
+    background-color: #f8f8f8;
 }
 
 .third .third_txt {
