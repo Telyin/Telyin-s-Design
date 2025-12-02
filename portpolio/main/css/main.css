@@ -194,7 +194,7 @@
 .second .second_wrap .skill ul li.Pre span::before{ background-image: url(../images/pre.svg); }
 
 .second .Career {
-    margin-top: 45px;
+    margin: 45px 0 60px 0;
     display: flex;
     flex-direction: column;
     text-align: center;
