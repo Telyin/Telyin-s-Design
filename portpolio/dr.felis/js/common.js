@@ -147,6 +147,25 @@ $(document).ready(function(){
             }
         })
     }
+    /* 검색 패널 열기/닫기 */
+    /* 검색 열기/닫기 버튼 */
+    $('header .gnb_util .search').click(function(e){
+        e.stopPropagation(); // body로 전파 방지
+        $('.search_panel').toggleClass('active');
+    });
+
+    /* 패널 내부 클릭하면 닫히지 않음 */
+    $('header .gnb_util .search_panel').click(function(e){
+        e.stopPropagation();
+    });
+
+    /* 패널 바깥(body 영역) 클릭하면 닫힘 */
+    $('html, body').click(function(){
+        if ($('header .gnb_util .search_panel').hasClass('active')) {
+            $('header .gnb_util .search_panel').removeClass('active');
+        }
+    });
+
 
 
     //모바일 header 제어

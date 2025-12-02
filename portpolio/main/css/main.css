@@ -91,12 +91,12 @@
     color: #111;
 }
 .second {
-    margin: 30px 24px 0 24px;
+    margin: 130px 24px 86px 24px;
 }
 .second .second_wrap {
     display: flex;
     justify-content: space-between;
-    margin-top: 78px;
+    margin-top: 95px;
 }
 .second .second_wrap .iam {
     display: flex;
@@ -117,10 +117,10 @@
 .second .second_wrap .iam .kim {
     display: flex;
     flex-direction: column;
-    gap: 15px 0;
+    gap: 10px 0;
 }
 .second .second_wrap .iam .kim strong {
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 700;
     color: #111;
 }
@@ -192,3 +192,229 @@
 .second .second_wrap .skill ul li.css span::before{ background-image: url(../images/css.svg); }
 .second .second_wrap .skill ul li.vsc span::before{ background-image: url(../images/vsc.svg); }
 .second .second_wrap .skill ul li.Pre span::before{ background-image: url(../images/pre.svg); }
+
+.second .Career {
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.second .Career p {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #111;
+    margin-bottom: 15px;
+}
+.second .Career ul li {
+    margin-bottom: 15px;
+}
+.second .Career ul li strong {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #111;
+    display: block;
+    margin-bottom: 10px;
+}
+.second .Career ul li span {
+    display: block;
+    margin-bottom: 10px;
+}
+.second .Career ul li span.last {
+    color: #111;
+}
+
+/* ===============================
+    THIRD SECTION
+=============================== */
+
+.third {
+    margin-bottom: 200px;
+}
+
+.third .top_wrap {
+    margin-top: 180px;
+}
+
+.third .third_txt {
+    margin: 130px 0 62px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.third .third_txt strong {
+    font-size: 40px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+/* ---------- 공통 리스트 레이아웃 ---------- */
+
+.third .third_list > div {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;              /* 사진–텍스트 간 공통 간격 */
+    margin-bottom: 120px;   /* 프로젝트 간 간격 */
+}
+
+/* ---------- 사진 영역 ---------- */
+
+.third .third_list .photo {
+    overflow: hidden;
+    width: 404px;
+    height: 404px;
+    flex-shrink: 0;
+}
+
+.third .third_list .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- 텍스트 영역 ---------- */
+
+.third .third_list .tit {
+    flex: 1;
+}
+
+.third .third_list .tit strong {
+    font-size: 40px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.third .third_list .tit > span {
+    display: block;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+/* ---------- p 태그 margin 문제 해결 ---------- */
+.third .third_list .tit p {
+    margin: 0;                /* 기본 margin 제거 */
+    line-height: 1.6;
+}
+
+/* ---------- 버튼 ---------- */
+
+.third .third_list .tit a {
+    display: inline-block;
+    margin-top: 40px;
+}
+
+.third .third_list .tit a span {
+    border: 1px solid #555;
+    padding: 16px 21px;
+    border-radius: 30px;
+    display: inline-block;
+    mix-blend-mode: difference;
+}
+.third .third_list .tit a:hover span {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.contact {
+    padding: 60px 0 231px 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../images/배경.jpg);
+    position: relative;
+}
+.contact .thank {
+    text-align: center;
+    margin-bottom: 75px;
+}
+.contact .thank > strong {
+    margin: 292px 0 15px 0;
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+}
+.contact .thank > span {
+    font-size: 80px;
+    font-weight: 700;
+    color: #111;
+}
+.contact .contact_me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px 0;
+}
+.contact .contact_me > strong {
+    font-size: 40px;
+    font-weight: 700;
+    color: #111;
+}
+.contact .contact_me > span {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+}
+.contact .rolling {
+    position: absolute;
+    left: 0;
+    bottom: 3%;
+    font-size: 130px;
+    width: 100%;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.1);
+}
+.contact .rolling p {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    animation: contact_roll 40s linear infinite;
+}
+@keyframes contact_roll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50.12%);
+    }
+}
+
+
+
+
+
+
+
+.cursor { 
+	position: absolute;  /* 반드시 absolute여야 하고 위치는 jquery에서 적용 시킴 */
+	z-index: 1000;
+	transform: translate(-50%, -50%); /* 커서 위치 조정 */
+	pointer-events: none; /* 생성된 cursor에 마우스 오버 이벤트를 주지 않기 - 이걸 주지 않으면 cursor에 마우스가 오버된 것으로 인식되어 하단 요소가 클릭되지 않음 */
+	display:none; /* 평소에는 보이지 않게 하기 위해서 - 만약 원래도 따라다니는 마우스 포인터를 디자인하려면 스타일을 주면 됨. */
+}
+.cursor.on {
+	display: block;  /* jquery에서 특정 요소에 마우스를 오버하면 class명을 추가해주고 그때 나타남 */
+	/* 기본적인 스타일 주기 */
+	mix-blend-mode: difference; /* 만약 블랜딩 모드를 주고 싶다면.. (반드시 background색상이 존재해야 적용됨 주의) */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 30px;
+    color: #fff;
+    background-color: #111;
+}
