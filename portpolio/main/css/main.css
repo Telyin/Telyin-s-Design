@@ -374,24 +374,21 @@
     width: 100%;
     white-space: nowrap;
     color: rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 .contact .rolling p {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+    display: inline-block;
     animation: contact_roll 40s linear infinite;
 }
 @keyframes contact_roll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50.12%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50.12%); }
 }
 
 
-
+html, body {
+    overflow-x: hidden;
+}
 
 
 
