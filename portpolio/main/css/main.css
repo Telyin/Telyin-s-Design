@@ -14,8 +14,13 @@
 @import url(common.css);
 @import url(layout.css);
 
+
+
+.fp-table {
+    justify-content: flex-start;
+}
 .main {
-    padding: 30px 0 70px 0;
+    padding: 30px 0 135px 0;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
