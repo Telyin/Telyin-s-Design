@@ -3,12 +3,14 @@
 @import url(common.css);
 @import url(layout.css);
 
+body {
+    background-color: #FCF8CC;
+}
 .container .iam,
 .container .about,
 .container .skill,
 .container .work,
 .container .contact {
-    background-color: #FBF8CC;
     color: #22226C;
 }
 
