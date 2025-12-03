@@ -156,6 +156,12 @@
 .skill .skill_inner .skill_ico.fus {
     background: url(../images/fus.svg) no-repeat center center / contain;
 }
+.skill .skill_inner .skill_ico.gpt {
+    background: url(../images/openai.svg) no-repeat center center / contain;
+}
+.skill .skill_inner .skill_ico.mid {
+    background: url(../images/midjourney.svg) no-repeat center center / contain;
+}
 .skill .skill_inner .inner_top ul,
 .skill .skill_inner .inner_bottom ul {
     display: flex;
