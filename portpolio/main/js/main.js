@@ -1,36 +1,88 @@
 //콘텐츠 스타일 지정
 $(document).ready(function(){
-    $(window).on('scroll mousemove', function(e){  /* html cursor가 마우스 포인터를 따라다니게 하는 값 */
-	$('.cursor').css('left', e.pageX + 'px');
-	$('.cursor').css('top', e.pageY + 'px');
-    });
-    $('.third .third_list .tit a').hover(function(){ /* 특정한 요소에 마우스를 올렸을때만 on 클래스 주기 */
-        $('.cursor').toggleClass('on');
-    });
 
-    const myFullpage = new fullpage('#fullpage', {  /* html에서 페이지 전체를 감싸는 요소 */
+	gsap.registerPlugin(ScrollTrigger);
 
-		navigation: true, /* 오른쪽에 각 페이지의 paging */
-		navigationPosition: 'right', /* 위치 */
-		navigationTooltips: ['Hello', 'Who am i?', 'Project', 'Contact me'], /* 툴팁 */
-		showActiveTooltip: true, /* 현재 활성화된 페이지의 툴팁에 특정 클래스 주기 */
+	$(function(){
+
+		// 등장 애니메이션을 넣고 싶은 섹션들
+		const sections = [
+			".iam",
+			".about",
+			".skill",
+			".work",
+			".contact"
+		];
+
+		sections.forEach(selector => {
+
+			gsap.from(selector, {
+				opacity: 0,
+				y: 80,
+				duration: 1,
+				ease: "power2.out",
+				scrollTrigger: {
+					trigger: selector,
+					start: "top 80%",   // 화면 아래에서 자연스럽게 시작
+					end: "bottom 60%",
+					toggleActions: "play none none reverse"
+				}
+			});
+		});
+
+		$('.about_list li').each(function(){
+
+			// 이미지 요소 만들어서 li 안에 추가
+			let imgTag = $('<img class="hover_img">');
+			$(this).append(imgTag);
 		
-		lockAnchors: true,
-		anchors: ['main', 'second', 'third', 'contact'], /* href="#link1" 이렇게 코딩하면 해당 링크명으로 이동 */
-
-		autoScrolling:true, /* 한페이지씩 스크롤 */
-		scrollHorizontally: true,
-
-		verticalCentered: true, /* 컨텐츠 요소 위아래 가운데 */
+		});
 		
-		// scrollOverflow: false, /* 컨텐츠가 넘쳐도 스크롤 금지 */
-
-		afterLoad: function(origin, destination, direction, trigger){
-			if(destination.index == 2){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
-				console.log('3번째 슬라이드가 로딩 되었을때');
-			}
-		},
-
-		responsiveWidth: 640 /* fullpage를 적용시키지 않을 모바일 사이즈 */
+		$('.about_list li').on('mouseenter', function(){
+		
+			let imgSrc = $(this).data('img'); // data-img 값 가져오기
+		
+			// 현재 li에 들어있는 hover_img 태그에 이미지 넣기
+			$(this).find('.hover_img')
+				.attr('src', 'images/about/' + imgSrc)
+				.css({ opacity: 1 });
+		
+		});
+		
+		$('.about_list li').on('mouseleave', function(){
+		
+			$(this).find('.hover_img')
+				.css({ opacity: 0 });
+		
+		});
+		
+		
 	});
+
+
+
+
+	
+	// 스킬 게이지 애니메이션
+	$('.skill li').hover(
+		function(){ 
+			// 마우스를 올렸을 때
+			
+			let per = $(this).data('percent'); // data-percent 읽기
+			
+			// 게이지 채우기
+			$(this).find('.gauge_fill').css({
+				'width' : per + '%'
+			});
+
+			// 퍼센트 텍스트 적용
+			$(this).find('.gauge_text').text(per + '%');
+		},
+		function(){
+			// 마우스를 벗어났을 때 게이지 초기화
+			$(this).find('.gauge_fill').css({
+				'width' : '0%'
+			});
+		}
+	);
 }) /* 끝 */

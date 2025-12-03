@@ -1,419 +1,367 @@
-/***********************
-* 파일명 : main.css 
-* 작성자 : 김영상
-* 작성일 : 25-11-20
-* 설  명 : index파일 (메인페이지)에서만 호출하는 css
-          메인페이지 (index)의 스타일이 이 페이지에서 선언됨 (header/footer 제외)
-          default.css (태그의 초기화 - 브라우저가 주는 기본 스타일 삭제)
-          common.css (wrapper, blind 처럼 모든 페이지에서 반복되는 기본 스타일 
-          - 변수도 여기서 선언, 변수가 너무 많으면 variable이라는 파일을 분리도 함)
-          layout.css (문서의 구조에 영향을 끼치는 요소 - header/footer가 들어감)
-*********************/
 @import url(default.css);
 @import url(fonts.css);
 @import url(common.css);
 @import url(layout.css);
 
+.container .iam,
+.container .about,
+.container .skill,
+.container .work,
+.container .contact {
+    background-color: #FBF8CC;
+    color: #22226C;
+}
 
-
-.fp-table {
-    justify-content: flex-start;
+.iam {
+    padding: 60px 0 150px 0;
 }
-.main {
-    padding: 30px 0 135px 0;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url(../images/배경.jpg);
+.iam .header {
+    padding-top: 35px;
 }
-.main .wrapper {
-    position: relative;
-}
-.container .top_wrap ul {
+.iam .header ul {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 104px;
 }
-.container .top_wrap ul li {
+.iam .header ul li {
+    font-size: 24px;
+    font-weight: 800;
+}
+.iam .iam_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.iam .iam_inner .iam_tit strong,
+.iam .iam_inner .iam_tit p {
+    font-size: 28px;
+}
+.iam .iam_inner .iam_tit h3 {
+    font-size: 100px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 15px 0;
+}
+
+
+.about {
+    padding: 60px 0 130px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.about h3 {
+    font-size: 100px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0 0 32px 0;
+}
+.about p {
+    font-size: 24px;
+    margin-bottom: 54px;
+}
+.about .about_box ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px 0;
+    margin-bottom: 80px;
+    position: relative; /* li가 이미지의 기준점이 됨 */
+    padding-right: 200px; /* 이미지 공간 확보 */
+}
+.about .about_box .about_list li .hover_img {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-15deg);
+    width: 180px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+.about ul li strong {
     font-size: 24px;
     font-weight: 700;
-    color: #111;
-}
-.main .mid_wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 258px;
-}
-.main .mid_wrap .mid_left span {
-    font-size: 80px;
-    font-weight: 700;
-    color: #111;
-    display: block;
-}
-.main .mid_wrap .mid_left strong {
-    font-size: 120px;
-    font-weight: 700;
-    color: #111;
-}
-.main .mid_wrap .mid_right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: right;
-}
-.main .mid_wrap .mid_right span {
-    font-size: 40px;
-    font-weight: 700;
-    color: #111;
-}
-.main .mid_wrap .mid_right p {
-    font-weight: 700;
-    color: #111;
-    margin-top: 18px;
-}
-.main .photo {
-    overflow: hidden;
-    position: absolute;
-    left: 50%;
-    top: 20%;
-    transform: translateX(-50%);
-}
-.main .photo img {
-    width: 551px;
-    height: 532px;
-    object-fit: contain;
-    vertical-align: middle;
-}
-.main .bot {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    margin-top: 100px;
-}
-.main .bot ul li {
-    margin-top: 15px;
-    font-weight: 700;
-    color: #111;
-}
-.second {
-    margin: 130px 24px 86px 24px;
-}
-.second .second_wrap {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 95px;
-}
-.second .second_wrap .iam {
-    display: flex;
-    justify-content: flex-start;
-    gap: 0 24px;
-}
-.second .second_wrap .iam .photo {
-    overflow: hidden;
-    width: 404px;
-    height: 404px;
-    border-radius: 15px;
-}
-.second .second_wrap .iam .photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.second .second_wrap .iam .kim {
-    display: flex;
-    flex-direction: column;
-    gap: 10px 0;
-}
-.second .second_wrap .iam .kim strong {
-    font-size: 32px;
-    font-weight: 700;
-    color: #111;
-}
-.second .second_wrap .iam .kim span.bold {
-    font-weight: 700;
-    color: #111;
-}
-.second .second_wrap .edu p {
-    font-size: 40px;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 15px;
-}
-.second .second_wrap .edu ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 15px 0;
-}
-.second .second_wrap .edu ul li.bold {
-    font-weight: 700;
-    color: #111;
-}
-.second .second_wrap .skill strong {
-    display: block;
-    font-size: 40px;
-    font-weight: 700;
-    color: #111;
-    padding-left: 130px;
-    margin-bottom: 15px;
-}
-.second .second_wrap .skill .skill_list {
-    display: flex;
-    gap: 0 65px;
-}
-.second .second_wrap .skill .skill_list ul {
-    display: flex;
-    flex-direction: column;
-    gap: 35px 65px;
-}
-.second .second_wrap .skill .skill_list ul li {
-    margin-top: 15px;
-}
-.second .second_wrap .skill ul li span {
     position: relative;
 }
-.second .second_wrap .skill ul li span::before {
+.about ul li strong::before {
     content: "";
     position: absolute;
-    z-index: 10;
-    left: -60px;
-    top: -15px;
+    left: -25px;
+    top: 10px;
+    width: 13px;
+    height: 13px;
+    background-color: #22226C;
+    border-radius: 50%;
+}
+.about ul li span {
+    font-size: 20px;
+}
+
+.skill {
+    padding: 160px 0 230px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.skill h3 {
+    font-size: 100px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0 0 32px 0;
+}
+.skill .skill_inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px 0;
+}
+.skill .skill_inner ul li .skill_ico {
     width: 50px;
     height: 50px;
-    background-position: center center;
-    background-repeat: no-repeat;
-
+    position: relative;
 }
-.second .second_wrap .skill ul li.fig span::before{ background-image: url(../images/figma.svg);}
-.second .second_wrap .skill ul li.pho span::before{ background-image: url(../images/pho.svg); }
-.second .second_wrap .skill ul li.ill span::before{ background-image: url(../images/ill.svg); }
-.second .second_wrap .skill ul li.ind span::before{ background-image: url(../images/ind.svg); }
-.second .second_wrap .skill ul li.xd span::before{ background-image: url(../images/xd.svg); }
-.second .second_wrap .skill ul li.fus span::before{ background-image: url(../images/fus.svg); }
-.second .second_wrap .skill ul li.git span::before{ background-image: url(../images/git.svg); }
-.second .second_wrap .skill ul li.blen span::before{ background-image: url(../images/blen.svg); }
-.second .second_wrap .skill ul li.h5 span::before{ background-image: url(../images/h5.svg); }
-.second .second_wrap .skill ul li.css span::before{ background-image: url(../images/css.svg); }
-.second .second_wrap .skill ul li.vsc span::before{ background-image: url(../images/vsc.svg); }
-.second .second_wrap .skill ul li.Pre span::before{ background-image: url(../images/pre.svg); }
 
-.second .Career {
-    margin: 45px 0 60px 0;
+.skill .skill_inner .skill_ico.fig {
+    background: url(../images/figma.svg) no-repeat center center / contain;
+}
+.skill .skill_inner .skill_ico.pho {
+    background: url(../images/pho.svg) no-repeat center center / contain;
+}
+.skill .skill_inner .skill_ico.ill {
+    background: url(../images/ill.svg) no-repeat center center / contain;
+}
+.skill .skill_inner .skill_ico.xd {
+    background: url(../images/xd.svg) no-repeat center center / contain;
+}
+.skill .skill_inner .skill_ico.pre {
+    background: url(../images/pre.svg) no-repeat center center / contain;
+}
+.skill .skill_inner .skill_ico.git {
+    background: url(../images/git.svg) no-repeat center center / contain;
+}
+.skill .skill_inner .skill_ico.h5 {
+    background: url(../images/h5.svg) no-repeat center center / contain;
+}
+.skill .skill_inner .skill_ico.css {
+    background: url(../images/css.svg) no-repeat center center / contain;
+}
+.skill .skill_inner .skill_ico.vsc {
+    background: url(../images/vsc.svg) no-repeat center center / contain;
+}
+.skill .skill_inner .skill_ico.ind {
+    background: url(../images/ind.svg) no-repeat center center / contain;
+}
+.skill .skill_inner .skill_ico.blen {
+    background: url(../images/blen.svg) no-repeat center center / contain;
+}
+.skill .skill_inner .skill_ico.fus {
+    background: url(../images/fus.svg) no-repeat center center / contain;
+}
+.skill .skill_inner .inner_top ul,
+.skill .skill_inner .inner_bottom ul {
     display: flex;
-    flex-direction: column;
-    text-align: center;
     justify-content: center;
     align-items: center;
+    gap: 0 15px;
 }
-.second .Career p {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 1.4;
-    color: #111;
-    margin-bottom: 15px;
-}
-.second .Career ul li {
-    margin-bottom: 15px;
-}
-.second .Career ul li strong {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.4;
-    color: #111;
-    display: block;
-    margin-bottom: 10px;
-}
-.second .Career ul li span {
-    display: block;
-    margin-bottom: 10px;
-}
-.second .Career ul li span.last {
-    color: #111;
-}
-
-/* ===============================
-    THIRD SECTION
-=============================== */
-
-.third {
-    padding: 60px 0 80px 0;
-    background-color: #f8f8f8;
-}
-
-.third .third_txt {
-    margin: 130px 0 62px 0;
+.skill .skill_inner .inner_top ul li,
+.skill .skill_inner .inner_bottom ul li {
     display: flex;
+    width: 107px;
+    height: 135px;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    overflow: visible;  /* 글자 잘림 방지 */
+    gap: 15px 0;
+}
+.skill .skill_inner ul li {
+    position: relative;
+    overflow: visible;
 }
 
-.third .third_txt strong {
-    font-size: 40px;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 15px;
-}
-
-/* ---------- 공통 리스트 레이아웃 ---------- */
-
-.third .third_list > div {
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;              /* 사진–텍스트 간 공통 간격 */
-    margin-bottom: 120px;   /* 프로젝트 간 간격 */
-}
-
-/* ---------- 사진 영역 ---------- */
-
-.third .third_list .photo {
+/* 기본 게이지 숨기기 */
+.skill li .gauge {
+    position: relative;
+    width: 100%;
+    height: 8px;
+    background: #e5e5e5;
+    border-radius: 4px;
+    margin-top: 10px;
     overflow: hidden;
-    width: 404px;
-    height: 404px;
-    flex-shrink: 0;
+    opacity: 0;              /* ← 기본 숨김 */
+    transition: .3s;
 }
 
-.third .third_list .photo img {
+/* 채워지는 바 */
+.skill li .gauge_fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background: #22226C;
+    border-radius: 4px;
+    transition: width .5s ease;
+}
+
+/* 퍼센트 텍스트 */
+.skill li .gauge_text {
+    position: absolute;
+    right: 0;
+    top: 100px;
+    font-size: 12px;
+    color: #22226C;
+    opacity: 0;
+    transition: .3s;
+    z-index: 10;
+}
+
+/* hover 시 gauge(회색 바) 등장 */
+.skill li:hover .gauge {
+    opacity: 1;
+}
+
+/* hover 시 퍼센트 텍스트 등장 */
+.skill li:hover .gauge_text {
+    opacity: 1;
+}
+
+
+
+.work {
+    padding: 60px 0 130px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.work h3 {
+    font-size: 100px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0 0 32px 0;
+}
+.work p {
+    margin: 32px 0 80px 0;
+    font-size: 24px;
+    line-height: 1.5;
+}
+.work .work_list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 80px 0;
+}
+.work .work_list .felis,
+.work .work_list .dokdo,
+.work .work_list .hospital {
+    display: flex;
+    align-items: center;
+    gap: 0 24px;
+}
+.work .work_list .felis .photo,
+.work .work_list .dokdo .photo,
+.work .work_list .hospital .photo {
+    overflow: hidden;
+    width: 608px;
+    height: 337px;
+}
+.work .work_list .felis .photo img,
+.work .work_list .dokdo .photo img,
+.work .work_list .hospital .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    vertical-align: middle;
-    border: 1px solid #ccc;
     border-radius: 15px;
-    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.1);
 }
-
-/* ---------- 텍스트 영역 ---------- */
-
-.third .third_list .tit {
-    flex: 1;
+.work .work_list .felis .felis_tit,
+.work .work_list .dokdo .dokdo_tit,
+.work .work_list .hospital .hospital_tit {
+    flex: 1; /* 남는 공간 모두 텍스트에 */
 }
-
-.third .third_list .tit strong {
-    font-size: 40px;
+.work .work_list .felis strong,
+.work .work_list .dokdo strong,
+.work .work_list .hospital strong {
+    font-size: 24px;
     font-weight: 700;
-    color: #111;
-    line-height: 1.4;
-    margin-bottom: 15px;
-    display: block;
 }
-
-.third .third_list .tit > span {
-    display: block;
-    margin-bottom: 30px;
-    color: #111;
+.work .work_list .felis p,
+.work .work_list .dokdo p,
+.work .work_list .hospital p {
+    font-size: 17px;
+    margin: 15px 0 15px 0;
 }
-
-/* ---------- p 태그 margin 문제 해결 ---------- */
-.third .third_list .tit p {
-    margin: 0;                /* 기본 margin 제거 */
-    line-height: 1.6;
-}
-
-/* ---------- 버튼 ---------- */
-
-.third .third_list .tit a {
+.work .work_list .felis a,
+.work .work_list .dokdo a,
+.work .work_list .hospital a {
     display: inline-block;
-    margin-top: 40px;
-}
-
-.third .third_list .tit a span {
-    border: 1px solid #555;
-    padding: 16px 21px;
+    border: 1px solid #22226C;
+    padding: 8px 24px 8px 24px;
     border-radius: 30px;
-    display: inline-block;
-    mix-blend-mode: difference;
+    margin: 40px 0 0 24px;
+    transition: .3s;
 }
-.third .third_list .tit a:hover span {
-    border: 1px solid #fff;
+.work .work_list .felis a:hover,
+.work .work_list .dokdo a:hover,
+.work .work_list .hospital a:hover {
+    border: 1px solid #22226C;
+    background-color: #22226C;
     color: #fff;
+}
+.work .work_list .felis a.non,
+.work .work_list .dokdo a.non,
+.work .work_list .hospital a.non {
+    margin: 0;
 }
 
 .contact {
-    padding: 60px 0 231px 0;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url(../images/배경.jpg);
+    padding: 60px 0 130px 0;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.contact .wrapper {
     position: relative;
 }
-.contact .thank {
-    text-align: center;
-    margin-bottom: 75px;
+.contact h3 {
+    font-size: 100px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0 0 63px 0;
 }
-.contact .thank > strong {
-    margin: 292px 0 15px 0;
-    display: block;
+.contact strong {
     font-size: 24px;
-    font-weight: 700;
-    color: #111;
 }
-.contact .thank > span {
-    font-size: 80px;
-    font-weight: 700;
-    color: #111;
-}
-.contact .contact_me {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 15px 0;
-}
-.contact .contact_me > strong {
+.contact p {
     font-size: 40px;
-    font-weight: 700;
-    color: #111;
+    font-weight: 800;
+    margin: 15px 0 35px 0;
 }
-.contact .contact_me > span {
-    font-size: 20px;
-    font-weight: 700;
-    color: #111;
+.contact ul li {
+    font-size: 24px;
+    margin-top: 15px;
 }
-.contact .rolling {
+.contact ul li span {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    position: relative;
+}
+.contact ul li span::before {
+    content: "";
     position: absolute;
-    left: 0;
-    bottom: 3%;
-    font-size: 130px;
-    width: 100%;
-    white-space: nowrap;
-    color: rgba(0, 0, 0, 0.1);
+    left: -50px;
+    top: 25px;
+    background: url(../images/contact_arrow.png) no-repeat center center / contain;
+    width: 40px;
+    height: 100px;
+}
+.contact .photo {
+    position: absolute;
+    right: 0;
+    bottom: -70px;
+    width: 431px;
+    height: 431px;
     overflow: hidden;
 }
-.contact .rolling p {
-    display: inline-block;
-    animation: contact_roll 40s linear infinite;
-}
-@keyframes contact_roll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50.12%); }
-}
-
-
-html, body {
-    overflow-x: hidden;
-}
-
-
-
-
-.cursor { 
-	position: absolute;  /* 반드시 absolute여야 하고 위치는 jquery에서 적용 시킴 */
-	z-index: 1000;
-	transform: translate(-50%, -50%); /* 커서 위치 조정 */
-	pointer-events: none; /* 생성된 cursor에 마우스 오버 이벤트를 주지 않기 - 이걸 주지 않으면 cursor에 마우스가 오버된 것으로 인식되어 하단 요소가 클릭되지 않음 */
-	display:none; /* 평소에는 보이지 않게 하기 위해서 - 만약 원래도 따라다니는 마우스 포인터를 디자인하려면 스타일을 주면 됨. */
-}
-.cursor.on {
-	display: block;  /* jquery에서 특정 요소에 마우스를 오버하면 class명을 추가해주고 그때 나타남 */
-	/* 기본적인 스타일 주기 */
-	mix-blend-mode: difference; /* 만약 블랜딩 모드를 주고 싶다면.. (반드시 background색상이 존재해야 적용됨 주의) */
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    text-align: center;
-    padding-top: 30px;
-    color: #fff;
-    background-color: #111;
+.contact .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
