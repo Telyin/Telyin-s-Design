@@ -51,6 +51,9 @@ body {
     width: 1260px;
     margin: 0 auto; /* 가운데 정렬 */
 }
+#wrap {
+    overflow-x: hidden;
+}
 @media screen and (max-width:1260px){
     body {
         overflow-x: auto;
