@@ -12,17 +12,18 @@ body {
 .skill::before,
 .Portfolio::after,
 .contact::after {
-    max-width: 100%;
-    overflow: hidden;
+    position: fixed;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .head {
     padding: 46px 0 106px 0;
     position: relative;
+    margin: 0 20px;
 }
 .head::before {
     content: "";
-    position: absolute;
     z-index: -1;
     right: 0;
     top: 0;
@@ -149,10 +150,10 @@ body {
 .about {
     position: relative;
     margin-bottom: 136px;
+    margin: 0 20px;
 }
 .about::before {
     content: "";
-    position: absolute;
     z-index: -1;
     left: 0;
     top: 0;
@@ -162,6 +163,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url(../images/aboutglow.png);
+    transform: translateX(-30%);
 }
 .about .wrapper {
     display: flex;
@@ -222,12 +224,11 @@ body {
 }
 
 .skill {
-    margin-bottom: 144px;
+    margin:150px 20px 200px 20px;
     position: relative;
 }
 .skill::before {
     content: "";
-    position: absolute;
     z-index: -1;
     right: 0;
     bottom: 0;
@@ -337,19 +338,6 @@ body {
 .Portfolio {
     margin-bottom: 214px;
     position: relative;
-}
-.Portfolio::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    bottom: -10%;
-    width: 426.32px;
-    height: 758.52px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url(../images/popolglow.png);
 }
 .Portfolio .pofol_box {
     width: 100%;
@@ -463,7 +451,6 @@ body {
 }
 .contact::after {
     content: "";
-    position: absolute;
     z-index: -1;
     right: 0;
     bottom: 0;

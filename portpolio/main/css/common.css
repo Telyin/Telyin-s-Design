@@ -61,6 +61,7 @@ body {
 
     #wrap {
         overflow: visible;  /* ← 중요! */
+        margin: 0 auto;
     }
 
     .wrapper {
