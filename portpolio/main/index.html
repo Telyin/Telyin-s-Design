@@ -6,8 +6,6 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!--라이브러리파일-->
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/gsap.min.js"></script>
-    <script src="js/ScrollTrigger.min.js"></script>
 
     <!--컨트롤파일-->
     <link rel="stylesheet" href="css/main.css">
@@ -19,280 +17,228 @@
         <div class="container">
             <h1 class="blind">h1</h1>
             <h2 class="blind">h2</h2>
-            <div class="accordion_wrap">
-                <div class="accordion">
-                    <div class="conts">
-                        <div class="iam">
-                            <div class="wrapper">
-                                <div class="header">
-                                    <ul>
-                                        <li>Kim Young Sang</li>
-                                        <li>Portfolio</li>
-                                    </ul>
+            <div class="head">
+                <div class="wrapper">
+                    <div class="head_wrap">
+                        <h3>Portfolio</h3>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#skill">Skill</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!--head-->
+            <div class="iam">
+                <div class="wrapper">
+                    <div class="iam_wrap">
+                        <div class="tit">
+                            <strong>UI/UX Designer</strong>
+                            <h3>김영상</h3>
+                            <p>사용자의 경험을 최우선에 두고, 명확한 구조와 직관적인 디자인을 만드는 웹디자이너 김영상입니다. 다양한 프로젝트를 통해 브랜드의 목적을 시각적으로 풀어내고, 안정적인 UI 흐름을 설계하는 데 집중해 왔습니다.</p>
+                            <a href="#n"><span>Contact me</span></a>
+                        </div>
+                        <div class="photo"><img src="images/photo.jpg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="about" id="about">
+                <div class="wrapper">
+                    <div class="about_tit">
+                        <h3>About me</h3>
+                        <p>학업과 다양한 실무 경험을 거치며, 사용자 관점에서 문제를 바라보는 시각을 갖추게 되었습니다. 고등학교 졸업 후 메이필드호텔조리학교에 진학했지만 진로를 재정비하며 현장 기반의 기업에서 실무 경험을 쌓았습니다. S&C 세모화학과 주식회사 SONOTEC 근무를 통해 현장의 업무 흐름, 협업 과정, 문제 해결 방식 등을 자연스럽게 익히며 업무의 기초 체력을 다졌습니다. 이후 디자인과 디지털 제품에 대한 관심을 확고히 하여 한국산업연수원의 AI 제품디자인 교육과 이지디자인컴퓨터학원의 UI/UX 과정을 수료하며, 웹디자인과 사용자 경험 설계 분야로 진로를 전환했습니다. 지금은 이러한 실무 경험과 새롭게 구축한 디자인 역량을 바탕으로, 더 나은 사용자 경험을 만드는 웹디자이너로 성장하고자 합니다.</p>
+                    </div>
+                    <div class="about_list">
+                        <ul>
+                            <li>
+                                <div class="inner_photo"><img src="images/list/high.jpg" alt=""></div>
+                                <div class="inner_tit">
+                                    <strong>풍생고등학교 졸업</strong>
+                                    <span>2008~2015</span>
                                 </div>
-                                <div class="iam_inner">
-                                    <div class="iam_tit">
-                                        <strong>안녕하세요, 저는</strong>
-                                        <h3>UI/UX<br> Designer</h3>
-                                        <p>김영상 입니다.</p>
-                                    </div>
-                                    <div class="iam_photo"><img src="images/photo1.png" alt="내사진"></div>
+                            </li>
+                            <li>
+                                <div class="inner_photo"><img src="images/list/hotel.jpg" alt=""></div>
+                                <div class="inner_tit">
+                                    <strong>메이필드호텔스쿨</strong>
+                                    <span>2016~2017(중퇴)</span>
                                 </div>
-                            </div><!--wrapper-->
+                            </li>
+                            <li>
+                                <div class="inner_photo"><img src="images/list/snc.jpg" alt=""></div>
+                                <div class="inner_tit">
+                                    <strong>S&C 세모화학 근무</strong>
+                                    <span>2017~2019</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inner_photo"><img src="images/list/sono.jpg" alt=""></div>
+                                <div class="inner_tit">
+                                    <strong>주식회사 SONOTEC 근무</strong>
+                                    <span>2019~2025</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inner_photo"><img src="images/list/hsy.jpg" alt=""></div>
+                                <div class="inner_tit">
+                                    <strong>한국산업연수원</strong>
+                                    <span>2024~2025 AI를 활용한 제품디자인 교육 수료</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inner_photo"><img src="images/list/ezd.jpg" alt=""></div>
+                                <div class="inner_tit">
+                                    <strong>이지디자인컴퓨터학원</strong>
+                                    <span>2025 웹 UI/UX 과정 수료</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="skill" id="skill">
+                <div class="wrapper">
+                    <div class="skill_box">
+                        <h3>My SKILL</h3>
+                        <div class="skill_list top">
+                            <ul class="up">
+                                <li>
+                                    <span class="fig">Figma</span>
+                                </li>
+                                <li>
+                                    <span class="pho">Photoshop</span>
+                                </li>
+                                <li>
+                                    <span class="ill">Illustrator</span>
+                                </li>
+                                <li>
+                                    <span class="xd">XD</span>
+                                </li>
+                                <li>
+                                    <span class="pre">Premeierpro</span>
+                                </li>
+                                <li>
+                                    <span class="git">Github</span>
+                                </li>
+                                <li>
+                                    <span class="ind">InDesign</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="skill_list bottom">
+                            <ul class="down">
+                                <li>
+                                    <span class="h5">Html5</span>
+                                </li>
+                                <li>
+                                    <span class="css">Css</span>
+                                </li>
+                                <li>
+                                    <span class="vsc">VS Code</span>
+                                </li>
+                                <li>
+                                    <span class="blen">Blender</span>
+                                </li>
+                                <li>
+                                    <span class="fus">Fusion360</span>
+                                </li>
+                                <li>
+                                    <span class="gpt">ChatGPT</span>
+                                </li>
+                                <li>
+                                    <span class="mid">Midjourney</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="accordion">
-                    <div class="conts">
-                        <div class="about">
-                            <div class="wrapper">
-                                <h3>about.</h3>
-                                <p>사용자 경험을 고민하는 웹디자이너 김영상 입니다.</p>
-                                <div class="about_box">
-                                    <ul class="about_list">
-                                        <li data-img="highschool.jpg">
-                                            <strong>2008~2015 / 풍생고등학교 (졸업)</strong>
-                                            <span>경기도에 있는 풍생 고등학교를 졸업</span>
-                                        </li>
-                                        <li data-img="hotelschool.jpg">
-                                            <strong>2016~2017 / 메이필드호텔조리학교 (중퇴)</strong>
-                                            <span>서울 메이필드호텔조리학교에 입학 했지만, 가정 형편상 중퇴 결정</span>
-                                        </li>
-                                        <li data-img="snc.jpg">
-                                            <strong>2017~2019 / S&C 세모화학 근무</strong>
-                                            <span>에쓰앤씨 세모화학에 취업 후 신축 아파트 현장으로 출근해 실외기실, 베란다 등의 외부내벽 페인트 시공업자 근무</span>
-                                        </li>
-                                        <li data-img="sonotec.jpg">
-                                            <strong>2019~2025 / 주식회사 소노텍 근무</strong>
-                                            <span>세모화학 퇴사 후,  인천 소재의 소노텍에 취업해 간단한 사무 업무와 물류관리, 현장 보조 등으로 5년을 근무 한 뒤 퇴사</span>
-                                        </li>
-                                        <li data-img="ai.png">
-                                            <strong>2024~2025 / 한국산업연수원</strong>
-                                            <span>AI를 활용한 제품디자인 과정 수료</span>
-                                        </li>
-                                        <li data-img="ez.png">
-                                            <strong>2025 / 이지디자인컴퓨터학원</strong>
-                                            <span>웹 UI/UX 디자인 과정 수료</span>
-                                        </li>
-                                    </ul>
-                                    <!-- 오른쪽에 뜨는 이미지 -->
-                                    <div class="about_preview">
-                                        <img src="" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="conts">
-                        <div class="skill">
-                            <div class="wrapper">
-                                <h3>SKILL.</h3>
-                                <div class="skill_inner">
-                                    <div class="inner_top">
-                                        <ul>
-                                            <li data-percent="95">
-                                                <div class="skill_ico fig"></div>
-                                                <span>Figma</span>
-                                                <div class="gauge">
-                                                    <div class="gauge_fill"></div>
-                                                </div>
-                                                <div class="gauge_text">95%</div>
-                                            </li>
-                                            <li data-percent="80">
-                                                <div class="skill_ico pho"></div>
-                                                <span>photoshop</span>
-                                                <div class="gauge">
-                                                    <div class="gauge_fill"></div>
-                                                </div>
-                                                <div class="gauge_text">80%</div>
-                                            </li>
-                                            <li data-percent="90">
-                                                <div class="skill_ico ill"></div>
-                                                <span>illustrator</span>
-                                                <div class="gauge">
-                                                    <div class="gauge_fill"></div>
-                                                </div>
-                                                <div class="gauge_text">90%</div>
-                                            </li>
-                                            <li data-percent="95">
-                                                <div class="skill_ico xd"></div>
-                                                <span>XD</span>
-                                                <div class="gauge">
-                                                    <div class="gauge_fill"></div>
-                                                </div>
-                                                <div class="gauge_text">95%</div>
-                                            </li>
-                                            <li data-percent="80">
-                                                <div class="skill_ico ind"></div>
-                                                <span>InDesign</span>
-                                                <div class="gauge">
-                                                    <div class="gauge_fill"></div>
-                                                </div>
-                                                <div class="gauge_text">80%</div>
-                                            </li>
-                                            <li data-percent="80">
-                                                <div class="skill_ico pre"></div>
-                                                <span>Premierepro</span>
-                                                <div class="gauge">
-                                                    <div class="gauge_fill"></div>
-                                                </div>
-                                                <div class="gauge_text">80%</div>
-                                            </li>
-                                            <li data-percent="90">
-                                                <div class="skill_ico git"></div>
-                                                <span>Github</span>
-                                                <div class="gauge">
-                                                    <div class="gauge_fill"></div>
-                                                </div>
-                                                <div class="gauge_text">90%</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="inner_bottom">
-                                        <ul>
-                                            <li data-percent="95">
-                                                <div class="skill_ico h5"></div>
-                                                <span>Html5</span>
-                                                <div class="gauge">
-                                                    <div class="gauge_fill"></div>
-                                                </div>
-                                                <div class="gauge_text">95%</div>
-                                            </li>
-                                            <li data-percent="90">
-                                                <div class="skill_ico css"></div>
-                                                <span>Css3</span>
-                                                <div class="gauge">
-                                                    <div class="gauge_fill"></div>
-                                                </div>
-                                                <div class="gauge_text">90%</div>
-                                            </li>
-                                            <li data-percent="90">
-                                                <div class="skill_ico vsc"></div>
-                                                <span>VS Code</span>
-                                                <div class="gauge">
-                                                    <div class="gauge_fill"></div>
-                                                </div>
-                                                <div class="gauge_text">90%</div>
-                                            </li>
-                                            <li data-percent="95">
-                                                <div class="skill_ico gpt"></div>
-                                                <span>ChatGPT</span>
-                                                <div class="gauge">
-                                                    <div class="gauge_fill"></div>
-                                                </div>
-                                                <div class="gauge_text">95%</div>
-                                            </li>
-                                            <li data-percent="90">
-                                                <div class="skill_ico mid"></div>
-                                                <span>Midjourney</span>
-                                                <div class="gauge">
-                                                    <div class="gauge_fill"></div>
-                                                </div>
-                                                <div class="gauge_text">90%</div>
-                                            </li>
-                                            <li data-percent="50">
-                                                <div class="skill_ico blen"></div>
-                                                <span>Blender</span>
-                                                <div class="gauge">
-                                                    <div class="gauge_fill"></div>
-                                                </div>
-                                                <div class="gauge_text">50%</div>
-                                            </li>
-                                            <li data-percent="85">
-                                                <div class="skill_ico fus"></div>
-                                                <span>Fusion360</span>
-                                                <div class="gauge">
-                                                    <div class="gauge_fill"></div>
-                                                </div>
-                                                <div class="gauge_text">85%</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="conts">
-                        <div class="work">
-                            <div class="wrapper">
-                                <h3>work.</h3>
-                                <p>문화, 쇼핑, 의료 분야의 웹사이트를 디자인·퍼블리싱하며 다양한 사용자 환경을 경험했습니다.<br> 프로젝트 성격에 맞춘 정보 설계와 브랜드 표현, 직관적인 UI/UX 구현을 중심으로 작업을 진행했습니다.</p>
-                                <div class="work_list">
-                                    <div class="felis">
-                                        <div class="photo"><img src="images/felis_img.jpg" alt=""></div>
-                                        <div class="felis_tit">
+            </div>
+            <div class="Portfolio" id="portfolio">
+                <div class="wrapper">
+                    <div class="pofol_box">
+                        <h3>My Portofolio</h3>
+                        <div class="wep">
+                            <ul>
+                                <li>
+                                    <a href="#n">
+                                        <div class="wep_photo"><img src="images/list/pof01.jpg" alt=""></div>
+                                        <div class="wep_tit">
                                             <strong>닥터펠리스 쇼핑몰 리뉴얼</strong>
-                                            <p>기존 닥터펠리스 홈페이지는 모바일 전용으로 디자인 되어 PC유저에겐 불편한 환경이 만들어져 있었습니다.<br><br>
-                                                최대한 기존 닥터펠리스의 콘텐츠를 유지한 채 PC환경에 맞는 UI 배치를 통해 PC유저의 접근을 더욱 높힐 수 있도록 개편했습니다.</p>
-                                            <a href="https://m.drfelis.com/" target="_blank" class="non"><span>원본 홈페이지</span></a>
-                                            <a href="https://telyin.github.io/Telyin-s-Design/portpolio/dr.felis/index.html" target="_blank"><span>개편 홈페이지</span></a>
+                                            <span>Wep</span>
                                         </div>
-                                    </div>
-                                    <div class="dokdo">
-                                        <div class="photo"><img src="images/dokdo_img.jpg" alt=""></div>
-                                        <div class="dokdo_tit">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <div class="wep_photo"><img src="images/list/pof02.jpg" alt=""></div>
+                                        <div class="wep_tit">
                                             <strong>독도박물관 홈페이지 리뉴얼</strong>
-                                            <p>기존 박물관 홈페이지는 자주 접속이 끊기고 박물관에서 진행하는 콘텐츠의 접근성이 떨어지는 문제가 존재 했었습니다.<br><br>
-                                                보다 직관적인 형태로 콘텐츠를 배치하고 홈페이지 방문자들에게 독도를 적극적으로 홍보하여 독도가 대한민국의 고유의 영토라는 것을 적극적으로 국민에게 알리는 박물관의 목적성 또한 유지하여 디자인 했습니다.</p>
-                                            <a href="https://www.dokdomuseum.go.kr/ko/main.do" target="_blank" class="non"><span>원본 홈페이지</span></a>
-                                            <a href="https://telyin.github.io/Telyin-s-Design/portpolio/dokdo/index.html" target="_blank"><span>개편 홈페이지</span></a>
+                                            <span>Wep</span>
                                         </div>
-                                    </div>
-                                    <div class="hospital">
-                                        <div class="photo"><img src="images/hospital_img.jpg" alt=""></div>
-                                        <div class="hospital_tit">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <div class="wep_photo"><img src="images/list/pof03.jpg" alt=""></div>
+                                        <div class="wep_tit">
                                             <strong>청주한국병원 홈페이지 리뉴얼</strong>
-                                            <p>기존 한국병원 홈페이지는 난잡한 배치로 인해 병원예약이나 방문 등을 목적으로 홈페이지에 접속하는 유저들에게 불편함을 초래하고 있었습니다.<br><br>
-                                                병원 홈페이지를 찾는 주요 목적인 예약과 진료시간 등을 가시성 좋게 표기하고, 홈페이지를 방문하는 연령대를 고려하여 폰트 사이즈를 평균치보다 크게 배치하는 디자인을 선택했습니다.</p>
-                                            <a href="http://www.hanhsp.co.kr/index.asp" target="_blank" class="non"><span>원본 홈페이지</span></a>
-                                            <a href="https://telyin.github.io/Telyin-s-Design/portpolio/hospital/index.html" target="_blank"><span>개편 홈페이지</span></a>
+                                            <span>Wep</span>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="work_list2_tit">홈페이지 제작 외 작업물</div>
-                                <div class="work_list2">
-                                    <div class="poster">
-                                        <div class="photo_wrap1">
-                                            <img src="images/work/photo1.jpg" alt="">
-                                            <img src="images/work/photo2.jpg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="screen">
+                            <ul>
+                                <li>
+                                    <div class="screen_photo"><img src="images/list/pof04.jpg" alt=""></div>
+                                        <div class="screen_tit">
+                                            <strong>AI Generation</strong>
+                                            <span>Midjourney</span>
                                         </div>
-                                        <strong>3D 모델링과 AI를 활용한 포스터 제작</strong>
-                                        <p>직접 만든 3D 모델링을<br> Midjourney, ChatGPT 등을 이용한 광고물로 제작</p>
-                                    </div>
-                                    <div class="art">
-                                        <div class="photo_wrap2">
-                                            <img src="images/work/photo3.jpg" alt="">
-                                            <img src="images/work/photo4.jpg" alt="">
+                                </li>
+                                <li>
+                                    <div class="screen_photo"><img src="images/list/pof05.png" alt=""></div>
+                                        <div class="screen_tit">
+                                            <strong>AI Magazine cover</strong>
+                                            <span>Midjourney</span>
                                         </div>
-                                        <strong>AI를 활용한 컨셉 아트 제작</strong>
-                                        <p>Midjourney를 이용해 컨셉아트 이미지 제작을 구현했습니다</p>
-                                    </div>
-                                </div>
+                                </li>
+                                <li>
+                                    <div class="screen_photo"><img src="images/list/pof06.jpg" alt=""></div>
+                                        <div class="screen_tit">
+                                            <strong>3D Modeling</strong>
+                                            <span>3D</span>
+                                        </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact" id="contact">
+                <div class="wrapper">
+                    <div class="contact_inner">
+                        <div class="contact_left">
+                            <div class="tit_box">
+                                <h3>Thank’s for WATCHING!</h3>
+                                <strong>Contact me here!</strong>
+                                <span>dudtkd960@gmail.com</span>
+                                <span>010-6231-9804</span>
+                                <p>읽어주셔서 감사합니다. 언제든 편하게 연락 주세요.</p>
+                                <div class="mini">UI/UX Designer Kim Young Sang</div>
+                            </div>
+                        </div>
+                        <div class="contact_right">
+                            <div class="contact_photo">
+                                <img src="images/list/team.jpg" alt="">
+                                <span>2025 . 06 . 28 AI Product Design Team 회식</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="accordion last">
-                    <div class="conts">
-                        <div class="contact">
-                            <div class="wrapper">
-                                <h3>contact me.</h3>
-                                <strong>UI/UX Designer KYS</strong>
-                                <p>Thank’s for WATCHING!</p>
-                                <ul>
-                                    <li><span>Contact me here!</span></li>
-                                    <li>dudtkd960@gmail.com</li>
-                                    <li>010-6231-9804</li>
-                                </ul>
-                                <div class="photo"><img src="images/contact.png" alt=""></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="contact_bottom"></div>
             </div>
         </div>
     </div>
