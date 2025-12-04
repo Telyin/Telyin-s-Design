@@ -6,6 +6,7 @@
 body {
     background-color: #030E21;
     color: #868490;
+    overflow-x: hidden;
 }
 .head::before,
 .about::before,
@@ -49,7 +50,7 @@ body {
     align-items: center;
     position: fixed;
     z-index: 999;
-    right: 0;
+    right: 23%;
     top: 0;
     margin: 25px 320px 0 0;
 }
